@@ -1,0 +1,188 @@
+.projectshow-container {
+  max-width: 1600px;
+  margin: auto;
+  min-height: 100vh;
+  .projectsshow-project-title {
+    display: flex;
+    padding: 1.5rem;
+    min-height: 25vw;
+    @media (max-width: 450px) {
+      padding: 0.5rem;
+    }
+    .project-name {
+      flex: 1;
+      h3 {
+        padding: 1rem;
+        margin: 1rem;
+        width: 0;
+        min-height: 25vw;
+        font-size: 5vw;
+        @media (max-width: 400px) {
+          font-size: 6vw;
+        }
+      }
+      .project-status {
+        background-color: #4885ed;
+        margin: 0rem 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        border-radius: 8px;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 0.875rem;
+        align-self: flex-start;
+        color: #ffffff;
+        padding: 1rem 1.5rem;
+        text-align: center;
+        text-decoration: none;
+        @media (max-width: 450px) {
+          font-size: 0.625rem;
+          padding: 0.5rem 0.75rem;
+        }
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  .project-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    @media (max-width: 450px) {
+      justify-content: flex-end;
+      padding-right: 3rem;
+    }
+    img {
+      width: 20rem;
+      max-width: 100%;
+      @media (max-width: 800px) {
+        width: 15rem;
+        max-width: 100%;
+      }
+      @media (max-width: 450px) {
+        width: 9rem;
+        max-width: 100%;
+      }
+      @media (max-width: 400px) {
+        width: 7rem;
+        max-width: 100%;
+      }
+    }
+  }
+  .projectshow-project-description {
+    padding-left: 3rem;
+    padding-right: 1rem;
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+    @media screen and (max-width: 450px) {
+      padding-left: 2rem;
+      padding-right: 1.5rem;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    h3 {
+      padding: 1rem 0 1rem 0;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      @media screen and (max-width: 450px) {
+        font-size: 1.3rem;
+      }
+    }
+    p {
+      font-size: 1.25rem;
+      line-height: 2rem;
+      @media screen and (max-width: 450px) {
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+      }
+    }
+  }
+  .projectshow-techstack {
+    padding-left: 3rem;
+    margin-bottom: 3rem;
+    @media screen and (max-width: 450px) {
+      padding-left: 2rem;
+    }
+    cursor: pointer;
+    h4 {
+      padding: 1rem 0 1rem 0;
+      font-size: 2.5rem;
+      @media screen and (max-width: 450px) {
+        font-size: 1.3rem;
+      }
+    }
+    .projects-stacks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      .tech {
+        .techlogo {
+          display: flex;
+          font-size: 1.625rem;
+          margin-right: 1rem;
+        }
+        display: flex;
+        align-items: center;
+        min-width: min-content;
+        height: 4rem;
+        background-color: #fffbfb;
+        border-radius: 10px;
+        padding: 0.5rem 1rem;
+        border: 2px solid var(--gdsc-bg-1-100);
+        @media screen and (max-width: 450px) {
+          padding: 0.75rem 1rem;
+        }
+        @media screen and (max-width: 350px) {
+          padding: 0.125rem 1rem;
+        }
+        p {
+          @media screen and (max-width: 350px) {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+  .projects-show-bottom {
+    padding-left: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 5rem;
+    padding-right: 1rem;
+    @media screen and (max-width: 450px) {
+      padding-left: 2rem;
+    }
+    h4 {
+      padding: 1rem 0 1rem 0;
+      font-size: 2.5rem;
+      @media screen and (max-width: 480px) {
+        font-size: 2rem;
+      }
+      @media screen and (max-width: 450px) {
+        font-size: 1.4rem;
+      }
+    }
+    ul {
+      font-size: 1.5rem;
+      padding: 0.5rem 0 0.5rem 0;
+      @media screen and (max-width: 450px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  @media screen and (max-width: 450px) and (orientation: portrait) {
+    .projects-show-bottom {
+      display: flex;
+      flex-direction: column;
+      // div{
+      //   border: 1px solid var(--gdsc-bg-1-100);
+      // }
+    }
+  }
+}

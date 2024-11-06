@@ -141,3 +141,10 @@ body {
     }
 }
 
+.animation-cont{
+    display: flex;
+    justify-content: end;
+    /* align-items: start;  */
+    height: 100vh;
+    margin-top: -290px;
+}
