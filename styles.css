@@ -14,7 +14,7 @@ body {
     justify-content: end;
 }
 
-.header {
+.footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,7 +38,7 @@ body {
     margin: 15px 0;
 }
 
-.social-icons a {
+.footer-social-icons a {
     width: 30px;
     height: 30px;
     display: inline-block;
@@ -86,9 +86,11 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
+    margin-left: -20px;
+    margin-bottom: -180px;
 }
 
-.main-sections {
+.footer-sections {
     display: flex;
     justify-content: space-between;
     margin-top: 50px;
@@ -143,43 +145,9 @@ body {
     padding-left: 10px;
 }
 
-.footer {
+.developer {
     text-align: center;
     /* margin-top: 50px; */
     padding: 20px;
     color: #ccc;
-}
-
-.footer .heart {
-    color: #ff4444;
-    display: inline-block;
-    animation: heartbeat 1.5s ease infinite;
-}
-
-@keyframes heartbeat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .main-sections {
-        flex-direction: column;
-    }
-
-    .section {
-        text-align: center;
-    }
-
-    .section h2::after {
-        left: 50%;
-        transform: translateX(-50%);
-    }
 }
