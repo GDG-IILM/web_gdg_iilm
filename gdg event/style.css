@@ -1,0 +1,152 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-decoration: none;   
+}
+
+body{
+    background-color: rgb(41, 34, 34);
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+nav{
+    background-color: rgb(92, 51, 51); 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    height: 45px;
+    width: 55px;
+    background-image: url(images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+li{
+    list-style: none;
+    margin: 14px;
+    padding: 14px; 
+}
+
+
+
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hero Section */
+.hero-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    height: 500px;
+    flex-direction: column;    
+}
+.hero-content{
+    margin: 20px;
+    
+}
+.image{
+    
+    height: 450px;
+    width: 850px;
+    background-image: url(images/hero-img.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+/* Other section */
+.content{
+    display: flex;
+    justify-content: center;
+    /* margin: 8px; */
+    font-size: 18px;
+}
+
+.content-1{
+    width: 750px;
+    height: 400px;
+    background-color: rgb(53, 49, 49);
+    word-spacing: 4px;
+    margin: 18px;
+    padding: 18px;
+    border-radius: 4px;
+}
+
+h4{
+    margin-top: 5px;
+}
+.img{
+    background-image: url(images/food.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    margin-left: 25%;
+    width: 100%;
+}
+
+/* Form */
+.contactUs{
+    display: flex;
+    justify-content: center;
+    height: 500px;
+    width: 750px;
+    border-radius: 4px;
+    background-color: rgb(53, 49, 49);
+    margin: 10px;
+    padding: 10px;
+}
+
+.contactUs h1{
+    margin-top: 5px;
+    position: absolute;
+    left: 250px;
+}
+
+input{
+    height: 28px;
+    width: 280px;
+    background-color: beige;
+    border-radius: 6px;
+    color: black;
+    font-size: 16px;
+}
+
+input:focus-within{
+    border: 4px solid blue;
+}
+
+label{
+    margin: 10px;
+    font-size: 18px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+}
+
+textarea{
+    height: 100px;
+    width: 300px;
+    border-radius: 4px;
+}
+
+textarea:focus-within{
+    border: 4px solid blue;
+}
+
+button{
+    margin: 30px;
+    color:black ;
+    height: 30px;
+    border-radius: 4px;
+}
