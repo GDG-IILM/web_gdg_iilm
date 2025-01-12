@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects</title>
+    <meta name="description" content="Explore innovative projects at GDG IILM, including task managers, weather apps, fitness trackers, and more. Stay updated with our creative solutions for real-world challenges.">
+    <meta name="keywords" content="GDG IILM, Technology Projects, Task Manager, Weather App, Fitness Tracker, Expense Tracker, Student Innovations">
+    <meta name="author" content="GDG IILM">
+    <title>Innovative Projects at GDG IILM</title>
     <link rel="stylesheet" href="project.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"> </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Innovative Projects at GDG IILM">
+    <meta property="og:description" content="Explore innovative projects like task managers, weather apps, and more at GDG IILM. Join us in solving real-world challenges with technology.">
+    <meta property="og:image" content="https://gdg-iilm.example.com/assets/og-image.jpg">
+    <meta property="og:url" content="https://gdg-iilm.example.com/projects">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Innovative Projects at GDG IILM">
+    <meta name="twitter:description" content="Explore our creative solutions to real-world problems with GDG IILM projects.">
+    <meta name="twitter:image" content="https://gdg-iilm.example.com/assets/twitter-card.jpg">
 </head>
 <body>
     <nav class="navbar">
@@ -27,6 +43,7 @@
         <h1 style="font-size: 5.5rem; text-align: left; margin-left: 1em; margin-top: 2.5em;">OUR<br><span style="display: inline-block; margin-left: 0em; margin-top: 0em;">PROJECTS</span></h1>
     </header>
 <!-- progress animation -->
+ 
     <div class="animation-cont">
         <div id="animation-container" style="width: 600px; height: 600px; display: none;"></div>
 
@@ -43,6 +60,20 @@
             document.getElementById('animation-container').style.display = 'block';
             document.getElementById('fallback-text').style.display = 'none';
         });
+        type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "GDG IILM",
+        "url": "https://gdg-iilm.example.com",
+        "logo": "https://gdg-iilm.example.com/assets/logo.png",
+        "sameAs": [
+            "https://github.com/GDG-IILM",
+            "https://www.instagram.com/gdg_iilm/",
+            "https://www.linkedin.com/company/gdg-iilm-cet/"
+        ],
+        "description": "GDG IILM is a hub for innovation and creativity, showcasing projects like task managers, fitness trackers, and more."
+    }
     </script>   
     </div>
 
