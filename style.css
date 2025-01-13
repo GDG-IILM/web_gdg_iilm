@@ -171,6 +171,7 @@ nav{
     text-align: center;
     padding: 15px;
     margin: 10px;
+    flex: 0 0 auto;
     /* border: solid 2px black; */
   }
   
