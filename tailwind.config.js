@@ -3,11 +3,16 @@ module.exports = {
   content: [
     './meetTheTeam/.{html,js}', // Update this path to match your project structure
     './meetTheTeam/index.html', // Include the main HTML file if needed
-    './meetTheTeam/.globals.css',
+    './meetTheTeam/globals.css',
     './landing-page.html'
   ],
   theme: {
     extend: {
+      colors: {
+        scrollbarThumb: '#4285f4',
+        scrollbarThumbHover: '#357ae8',
+        scrollbarTrack: '#f1f1f1',
+      },
       height:{
         '128':'32rem',
       },
@@ -25,6 +30,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar'),
+  ],
 };
 
