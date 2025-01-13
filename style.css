@@ -9,11 +9,6 @@ body{
     color: white;
     overflow-x: hidden;
 }
-/* Anchor Tag */
-a{
-    text-decoration: none;
-    color: white;
-}
 
 /* Font */
 .vidaloka-regular {
@@ -22,6 +17,12 @@ a{
     font-style: normal;
 }
 
+
+/* Anchor Tag */
+a{
+  text-decoration: none;
+  color: white;
+}
 
 
 /* Nav Bar */
