@@ -12,38 +12,49 @@ body {
 }
 
 /* Navbar styles */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 20px;
-    background-color: rgba(26, 26, 26, 0.9);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-    border-bottom: #cccccc 1px solid;
-    margin-left: -20px;
-}
-
-.logo img {
-    height: 40px;
-}
-
-.nav-links a {
-    color: white;
+/* Anchor Tag */
+a{
     text-decoration: none;
-    margin-left: 2rem;
-    transition: color 0.3s ease;
-}
-
-.nav-links a.active {
-    color: #8d8483;
-}
-
-.nav-links a:hover{
-    color: #d0c454;
-}
+    color: white;
+  }
+  
+  
+  /* Nav Bar */
+  nav{
+      background-color: #1E1E1E;
+      height: 50px;
+      width: 100%;
+      position: sticky;
+  }
+  
+  .nav-elements ul{
+      height: 48px;
+      width: 600px;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      margin: 8px;
+      padding: 4px;
+  }
+  
+  .nav-elements li{
+      list-style: none;
+  
+  }
+  
+  .home-img{
+      width: 400px;
+      height: 250px;
+      margin-top: 30px;
+  }
+  
+  .gdg-logo{
+      width: 100px;
+      height: 100px;
+      margin-top: 40px;
+      margin-bottom: 0;
+  }
+  
 
 /* Hero section */
 .hero {
