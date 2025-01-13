@@ -89,6 +89,77 @@ nav{
     color: #ccc;
 }
 
+/* ELEMENTS */
+
+/* .circle {
+  width: 60px;
+  height: 60px;
+  background-color: #204d9c;
+  border: 2px solid #3a8edb;
+  border-radius: 50%;
+  position: relative;
+}
+
+.mouth {
+  width: 40px;
+  height: 15px;
+  background-color: black;
+  border-radius: 0 0 50px 50px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+} */
+
+.element-1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-left: 65%;
+  margin-top: 10px;
+}
+
+
+.semi-circle {
+  width: 100px;
+  height: 45px;
+  background-color: #0F9D58;
+  border-radius: 75px 75px 0 0;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.dot.green {
+  background-color: #0F9D58;
+}
+
+.dot.red {
+  background-color: #EA4335;
+}
+
+.dot.yellow {
+  background-color: #FBCC43;
+}
+
+.dot.blue {
+  background-color: #264D8E;
+}
+
+
+
 /* Meet the team section */
 
 .profile-card {
@@ -139,3 +210,86 @@ nav{
   .social-links img:hover {
     transform: scale(1.2);
   }
+
+
+  /* Contact US section */
+  .contact-us-section {
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  .contact-us-section h2 {
+    font-size: 2.5rem;
+  }
+  
+  .contact-us-section p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .contact-form {
+    margin: 30px auto;
+    max-width: 600px;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form .form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .contact-form .form-group input,
+  .contact-form .form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .contact-form .btn {
+    padding: 10px 20px;
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .contact-form .btn:hover {
+    background-color: #357ae8;
+  }
+  
+  .contact-info {
+    margin-top: 30px;
+    font-size: 1rem;
+  }
+  
+  .contact-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-info ul li {
+    margin: 10px 0;
+  }
+  
+  .contact-info ul a {
+    color: #4285f4;
+    text-decoration: none;
+  }
+  
+  .contact-info ul a:hover {
+    text-decoration: underline;
+  }
+  

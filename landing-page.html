@@ -32,7 +32,9 @@
     <!-- Nav Bar -->
     <nav>
         <div class="flex justify-evenly">
-            <div class="logo"></div>
+            <div class="logo h-2 w-20 m-3 mr-52">
+              <img src="assets/nav-logo.svg" alt="Logo">
+            </div>
             <div class="nav-elements">
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -46,7 +48,30 @@
 
     <hr class="w-full h-1 mt-4">
 
-    <section class="flex justify-center">
+    <!-- <div class="circle">
+      <div class="mouth"></div>
+  </div> -->
+      <div class="element-1">
+        <div class="semi-circle"></div>
+        <div class="row">
+            <div class="dot green"></div>
+            <div class="dot red"></div>
+        </div>
+        <div class="row">
+            <div class="dot yellow"></div>
+            <div class="dot blue"></div>
+        </div>
+        <div class="row">
+            <div class="dot blue"></div>
+            <div class="dot yellow"></div>
+        </div>
+        <div class="row">
+            <div class="dot red"></div>
+            <div class="dot green"></div>
+        </div>
+      </div>
+      
+    <section class="flex justify-center mt-[-6rem]">
         <div class="flex items-center flex-wrap flex-col">
             <div class="gdg-logo">
                 <img src="assets/landingPage/gdg-logo.svg" alt="GDG Logo" />
@@ -56,7 +81,7 @@
             </h1>
             <h6 class="text-xs mt-0 m-2 text-gray-500">IILM UNIVERSITY GREATER NOIDA</h6>
             <button type="button" class="w-40 bg-blue-600 rounded-lg m-2 p-2">
-                <strong>Join Community</strong>
+                <strong class="hover:text-blue-900">Join Community</strong>
             </button>
             <div class="home-img">
                 <img src="assets/landingPage/HomePage.png" alt="GDG IILM Homepage Image" />
@@ -155,7 +180,7 @@
                           <a target="_blank" href=""><img  src="https://www.imgtr.net/ib/djOgwRJbUdVXl08_1734977195.jpg" alt="IMG_20240816_150200 - Somil S (1).jpg"/></a>
                         </div>
                         <div class="profile-info">
-                          <h2></h2>
+                          <h2>Somil jha</h2>
                           <p>Web Developer</p>
                           <div class="social-links">
                             <a class="h-10 w-10 m-2 mb-0" target="_blank" href="https://portfolio2-omega-seven.vercel.app/"><img  src="assets/Portfolio-icon.jpg" alt="portfolio"/></a>
@@ -171,7 +196,7 @@
                           <a target="_blank" href=""><img  src="https://www.imgtr.net/ib/4UeEFalasF6mccP_1734978059.jpg" alt="WhatsApp Image 2024-12-23 at 23.46.54_b3cef535.jpg"/></a>
                         </div>
                         <div class="profile-info">
-                          <h2>Vineet Raj</h2>
+                          <h2>Anchita Labh</h2>
                           <p>UI/UX Designer</p>
                           <div class="social-links">
                             <a class="h-10 w-10 m-2 mb-0" target="_blank" href="https://v0.dev/chat/personal-portfolio-tWZJa74q8PV?b=b_VBw2BNJjbVD"><img  src="assets/Portfolio-icon.jpg" alt="portfolio"/></a>
@@ -184,5 +209,44 @@
             </div>
         </div>
     </section>
+
+    <!-- Contact US section -->
+    <section id="contact-us" class="contact-us-section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or want to reach out, we'd love to hear from you!</p>
+        
+        <div class="contact-form">
+          <form action="your-form-handler-url" method="POST">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your Full Name" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Your Email Address" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn">Send Message</button>
+          </form>
+        </div>
+        
+        <div class="contact-info">
+          <h3>Get in Touch</h3>
+          <ul>
+            <li>Email: <a href="mailto:your-email@example.com">vaibhavbajaj20@gmail.com</a></li>
+            <li>Phone: <a href="tel:+1234567890">+91 9354096936</a></li>
+            <li>Address: IILM University</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    
 </body>
 </html>
