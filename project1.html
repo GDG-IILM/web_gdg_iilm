@@ -47,55 +47,79 @@
     </style>
 </head>
 <!-- <body class="bg-black text-white font-sans"> -->
-    <!-- Navbar -->
-    <nav>
-        <div class="flex justify-evenly items-center">
-            <!-- Logo -->
-            <div class="logo h-10 w-20 m-3 mr-52">
-                <img src="assets/nav-logo.svg" alt="Logo" class="h-full w-full">
-            </div>
-    
-            <!-- Navigation Links -->
-            <div class="nav-elements">
-                <ul class="flex space-x-8">
-                    <li>
-                        <a href="./landing-page.html" class="relative text-white group">
-                            <span class="relative inline-block transition-transform duration-300 transform group-hover:text-blue-500 group-hover:-translate-y-1">
-                                Home
-                            </span>
-                            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="project/project.html" class="relative text-white group">
-                            <span class="relative inline-block transition-transform duration-300 transform group-hover:text-yellow-500 group-hover:-translate-y-1">
-                                Projects
-                            </span>
-                            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="relative text-white group">
-                            <span class="relative inline-block transition-transform duration-300 transform group-hover:text-red-500 group-hover:-translate-y-1">
-                                Events
-                            </span>
-                            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="meetTheTeam/meet-our-team.html" class="relative text-white group">
-                            <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1">
-                                Team
-                            </span>
-                            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+   <!-- Navbar -->
+<nav>
+    <div class="flex justify-evenly items-center">
+        <!-- Logo -->
+        <div class="logo h-10 w-20 m-3 mr-52">
+            <img src="assets/nav-logo.svg" alt="Logo" class="h-full w-full">
         </div>
-    </nav>
-    
-    
+
+        <!-- Navigation Links -->
+        <div class="nav-elements">
+            <ul class="flex space-x-8">
+                <li>
+                    <a href="./landing-page.html" class="relative text-white group nav-link" id="homeLink">
+                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-blue-500 group-hover:-translate-y-1">
+                            Home
+                        </span>
+                        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="project/project.html" class="relative text-white group nav-link" id="projectsLink">
+                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-yellow-500 group-hover:-translate-y-1">
+                            Projects
+                        </span>
+                        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="relative text-white group nav-link" id="eventsLink">
+                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-red-500 group-hover:-translate-y-1">
+                            Events
+                        </span>
+                        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="meetTheTeam/meet-our-team.html" class="relative text-white group nav-link" id="teamLink">
+                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1">
+                            Team
+                        </span>
+                        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Select all the navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Remove active color classes from all links
+            navLinks.forEach(l => {
+                l.querySelector('span').classList.remove('text-blue-500', 'text-yellow-500', 'text-red-500', 'text-green-500');
+                l.querySelector('span').classList.add('text-white'); // Reset to white
+            });
+
+            // Add the respective color to the clicked link
+            if (link.id === 'homeLink') {
+                link.querySelector('span').classList.add('text-blue-500');
+            } else if (link.id === 'projectsLink') {
+                link.querySelector('span').classList.add('text-yellow-500');
+            } else if (link.id === 'eventsLink') {
+                link.querySelector('span').classList.add('text-red-500');
+            } else if (link.id === 'teamLink') {
+                link.querySelector('span').classList.add('text-green-500');
+            }
+        });
+    });
+</script>    
     <!-- Horizontal Line -->
     <hr class="w-full h-1 mt-4">
 
