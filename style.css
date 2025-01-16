@@ -26,38 +26,37 @@ a{
 
 /* Nav Bar */
 nav{
-    background-color: #1E1E1E;
-    height: 50px;
-    width: 100%;
-    position: sticky;
+  /* background-color: #1E1E1E; */
+  height: 50px;
+  width: 100%;
+  position: sticky;
 }
 
 .nav-elements ul{
-    height: 48px;
-    width: 600px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 8px;
-    padding: 4px;
+  height: 48px;
+  width: 600px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 8px;
+  padding: 4px;
 }
 
 .nav-elements li{
-    list-style: none;
-
+  list-style: none;
 }
 
 .home-img{
-    width: 400px;
-    height: 250px;
-    margin-top: 30px;
+  width: 400px;
+  height: 250px;
+  margin-top: 30px;
 }
 
 .gdg-logo{
-    width: 100px;
-    height: 100px;
-    margin-top: 40px;
-    margin-bottom: 0;
+  width: 100px;
+  height: 100px;
+  margin-top: 40px;
+  margin-bottom: 0;
 }
 
 /* Section-specific colors */
@@ -215,7 +214,7 @@ nav{
 
   /* Contact US section */
   .contact-us-section {
-    padding: 60px 20px;
+    padding: 20px 20px;
     text-align: center;
   }
   
@@ -225,6 +224,7 @@ nav{
   
   .contact-us-section p {
     font-size: 1rem;
+    margin: -10px;
     color: #666;
   }
   
@@ -267,9 +267,6 @@ nav{
     font-size: 1rem;
   }
 
-  .btn:hover{
-    color: #000;
-  }
   
   .contact-form .btn:hover {
     background-color: #357ae8;
@@ -286,11 +283,11 @@ nav{
   }
   
   .contact-info ul li {
-    margin: 10px 0;
+    margin:0;
   }
   
   .contact-info ul a {
-    color: #4285f4;
+    color: white;
     text-decoration: none;
   }
   
@@ -298,3 +295,56 @@ nav{
     text-decoration: underline;
   }
   
+/* About Section Styling */
+.about-section {
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+
+.about-item {
+  flex: 1 1 45%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.about-subtitle {
+  font-size: 1.5rem;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+
+  .about-item {
+    flex: 1 1 100%;
+  }
+}
+
