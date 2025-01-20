@@ -173,6 +173,9 @@ a{
     color: #ffffff;
     transition: background-color 0.3s, color 0.3s;
   }
+  .button-group button:hover {
+    border: solid 0.5px white;
+  }
   .button-group button.active {
     color: white;
   }
@@ -192,15 +195,11 @@ a{
   }
   .button-group button[data-dept="4"].active {
     background-color: #109554;
-    .card{
-      /*  */
-      box-shadow: 0px 4px 10px #109554;
-    }
   }
   .card {
     display: inline-block;
     width: 300px;
-    height: 275px;
+    height: 265px;
     margin: 18px;
     padding: 15px;
     border: 1px solid #333;
@@ -211,10 +210,28 @@ a{
     transition: width 0.3s, height 0.3s, padding 0.3s;
   }
 
-  .card:hover{
+  .button-group button.active#view-all ~ #cards-container .card:hover {
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.7); /* White shadow */
+  }
+
+  .card[data-dept="1"]:hover{
+    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.7);
+  }
+
+  .card[data-dept="2"]:hover{
+    box-shadow: 0px 4px 10px #FBCC43;
+  }
+  .card[data-dept="3"]:hover{
+    box-shadow: 0px 4px 10px #ff4444;
+  }
+  .card[data-dept="4"]:hover{
+    box-shadow: 0px 4px 10px #109554;
+  }
+
+  .card:hover {
     transform: scale(1.1);
     transition: transform 0.3s ease, opacity 0.3s ease-in-out;
-    /* box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.7); */
+    box-shadow: 0 8px 15px var(--shadow-color); /* Use dynamic shadow color */
   }
   
   .card img {
