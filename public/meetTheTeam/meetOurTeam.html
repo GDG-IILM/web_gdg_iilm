@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+        <!-- Nav Bar -->
+        <nav>
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="logo h-10 w-20 m-3 mr-52">
+                    <img src="assets/nav-logo.svg" alt="Logo" class="h-full w-full">
+                </div>
+        
+                <!-- Navigation Links -->
+                <div class="nav-elements">
+                    <ul class="flex space-x-8">
+                        <li>
+                            <a href="./landing-page.html" class="relative text-white group">
+                                <span class="relative inline-block transition-transform duration-300 transform group-hover:text-blue-500 group-hover:-translate-y-1">
+                                    Home
+                                </span>
+                                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="public/project/project.html" class="relative text-white group">
+                                <span class="relative inline-block transition-transform duration-300 transform group-hover:text-yellow-500 group-hover:-translate-y-1">
+                                    Projects
+                                </span>
+                                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="relative text-white group">
+                                <span class="relative inline-block transition-transform duration-300 transform group-hover:text-red-500 group-hover:-translate-y-1">
+                                    Events
+                                </span>
+                                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="public/meetTheTeam/meet-our-team.html" class="relative text-white group">
+                                <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1">
+                                    Team
+                                </span>
+                                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    <hr class="w-full h-1 mt-4">
+
+    <!--  -->
+    <div class="flex justify-between">
+        <div data-aos="fade-up">
+            <div class="oval">
+                <h2>IILM University</h2>
+            </div>
+        </div>
+
+        <div data-aos="fade-up">
+            <div class="oval-2">
+                <h2 class="hover:text-black">Back</h2>
+            </div>
+        </div>
+    </div>
+
+    <section class="mb-10">
+        <div class="flex flex-col grid-flow-col">
+            <div class="flex flex-col items-center w-full">
+                <div class="flex justify-center">
+                    <div data-aos="fade-up">
+                        <h1 class="text-6xl font-bold text-amber-300">MEET THE TEAMS</h1>
+                    </div>
+                </div>
+                <div data-aos="fade-up">
+                    <pre class="p-4 mt-6 text-3xl">Our team runs on creativity, coffee, and code—where 
+problem-solving developers, pixel-perfect designers, and
+laser-focused managers come together to make magic 
+happen.</pre>
+                </div>
+            </div>
+            <!-- <div class="flex ml-56">
+                <ul>
+                  <li class="text-xl m-0.5 relative group">
+                    <div data-aos="fade-right" data-aos-duration="5000" data-aos-offset="100">
+                        <a href="#leads"><p class="transition duration-300">LEADS</p></a>
+                    <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                    </div>
+                  </li>
+                  <li class="text-xl m-0.5 relative group">
+                    <div data-aos="fade-right" data-aos-duration="5000" data-aos-offset="100">
+                        <p class="transition duration-300">DEVS & UI/UX</p>
+                    <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                    </div>
+                  </li>
+                  <li class="text-xl m-0.5 relative group">
+                    <div data-aos="fade-right" data-aos-duration="5000" data-aos-offset="100">
+                        <p class="transition duration-300">EVENT MANAGEMENT</p>
+                    <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                    </div>
+                  </li>
+                  <li class="text-xl m-0.5 relative group">
+                    <div data-aos="fade-right" data-aos-duration="5000" data-aos-offset="100">
+                        <p class="transition duration-300">SOCIAL MEDIA</p>
+                    <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                    </div>
+                  </li>
+                  <li class="text-xl m-0.5 relative group">
+                    <div data-aos="fade-right" data-aos-duration="5000" data-aos-offset="100">
+                        <p class="transition duration-300">MARKETING</p>
+                    <span class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-500 transition-all duration-300 ease-in-out group-hover:w-full"></span>
+                    </div>
+                  </li>
+                </ul>
+              </div> -->
+              
+        </div>
+    </section>
+
+    <section >
+        <div class="flex flex-col items-center w-full h-full">
+        <div class="button-group">
+            <button id="view-all" class="active">View all</button>
+            <button data-dept="1">DEVS & UI/UX</button>
+            <button data-dept="2">EVENT MANAGEMENT</button>
+            <button data-dept="3">SOCIAL MEDIA</button>
+            <button data-dept="4">MARKETING</button>
+          </div>
+
+          <dix id="cards-container" class=" flex flex-wrap justify-center items-center">
+            <div class="card">
+                <div class="flex flex-col items-center">
+                    <img src="https://via.placeholder.com/100" alt="Person 1">
+                    <h3>Kushal Sharma</h3>
+                    <p>GDG Lead</p>
+                    <p class="description hidden">Specializes in leading the UI/UX and development teams with cutting-edge technology.</p>
+                    <div>
+                        <span><a href=""><i class="fab fa-instagram" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-github" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- web developers and UI/UX -->
+            
+            <div class="card" data-dept="1">
+                <div class="flex flex-col items-center">
+                    <img src="https://via.placeholder.com/100" alt="Person 2">
+                    <h3>Vineet Raj</h3>
+                    <p>Web Developer Lead</p>
+                    <p class="description hidden">Expert in event planning and management, ensuring seamless execution of programs.</p>
+                    <div>
+                        <span><a href=""><i class="fab fa-instagram" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-github" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-dept="1">
+                <div class="flex flex-col items-center">
+                    <img src="https://via.placeholder.com/100" alt="Person 2">
+                    <h3>Vaibhav Bajaj</h3>
+                    <p>Web Developer</p>
+                    <p class="description hidden">Expert in event planning and management, ensuring seamless execution of programs.</p>
+                    <div>
+                        <span><a href="https://www.instagram.com/vaibhav.bajaj._/"><i class="fab fa-instagram" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href="https://github.com/v-aibhavbajaj2520"><i class="fab fa-github" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href="https://www.linkedin.com/in/vaibhav-bajaj-2005vaibhav"><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></span>
+                    </div>
+                </div>
+            </div>
+              
+            <div class="card" data-dept="1">
+                <div class="flex flex-col items-center">
+                    <img src="https://via.placeholder.com/100" alt="Person 2">
+                    <h3>Vaibhav Raj</h3>
+                    <p>Web Developer</p>
+                    <p class="description hidden">Expert in event planning and management, ensuring seamless execution of programs.</p>
+                    <div>
+                        <span><a href=""><i class="fab fa-instagram" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-github" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-dept="1">
+                <div class="flex flex-col items-center">
+                    <img src="https://via.placeholder.com/100" alt="Person 2">
+                    <h3>Somil Jha</h3>
+                    <p>Web Developer</p>
+                    <p class="description hidden">Expert in event planning and management, ensuring seamless execution of programs.</p>
+                    <div>
+                        <span><a href=""><i class="fab fa-instagram" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-github" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-dept="1">
+                <div class="flex flex-col items-center">
+                    <img src="https://via.placeholder.com/100" alt="Person 2">
+                    <h3>Piyush Pattanayak</h3>
+                    <p>Web Developer</p>
+                    <p class="description hidden">Expert in event planning and management, ensuring seamless execution of programs.</p>
+                    <div>
+                        <span><a href=""><i class="fab fa-instagram" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-github" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-dept="1">
+                <div class="flex flex-col items-center">
+                    <img src="https://via.placeholder.com/100" alt="Person 2">
+                    <h3>Anchita Labh</h3>
+                    <p>UI/UX designer</p>
+                    <p class="description hidden">Expert in event planning and management, ensuring seamless execution of programs.</p>
+                    <div>
+                        <span><a href=""><i class="fab fa-instagram" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-github" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-dept="1">
+                <div class="flex flex-col items-center">
+                    <img src="https://via.placeholder.com/100" alt="Person 2">
+                    <h3>Utkarsh Kumar</h3>
+                    <p>UI/UX designer</p>
+                    <p class="description hidden">Expert in event planning and management, ensuring seamless execution of programs.</p>
+                    <div>
+                        <span><a href=""><i class="fab fa-instagram" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-github" style="font-size: 20px; margin-right: 5px;"></i></a></span>
+                        <span><a href=""><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></span>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Script -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      const buttons = document.querySelectorAll('.button-group button');
+    const cards = document.querySelectorAll('.card');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        document.querySelector('.button-group .active').classList.remove('active');
+        button.classList.add('active');
+
+        const dept = button.dataset.dept;
+
+        cards.forEach(card => {
+          const description = card.querySelector('.description');
+          if (!dept || card.dataset.dept === dept) {
+            card.classList.remove('hidden');
+            if (dept) {
+              card.classList.add('expanded');
+              description.classList.remove('hidden');
+            } else {
+              card.classList.remove('expanded');
+              description.classList.add('hidden');
+            }
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    document.getElementById('view-all').click();
+    </script>
+</body>
+</html>

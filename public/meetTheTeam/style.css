@@ -159,3 +159,100 @@ a{
   .social-links img:hover {
     transform: scale(1.2);
   }
+
+  .button-group {
+    margin-bottom: 20px;
+  }
+  .button-group button {
+    margin: 0 5px;
+    padding: 10px 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #1e1e1e;
+    color: #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .button-group button.active {
+    color: white;
+  }
+  .button-group button#view-all.active {
+    background-color: white;
+    color: #121212;
+  }
+  .button-group button[data-dept="1"].active {
+    background-color: #4285F4;
+  }
+  .button-group button[data-dept="2"].active {
+    background-color: #FBCC43;
+    color: #121212;
+  }
+  .button-group button[data-dept="3"].active {
+    background-color: #ff4444;
+  }
+  .button-group button[data-dept="4"].active {
+    background-color: #109554;
+    .card{
+      /*  */
+      box-shadow: 0px 4px 10px #109554;
+    }
+  }
+  .card {
+    display: inline-block;
+    width: 300px;
+    height: 275px;
+    margin: 18px;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+    transition: width 0.3s, height 0.3s, padding 0.3s;
+  }
+
+  .card:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease, opacity 0.3s ease-in-out;
+    /* box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.7); */
+  }
+  
+  .card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #555;
+  }
+  .card h3 {
+    color: #ffffff;
+    margin: 10px 0 5px;
+  }
+  .card p {
+    color: #bbbbbb;
+    margin-bottom: 10px;
+  }
+  .card div span {
+    margin: 0 5px;
+    color: #007bff;
+    cursor: pointer;
+  }
+  .card div span:hover {
+    color: #00bfff;
+  }
+  .hidden {
+    display: none;
+  }
+  .expanded {
+    width: 400px;
+    height: auto;
+    padding: 20px;
+  }
+  .expanded p.description {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #cccccc;
+  }
+  /* Icons */
+  
