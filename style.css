@@ -211,14 +211,23 @@ nav{
 /* Meet the team section */
 
 /* Scroll bar */
+.scroll-container {
+  display: flex;
+  overflow-x: scroll; /* Horizontal scrolling */
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
-
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
 
 .profile-card {
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 250px;
+    width: 225px;
     text-align: center;
     padding: 15px;
     margin: 10px;
@@ -350,8 +359,87 @@ nav{
   
 /* About Section Styling */
 .about-section {
-  padding: 20px 20px;
+  /* padding: 20px 20px; */
   text-align: center;
+}
+
+.circle{
+  margin: 0 35px;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background-color: #264d8e;
+}
+
+/* Outlined Circle */
+.circle-out{  
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  border: solid #264d8e 2px;
+}
+
+.g-circle{
+  position: absolute;
+  width: 175px;
+  height: 175px;
+  background-color: #0F9D58;
+  border-radius: 50%;
+  z-index: -1;
+  margin-left: 996px;
+  margin-top: -85px;
+}
+
+.y-circle{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #FBCC43;
+  border-radius: 50%;
+  z-index: -1;
+  margin-left: 50px;
+  margin-top: -105px;
+}
+
+/* Repeated element */
+.element-rep {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-left: 0;
+  margin-top: -50px;
+  z-index: -1;
+}
+
+.sm-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
+.sm-dot.green {
+  background-color: #0F9D58;
+}
+
+.sm-dot.red {
+  background-color: #EA4335;
+}
+
+.sm-dot.yellow {
+  background-color: #FBCC43;
+}
+
+.sm-dot.blue {
+  background-color: #264D8E;
+}
+
+.sm-semi-circle {
+  width: 70px;
+  height: 25px;
+  background-color: #0F9D58;
+  border-radius: 65px 65px 0 0;
 }
 
 .about-title {
@@ -363,9 +451,9 @@ nav{
 .about-content {
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 70px;
   flex-wrap: wrap;
-  max-width: 1000px;
+  max-width: 1050px;
   margin: 0 auto 40px;
 }
 
@@ -387,7 +475,8 @@ nav{
 .about-description {
   font-size: 1.1rem;
   color: #555;
-  line-height: 1.8;
+  line-height: 1.6;
+  margin-top: 14px;
 }
 
 /* Responsive Design */
