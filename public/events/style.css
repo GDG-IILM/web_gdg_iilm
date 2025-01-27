@@ -1,0 +1,119 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #1E1E1E;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Font */
+.vidaloka-regular {
+    font-family: "Vidaloka", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* Anchor Tag */
+a{
+  text-decoration: none;
+  color: white;
+}
+
+
+/* Nav Bar */
+nav{
+  /* background-color: #1E1E1E; */
+  height: 50px;
+  width: 100%;
+  position: sticky;
+}
+
+.nav-elements ul{
+  height: 48px;
+  width: 600px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 8px;
+  padding: 4px;
+}
+
+.nav-elements li{
+  list-style: none;
+}
+
+.home-img{
+  width: 400px;
+  height: 250px;
+  margin-top: 30px;
+}
+
+.gdg-logo{
+  width: 100px;
+  height: 100px;
+  margin-top: 40px;
+  margin-bottom: 0;
+}
+
+/* Section-specific colors */
+.about h2::after { background-color: #ff4444; }
+.events h2::after { background-color: #109554; }
+.projects h2::after { background-color: #FBCC43; }
+.teams h2::after { background-color: #4285F4; }
+
+.section ul {
+    list-style: none;
+}
+
+.section li {
+    margin-bottom: 10px;
+    color: #ccc;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    cursor: pointer;
+}
+
+.section li:hover {
+    color: white;
+    padding-left: 10px;
+}
+
+.developer {
+    text-align: center;
+    /* margin-top: 50px; */
+    padding: 20px;
+    color: #ccc;
+}
+
+.oval{
+    height: 40px;
+    width: 150px;
+    margin: 10px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    border: solid 2px white;
+}
+
+.big-circle{
+    z-index: 10;
+    border-radius: 50%;
+    background-image: linear-gradient(#3B5174);
+  }
+
+  .profile-card {
+    background-color: #999898;
+    border-radius: 45px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 275px;
+    text-align: center;
+    padding: 15px;
+    margin: 10px;
+    flex: 0 0 auto;
+    /* border: solid 2px black; */
+  }

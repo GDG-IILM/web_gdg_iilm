@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+        <!-- Nav Bar -->
+        <nav>
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="logo h-10 w-20 m-3 mr-52">
+                    <img src="../../assets/nav-logo.svg" alt="Logo" class="h-full w-full">
+                </div>
+        
+                <!-- Navigation Links -->
+                <div class="nav-elements">
+                    <ul class="flex space-x-8">
+                        <li>
+                            <a href="../../landing-page.html" class="relative text-white group">
+                                <span class="relative inline-block transition-transform duration-300 transform group-hover:text-blue-500 group-hover:-translate-y-1">
+                                    Home
+                                </span>
+                                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../../public/project/project.html" class="relative text-white group">
+                                <span class="relative inline-block transition-transform duration-300 transform group-hover:text-yellow-500 group-hover:-translate-y-1">
+                                    Projects
+                                </span>
+                                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./index.html" class="relative text-white group">
+                                <span class="relative inline-block transition-transform duration-300 transform group-hover:text-red-500 group-hover:-translate-y-1">
+                                    Events
+                                </span>
+                                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../meetTheTeam/meetOurTeam.html" class="relative text-white group">
+                                <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1">
+                                    Team
+                                </span>
+                                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+      
+          <hr class="w-full h-1 mt-4">
+
+          <div class="flex justify-between">
+            <div data-aos="fade-up">
+                <div class="oval">
+                    <h2>IILM University</h2>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div data-aos="fade-up" class="flex flex-col  items-center">
+                    <h1 class="text-5xl"><strong>EVENTS</strong></h1>
+                    <h2 class="text-gray-300">Come learn, share and connect with us in person</h2>
+                </div>
+                
+            <div class="mt-5">
+                <div class="h-[200px] w-[200px] rounded-full bg-[#3B5174] opacity-55 -ml-4">
+                    <div class="h-[45px] w-[45px] rounded-full bg-[#4285F4] -mb-12 ml-6"></div>
+                    <div class="h-[85px] w-[85px] bg-[#EA4335] rounded-full mt-[148px] ml-[120px] opacity-55"></div>
+                    <div class="h-[35px] w-[35px] rounded-full bg-[#EA4335] ml-[87px] -mt-12 opacity-100"></div>
+                </div>
+            </div>
+
+            <div class="flex flex-col  items-center -mt-[175px]">
+                <h1 class="text-4xl text-[#B5AAAA]"><strong>Upcoming Events</strong></h1>
+                <div class="h-[250px] w-[250px] bg-[url(/assets/events/hackOclock.png)] bg-cover mt-8"></div>
+            </div>
+        </section>
+        
+        <section class="mt-14">
+            <div class="flex flex-col items-center">
+                <h1 class="text-3xl text-[#B5AAAA]"><strong>Past Events</strong></h1>
+                <div class="container flex gap-4 overflow-x-scroll scroll-container">
+                    <!-- Card 1 -->
+                    <div class="profile-card hover:scale-105 transition ease-in-out">
+                        <div class="profile-photo">
+                          <img src="../../assets/events/flutter.png" alt="Flutter">
+                        </div>
+                        <div class="profile-info">
+                          <h2>Flutter event</h2>
+                          <p>By Apoorv Yash</p>
+                          <a href="" class="mt-2"><button class="h-[28px] w-[125px] bg-[#000000] opacity-35 rounded-lg text-white">View Insights</button></a>
+                        </div>
+                      </div>
+
+                    <!-- Card 2 -->
+                    <div class="profile-card hover:scale-105 transition ease-in-out">
+                        <div class="profile-photo">
+                          <img src="../../assets/events/webDev.png" alt="Web Dev">
+                        </div>
+                        <div class="profile-info">
+                          <h2>Web Development event</h2>
+                          <p>By Vaibhav Bajaj & Vineet Raj</p>
+                          <a href="" class="mt-2"><button class="h-[28px] w-[125px] bg-[#000000] opacity-35 rounded-lg text-white">View Insights</button></a>
+                        </div>
+                      </div>
+
+                    <!-- Card 3 -->
+                    <div class="profile-card hover:scale-105 transition ease-in-out">
+                        <div class="profile-photo">
+                          <img src="../../assets/events/quizathon.png" alt="Quizathon">
+                        </div>
+                        <div class="profile-info">
+                          <h2>Quiz-A-Thon</h2>
+                          <p>By Kaustubh Pandey</p>
+                          <a href="" class="mt-2"><button class="h-[28px] w-[125px] bg-[#000000] opacity-35 rounded-lg text-white">View Insights</button></a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </section>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+      let aosRefresh = _.debounce(() => {
+      AOS.refresh();
+      }, 200); // Adjust debounce time as needed
+
+      window.addEventListener("scroll", aosRefresh);
+    </script>
+</body>
+</html>
