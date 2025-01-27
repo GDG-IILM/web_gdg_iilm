@@ -476,3 +476,27 @@ nav{
   border: solid 1px #000000;
   background: transparent;
 }
+
+.sticky-login {
+  position: fixed;
+  bottom: 50px; /* Distance from the bottom of the screen */
+  right: 50px; /* Distance from the right edge of the screen */
+  z-index: 1000; /* Ensure it appears on top of other elements */
+}
+
+.sticky-login button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  background-color:  rgb(37, 99, 235);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.sticky-login button:hover {
+  background-color: #0361c5;
+  transform: scale(1.05);
+}
