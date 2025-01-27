@@ -272,90 +272,6 @@ nav{
   .social-links img:hover {
     transform: scale(1.2);
   }
-
-
-  /* Contact US section */
-  .contact-us-section {
-    padding: 20px 20px;
-    text-align: center;
-  }
-  
-  .contact-us-section h2 {
-    font-size: 2.5rem;
-  }
-  
-  .contact-us-section p {
-    font-size: 1rem;
-    margin: -10px;
-    color: #666;
-  }
-  
-  .contact-form {
-    margin: 30px auto;
-    max-width: 600px;
-  }
-  
-  .contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .contact-form .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .contact-form .form-group label {
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  .contact-form .form-group input,
-  .contact-form .form-group textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  .contact-form .btn {
-    padding: 10px 20px;
-    background-color: #4285f4;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-
-  
-  .contact-form .btn:hover {
-    background-color: #357ae8;
-  }
-  
-  .contact-info {
-    margin-top: 30px;
-    font-size: 1rem;
-  }
-  
-  .contact-info ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .contact-info ul li {
-    margin:0;
-  }
-  
-  .contact-info ul a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .contact-info ul a:hover {
-    text-decoration: underline;
-  }
   
 /* About Section Styling */
 .about-section {
@@ -479,14 +395,84 @@ nav{
   margin-top: 14px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
-  }
 
-  .about-item {
-    flex: 1 1 100%;
-  }
+
+/* Contact Us */
+.l-elm-1{
+  height: 35px;
+  width: 118px;
+  border-radius: 20px ;
+  background-image: linear-gradient(to right, #EA4335,#84261E);
+  
 }
 
+.l-elm-2{
+  height: 35px;
+  width: 75px;
+  margin-top: 16px;
+  border-radius: 0 10px 10px 0 ;
+  background-image: linear-gradient(to right, #FBCC43,#957928);
+}
+
+.big-circle{
+  z-index: 10;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, #EA4335, #B73429, #84261E);
+}
+
+.g-semi-circle{
+  width: 175px;
+  height: 378px;
+  background: linear-gradient(90deg, #00a651, #00a651);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 150px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 150px;
+  margin-top: -70px;
+  background-image: linear-gradient(to bottom, #0F9D58, #0A6A3B, #08512D, #064426, #05371F);
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-b-circle{
+  z-index: 10;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, #264D8E, #0B1628);
+}
+
+.bottom-y-circle{
+  z-index: 10;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom, #FBCC43, #957928);
+}
+
+/* Form */
+#name{
+  height: 35px;
+  width: 192px;
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 4px;
+  border: solid 1px #000000;
+  background: transparent;
+}
+
+#mail{
+  height: 35px;
+  width: 192px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  border: solid 1px #000000;
+  background: transparent;
+}
+
+#msg{
+  height: 105px;
+  width: 250px;
+  margin-top: 20px;
+  padding: 4px;
+  border-radius: 4px;
+  border: solid 1px #000000;
+  background: transparent;
+}
