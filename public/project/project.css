@@ -150,7 +150,10 @@ a{
     background-image:url("../assets/project/card.png");
    }
 
-
+   .content {
+    padding: 40px;
+    color: white;
+}
 
 .content h2 {
     font-size: 2.5em;
@@ -262,14 +265,6 @@ html {
     font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #1a1a1a;
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-}
 
 .footer {
     display: flex;
@@ -408,10 +403,4 @@ body {
     /* margin-top: 50px; */
     padding: 20px;
     color: #ccc;
-}
-
-
-.content {
-    padding: 40px;
-    color: white;
 }
