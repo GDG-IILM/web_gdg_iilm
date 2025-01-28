@@ -1,76 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Blocks Design</title>
-  <style>
-    body {
-      background-color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .element-2 {
-      position: relative;
-      width: 300px;
-      height: 150px;
-      display: flex;
-    }
-    .left-section {
-      flex: 1;
-      background-color: #4287f5;
-      position: relative;
-    }
-    .right-section {
-      flex: 1;
-      background-color: #f54242;
-      position: relative;
-    }
-    .left-circle {
-      position: absolute;
-      left: -30px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 60px;
-      height: 60px;
-      background-color: #333;
-      border-radius: 50%;
-    }
-    .black-triangle {
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 0;
-      border-left: 60px solid transparent;
-      border-right: 60px solid transparent;
-      border-top: 60px solid #333;
-    }
-    .right-circle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60px;
-      height: 60px;
-      background-color: #333;
-      border-radius: 50%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract Circle Design</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .canvas {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+        .semi-circle-red {
+            position: absolute;
+            width: 500px;
+            height: 250px;
+            border: 1.5px solid red;
+            border-bottom: none;
+            border-radius: 250px 250px 0 0;
+            top: 0;
+            left: 0;
+        }
+        .circle-green {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 3px solid green;
+            border-radius: 50%;
+            top: 50px;
+            left: 300px;
+        }
+        .circle-blue {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            border: 2px solid blue;
+            border-radius: 50%;
+            top: 100px;
+            left: 150px;
+        }
+        .circle-yellow {
+            position: absolute;
+            width: 75px;
+            height: 75px;
+            border: 2px solid yellow;
+            border-radius: 50%;
+            top: 300px;
+            left: 250px;
+        }
+    </style>
 </head>
 <body>
-  <div class="contain">
-    <div class="left-section">
-      <div class="left-circle"></div>
-      <div class="black-triangle"></div>
+    <div class="canvas">
+        <div class="semi-circle-red"></div>
+        <div class="circle-green"></div>
+        <div class="circle-blue"></div>
+        <div class="circle-yellow"></div>
     </div>
-    <div class="right-section">
-      <div class="right-circle"></div>
-    </div>
-  </div>
+    <img
+  loading="lazy"
+  src="https://cdn.builder.io/api/v1/image/assets/TEMP/9a2c90baa37495bb374b9064c9327d544ea66be1a89eeae1e792d5116fa5679c?placeholderIfAbsent=true&apiKey=2fedc823b94c45819b9819de22b11ada"
+  class="object-contain w-full rounded-2xl aspect-square max-w-[48px]"
+  alt=""
+  tabindex="-1"
+/>
 </body>
 </html>
