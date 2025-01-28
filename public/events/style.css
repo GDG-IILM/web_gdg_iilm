@@ -7,6 +7,7 @@ body{
     background-color: #1E1E1E;
     color: white;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 /* Font */
@@ -110,10 +111,14 @@ nav{
     background-color: #999898;
     border-radius: 45px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 275px;
+    width: 300px;
     text-align: center;
     padding: 15px;
     margin: 10px;
     flex: 0 0 auto;
     /* border: solid 2px black; */
   }
+/* 
+  .profile-info:hover{
+    font-weight: 500;
+  }  */

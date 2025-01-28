@@ -83,24 +83,41 @@
             </div>
 
             <div class="flex flex-col  items-center -mt-[175px]">
-                <h1 class="text-4xl text-[#B5AAAA]"><strong>Upcoming Events</strong></h1>
-                <div class="h-[250px] w-[250px] bg-[url(/assets/events/hackOclock.png)] bg-cover mt-8"></div>
+                <h1 class="text-4xl text-[#B5AAAA]  mb-3"><strong>Upcoming Events</strong></h1>
+                <div class="profile-card hover:scale-105 transition ease-in-out">
+                    <div class="profile-photo">
+                      <img src="../../assets/events/hackOclock.png" alt="hackOclock">
+                    </div>
+                    <div class="profile-info">
+                      <h2 class="font-bold">hackOclock</h2>
+                      <p>By GDG Team</p>
+                      <a href="" class="mt-2"><button class="h-[28px] w-[125px] bg-[#000000] opacity-35 rounded-lg text-white hover:bg-black">Register</button></a>
+                    </div>
+                  </div>
+            </div>
+
+            
+            <div class="ml-[75%] -mt-[75px]">
+                <div class="h-[45px] w-[45px] bg-[#EA4335] rounded-tl-[35px] rounded-xl"></div>
+                <div class="h-[40px] w-[40px] ml-[36px] rounded-tr-2xl rounded-br-2xl  bg-[#0F9D58]"></div>
+                <div class="h-[40px] w-[40px] rounded-tl-2xl rounded-bl-2xl -ml-1 bg-[#4285F4]"></div>
+                <div class="h-[45px] w-[45px] ml-[32px] bg-[#FBCC43] rounded-br-[35px] rounded-xl"></div>
             </div>
         </section>
         
         <section class="mt-14">
             <div class="flex flex-col items-center">
                 <h1 class="text-3xl text-[#B5AAAA]"><strong>Past Events</strong></h1>
-                <div class="container flex gap-4 overflow-x-scroll scroll-container">
+                <div class="container flex justify-center mt-8 gap-[18px]">
                     <!-- Card 1 -->
                     <div class="profile-card hover:scale-105 transition ease-in-out">
                         <div class="profile-photo">
                           <img src="../../assets/events/flutter.png" alt="Flutter">
                         </div>
                         <div class="profile-info">
-                          <h2>Flutter event</h2>
+                          <h2 class="font-bold">Flutter Event</h2>
                           <p>By Apoorv Yash</p>
-                          <a href="" class="mt-2"><button class="h-[28px] w-[125px] bg-[#000000] opacity-35 rounded-lg text-white">View Insights</button></a>
+                          <a href="" class="mt-2"><button class="h-[28px] w-[125px] bg-[#000000] opacity-35 rounded-lg text-white hover:bg-black">View Insights</button></a>
                         </div>
                       </div>
 
@@ -110,9 +127,9 @@
                           <img src="../../assets/events/webDev.png" alt="Web Dev">
                         </div>
                         <div class="profile-info">
-                          <h2>Web Development event</h2>
+                          <h2 class="font-bold">Web Development event</h2>
                           <p>By Vaibhav Bajaj & Vineet Raj</p>
-                          <a href="" class="mt-2"><button class="h-[28px] w-[125px] bg-[#000000] opacity-35 rounded-lg text-white">View Insights</button></a>
+                          <a href="" class="mt-2"><button class="h-[28px] w-[125px] bg-[#000000] opacity-35 rounded-lg text-white hover:bg-black">View Insights</button></a>
                         </div>
                       </div>
 
@@ -122,12 +139,14 @@
                           <img src="../../assets/events/quizathon.png" alt="Quizathon">
                         </div>
                         <div class="profile-info">
-                          <h2>Quiz-A-Thon</h2>
+                          <h2 class="font-bold">Quiz-A-Thon</h2>
                           <p>By Kaustubh Pandey</p>
-                          <a href="" class="mt-2"><button class="h-[28px] w-[125px] bg-[#000000] opacity-35 rounded-lg text-white">View Insights</button></a>
+                          <a href="" class="mt-2"><button class="h-[28px] w-[125px] bg-[#000000] opacity-35 rounded-lg text-white hover:bg-black">View Insights</button></a>
                         </div>
                       </div>
                 </div>
+
+                <div class=""></div>
             </div>
         </section>
 
@@ -138,7 +157,7 @@
       AOS.refresh();
       }, 200); // Adjust debounce time as needed
 
-      window.addEventListener("scroll", aosRefresh);
     </script>
+      <!-- window.addEventListener("scroll", aosRefresh); -->
 </body>
 </html>
