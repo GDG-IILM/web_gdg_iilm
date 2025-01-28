@@ -27,6 +27,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="script.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Vidaloka&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -105,9 +106,9 @@
         </div>
       </div>
       
-      <div class="sticky-login">
+      <!-- <div class="sticky-login">
         <button onclick="window.location.href='/login'"><strong>Resources</strong></button>
-      </div>
+      </div> -->
 
     <section class="mt-[-6rem]">
         <div class="flex items-center flex-wrap flex-col">
@@ -276,7 +277,61 @@
             </div>
         </div>
     </section>
+   <!-- yeh chatbot ka code hai -->
+<div id="chatbot-icon" onclick="toggleChatbot()">
+  💬
+</div>
 
+<!-- Chatbot iframe (Initially Hidden) -->
+<div id="chatbot-container" style="width: 350px; height: 500px; overflow: hidden;">
+  <iframe id="chatbot-frame" src="http://127.0.0.1:5000/" frameborder="0" 
+          style="width: 100%; height: 100%; border: none;"></iframe>
+</div>
+
+<style>
+  /* Chatbot Icon Styling */
+  #chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007bff;
+      color: white;
+      font-size: 24px;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Chatbot Window Styling */
+  #chatbot-container {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      display: none;
+      overflow: hidden;
+  }
+
+  #chatbot-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+  }
+</style>
+
+<script>
+  function toggleChatbot() {
+      var chatbot = document.getElementById("chatbot-container");
+      chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+  }
+</script>
+<!-- khtm -->
+ 
     <!-- About section -->
     <section id="about" class="about-section" >
       <div class="flex justify-between w-[1100px]">
