@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0D0D0D;
+    color: white;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Top Left Logo */
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.logo img {
+    width: 100px;
+}
+
+/* Centered main container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%; /* Adjust width */
+    max-width: 900px; /* Prevents excessive width */
+    height: 70vh; /* Makes it properly spaced */
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Left Section (Form) */
+.form-section {
+    width: 50%;
+    text-align: left;
+}
+
+/* Welcome text */
+h1 {
+    font-size: 36px;
+    text-align: left;
+}
+
+.welcome {
+    color: red;
+    font-weight: bold;
+}
+
+.techie {
+    color: #3A80F5;
+    font-family: 'Courier New', monospace;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: none;
+    background: #1A1A1A;
+    color: white;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: gray;
+}
+
+/* Right Section (Illustration) */
+.illustration {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.illustration img {
+    width: 100%;
+    max-width: 400px; /* Adjusted to fit */
+    height: auto;
+}
+
+/* Bottom Left Small Illustration */
+.bottom-left-illustration {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+}
+
+.bottom-left-illustration img {
+    width: 120px;
+}
+
+/* Bottom Right "Buy me a coffee" */
+.buy-coffee {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.buy-coffee img {
+    width: 24px;
+    margin-right: 5px;
+}
+
+.buy-coffee span {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        height: auto;
+        padding: 20px;
+    }
+
+    .form-section, .illustration {
+        width: 100%;
+    }
+
+    .illustration img {
+        width: 80%;
+    }
+}
