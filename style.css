@@ -16,6 +16,13 @@ body{
     font-style: normal;
 }
 
+.montserrat-bold {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
 
 /* Anchor Tag */
 a{
