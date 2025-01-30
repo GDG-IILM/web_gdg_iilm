@@ -6,6 +6,10 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Vidaloka&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <!-- Nav Bar -->
@@ -60,10 +64,204 @@
 
     <section class="mt-[25px]">
         <div class="flex flex-col items-center">
-            <h1 class="text-5xl "><strong>RESOURCES</strong></h1>
+            <h1 class="text-5xl montserrat-bold"><strong>RESOURCES</strong></h1>
             <p class="text-gray-500">Your destination for Books, PYQs and Notes</p>
         </div>
     </section>
 
+    <!-- Cards -->
+     <section>
+        <div class="container">
+            <!-- Books -->
+            <div class="section">
+                <div class="title">
+                    <h1 class="text-3xl">Books</h1>
+                </div>
+                <div class="cards">
+                    <div class="card" data-dept="2">
+                        <div class="flex flex-col items-center">
+                            <a target="_blank" href=""><img  src="" alt=""/></a>
+                            <h3>Book Name</h3>
+                            <p>Subject</p>
+                        </div>
+                    </div>
+
+                    <div class="card" data-dept="2">
+                        <div class="flex flex-col items-center">
+                            <a target="_blank" href=""><img  src="" alt=""/></a>
+                            <h3>Book Name</h3>
+                            <p>Subject</p>
+                        </div>
+                    </div>
+
+                    <div class="card" data-dept="2">
+                        <div class="flex flex-col items-center">
+                            <a target="_blank" href=""><img  src="" alt=""/></a>
+                            <h3>Book Name</h3>
+                            <p>Subject</p>
+                        </div>
+                    </div>
+                    
+                    <!-- View More Button -->
+                    <button class="show-more" onclick="toggleCards(this)">View More</button>
+    
+                    <!-- Hidden Cards -->
+                    <div class="extra-cards">
+                        <div class="card" data-dept="2">
+                            <div class="flex flex-col items-center">
+                                <a target="_blank" href=""><img  src="" alt=""/></a>
+                                <h3>Book Name</h3>
+                                <p>Subject</p>
+                            </div>
+                        </div>
+    
+                        <div class="card" data-dept="2">
+                            <div class="flex flex-col items-center">
+                                <a target="_blank" href=""><img  src="" alt=""/></a>
+                                <h3>Book Name</h3>
+                                <p>Subject</p>
+                            </div>
+                        </div>
+    
+                        <div class="card" data-dept="2">
+                            <div class="flex flex-col items-center">
+                                <a target="_blank" href=""><img  src="" alt=""/></a>
+                                <h3>Book Name</h3>
+                                <p>Subject</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- PYQs -->
+            <div class="section">
+                <div class="title">
+                    <h1 class="text-3xl">PYQs</h1>
+                </div>
+                <div class="cards">
+                    <div class="card" data-dept="1">
+                        <div class="flex flex-col items-center">
+                            <a target="_blank" href=""><img  src="" alt=""/></a>
+                            <h3>PYQ Year</h3>
+                            <p>Subject</p>
+                        </div>
+                    </div>
+                    <div class="card" data-dept="1">
+                        <div class="flex flex-col items-center">
+                            <a target="_blank" href=""><img  src="" alt=""/></a>
+                            <h3>PYQ Year</h3>
+                            <p>Subject</p>
+                        </div>
+                    </div>
+                    <div class="card" data-dept="1">
+                        <div class="flex flex-col items-center">
+                            <a target="_blank" href=""><img  src="" alt=""/></a>
+                            <h3>PYQ Year</h3>
+                            <p>Subject</p>
+                        </div>
+                    </div>
+
+                    <button class="show-more" onclick="toggleCards(this)">View More</button>
+    
+                    <!-- Hidden Cards -->
+                    <div class="extra-cards">
+                        <div class="card" data-dept="1">
+                            <div class="flex flex-col items-center">
+                                <a target="_blank" href=""><img  src="" alt=""/></a>
+                                <h3>PYQ Year</h3>
+                                <p>Subject</p>
+                            </div>
+                        </div>
+                        <div class="card" data-dept="1">
+                            <div class="flex flex-col items-center">
+                                <a target="_blank" href=""><img  src="" alt=""/></a>
+                                <h3>PYQ Year</h3>
+                                <p>Subject</p>
+                            </div>
+                        </div>
+                        <div class="card" data-dept="1">
+                            <div class="flex flex-col items-center">
+                                <a target="_blank" href=""><img  src="" alt=""/></a>
+                                <h3>PYQ Year</h3>
+                                <p>Subject</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Notes -->
+            <div class="section">
+                <div class="title">
+                    <h1 class="text-3xl">Notes</h1>
+                </div>
+                <div class="cards">
+                    <div class="card" data-dept="3">
+                        <div class="flex flex-col items-center">
+                            <a target="_blank" href=""><img  src="" alt=""/></a>
+                            <h3>Notes By</h3>
+                            <p>Subject</p>
+                        </div>
+                    </div>
+                    <div class="card" data-dept="3">
+                        <div class="flex flex-col items-center">
+                            <a target="_blank" href=""><img  src="" alt=""/></a>
+                            <h3>Notes By</h3>
+                            <p>Subject</p>
+                        </div>
+                    </div>
+                    <div class="card" data-dept="3">
+                        <div class="flex flex-col items-center">
+                            <a target="_blank" href=""><img  src="" alt=""/></a>
+                            <h3>Notes By</h3>
+                            <p>Subject</p>
+                        </div>
+                    </div>
+                    <button class="show-more" onclick="toggleCards(this)">View More</button>
+    
+                    <!-- Hidden Cards -->
+                    <div class="extra-cards">
+                        <div class="card" data-dept="3">
+                            <div class="flex flex-col items-center">
+                                <a target="_blank" href=""><img  src="" alt=""/></a>
+                                <h3>Notes By</h3>
+                                <p>Subject</p>
+                            </div>
+                        </div>
+                        <div class="card" data-dept="3">
+                            <div class="flex flex-col items-center">
+                                <a target="_blank" href=""><img  src="" alt=""/></a>
+                                <h3>Notes By</h3>
+                                <p>Subject</p>
+                            </div>
+                        </div>
+                        <div class="card" data-dept="3">
+                            <div class="flex flex-col items-center">
+                                <a target="_blank" href=""><img  src="" alt=""/></a>
+                                <h3>Notes By</h3>
+                                <p>Subject</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+     </section>
+
+    <script>
+        function toggleCards(button) {
+            const section = button.closest('.section'); // Find the closest section
+            const extraCards = section.querySelector('.extra-cards'); // Find .extra-cards within that section
+            if (extraCards.style.display === "none" || extraCards.style.display === "") {
+                extraCards.style.display = "flex";
+                button.textContent = "View Less";
+            } else {
+                extraCards.style.display = "none";
+                button.textContent = "View More";
+            }
+        }
+    </script>
 </body>
 </html>

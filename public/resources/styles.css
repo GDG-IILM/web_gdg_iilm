@@ -16,6 +16,13 @@ body{
   font-style: normal;
 }
 
+.montserrat-bold {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 900;
+  font-style: normal;
+}
+
 
 /* Anchor Tag */
 a{
@@ -87,3 +94,118 @@ text-align: center;
 padding: 20px;
 color: #ccc;
 }
+
+/* Cards */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #1E1E1E;
+  color: white;
+  padding: 20px;
+}
+
+img {
+  width: 180px;
+  height: 150px;
+}
+h4 {
+  padding: 0;
+  margin: 0;
+  margin-top: 4px;
+}
+.section {
+  display: flex;
+  margin: 4px;
+  flex-direction: column;
+}
+h1 {
+  display: block;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+button {
+  background-color: transparent;
+  cursor: pointer;
+  width: 100%; /* Ensure it takes the full width of the card container */
+  text-align: center;
+}
+.extra-cards {
+  display: none;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.card {
+  display: inline-block;
+  width: 300px;
+  height: 265px;
+  margin: 18px;
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  transition: width 0.3s, height 0.3s, padding 0.3s;
+}
+
+.card[data-dept="2"]:hover{
+  box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.7);
+}
+
+.card[data-dept="1"]:hover{
+  box-shadow: 0px 4px 10px #FBCC43;
+}
+
+.card[data-dept="3"]:hover{
+  box-shadow: 0px 4px 10px #ff4444;
+}
+
+.show-more {
+  height: 160px;
+  width: 200px;
+  /* background-color: aqua; */
+  display: flex;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 8px;
+  margin-top: 24px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  transition: width 0.3s, height 0.3s, padding 0.3s;
+}
+.show-more:hover {
+  box-shadow: 0px 4px 10px #109554;}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .cards {
+      justify-content: center; /* Center the cards on smaller screens */
+  }
+  .card {
+      width: 150px; /* Reduce card size for smaller screens */
+  }
+  .show-more {
+      width: 150px; /* Match the button size with the cards */
+  }
+}
+
+@media (max-width: 480px) {
+  .cards {
+      justify-content: center; /* Center the cards even more on very small screens */
+  }
+  .card {
+      width: 120px; /* Further reduce card size for mobile */
+  }
+  .show-more {
+      width: 120px; /* Adjust button size for mobile screens */
+  }
+}
+
