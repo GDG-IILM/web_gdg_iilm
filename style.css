@@ -762,3 +762,142 @@ nav{
 
 
 }
+
+@media screen and (max-width: 480px) {
+  .nav-elements {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem; /* Reduce font size */
+    align-items: center;
+    width:0px; 
+    height: auto; 
+    margin-right: 200px;
+    transition: background-color 0.3s, transform 0.3s;
+    background-blend-mode: overlay;
+    box-sizing: border-box;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between; 
+    width: 30%; /* Ensure full width utilization */
+    padding: 0 5px; /* Reduce padding */
+  }
+
+  body {
+    font-size: 8px;
+  }
+
+  .home-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    margin-left: -120px;
+    height: 200px;
+    width: 200px;
+  }
+
+  .about-title, .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 100px;
+  }
+
+  .g-circle{
+    margin-left: 1200px;
+  }
+
+  .y-circle {
+    margin-left:170px;
+  }
+
+  .element-rep{
+    margin-left: 100px;
+  }
+
+  #scroll-circle {
+   visibility: hidden;
+  }
+
+  #portrait-img{
+    margin-left: -350px;
+  }
+
+  .element-1{
+    visibility: hidden;
+  }
+
+  .home-img{ margin-left: 90px;
+    margin-top: 70px;
+    position: absolute;
+  }
+
+  .element-2{
+    position: relative;
+    margin-left: 1000px;
+  
+  }
+
+  .gdg-logo{
+    margin-top: -40px;
+  }
+
+  #gdg-text{
+    margin-left: 30px;
+    font-size: 22px;
+  }
+
+  #whattodo-txt{
+    margin-top: 120px;
+    margin-left: 30px;
+    font-size:26px;
+  }
+
+  .desg, .prog, .dev p{
+    width:100px;
+    font-size: 20px;
+    margin-left: -10px;
+  }
+
+  .container{
+    margin-top: 100px;
+  }
+
+ .about-description{
+  font-size: 17px;
+ }
+
+ .about-title{
+  margin-left: -760px;
+ }
+
+ #scroll-circle{
+  visibility: hidden;
+ }
+
+ #card-info {
+  width: 100%; 
+  min-height: 20px; 
+  margin-left: 0; 
+  display: flex;
+}
+
+ #cont-1{
+  font-size: 10px;
+  margin-left: -375px;
+  display: flex;
+  flex-direction: column;
+ }
+
+ #cont-2{
+  visibility: hidden;
+ }
+
+ .g-circle, .y-circle, .element-rep, #b-circle{
+  visibility: hidden;
+ }
+
+
+}
