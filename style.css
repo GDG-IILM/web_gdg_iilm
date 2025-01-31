@@ -764,6 +764,10 @@ nav{
 }
 
 @media screen and (max-width: 480px) {
+
+  .body{
+    font-size: 1rem;
+  }
   .nav-elements {
     display: flex;
     justify-content: center;
@@ -776,6 +780,8 @@ nav{
     background-blend-mode: overlay;
     box-sizing: border-box;
   }
+
+  
 
   .nav-container {
     display: flex;
@@ -861,16 +867,20 @@ nav{
     margin-left: -10px;
   }
 
-  .container{
+  .container1{
     margin-top: 100px;
+    max-width: 20%; /* Adjust width to be responsive */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
   }
 
  .about-description{
-  font-size: 17px;
+  font-size: 0.7rem;
  }
 
  .about-title{
-  margin-left: -760px;
+  margin:0;
  }
 
  #scroll-circle{
@@ -878,7 +888,6 @@ nav{
  }
 
  #card-info {
-  width: 100%; 
   min-height: 20px; 
   margin-left: 0; 
   display: flex;
@@ -886,7 +895,6 @@ nav{
 
  #cont-1{
   font-size: 10px;
-  margin-left: -375px;
   display: flex;
   flex-direction: column;
  }
@@ -895,9 +903,44 @@ nav{
   visibility: hidden;
  }
 
- .g-circle, .y-circle, .element-rep, #b-circle{
+ .g-circle, .y-circle, .element-rep, #b-circle, .y-line, .r-line, .l-elm-1, .l-elm-2, .big-circle,.bottom-b-circle,.g-semi-circle{
   visibility: hidden;
  }
+
+ .whatarewe{
+  font-size: 1rem;
+ }
+
+ .whitec{
+  height: 30vh;
+  width: 90%;
+  margin-left: 20px;
+ }
+
+ .whitec2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 90%;
+  margin-left: 5px;
+  margin-top: -200px;
+ }
+
+ .whitec3{
+  height: 50vh;
+  width: 90%;
+  margin-left: 5px;
+ }
+
+
+
+
+
+
+
+ 
+ 
 
 
 }
