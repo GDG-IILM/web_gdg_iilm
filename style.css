@@ -912,7 +912,7 @@ nav{
   visibility: hidden;
  }
 
- .g-circle, .y-circle, .element-rep, #b-circle, .y-line, .r-line, .l-elm-1, .l-elm-2, .big-circle,.bottom-b-circle,.g-semi-circle{
+ .g-circle, .y-circle, #elem , .element-rep, #b-circle, .y-line, .r-line, .l-elm-1, .l-elm-2, .big-circle,.bottom-b-circle,.g-semi-circle{
   visibility: hidden;
  }
 
