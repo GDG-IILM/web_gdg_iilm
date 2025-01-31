@@ -718,8 +718,6 @@ nav{
     margin-left: 25%;
   }
 
-  .
-
 
 }
 
@@ -784,6 +782,12 @@ nav{
   }
 
 
+  .home-img{
+    width: 200px;
+    height: 150px;
+    margin-left: -120px;
+    margin-top: 30px;
+  }
 
   .nav-container {
     display: flex;
@@ -937,15 +941,5 @@ nav{
   width: 90%;
   margin-left: 5px;
  }
-
-
-
-
-
-
-
- 
- 
-
 
 }
