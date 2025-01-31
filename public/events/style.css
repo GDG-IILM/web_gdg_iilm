@@ -172,3 +172,46 @@ nav{
     opacity: 56%;
     transform: rotate(25deg);
 }
+
+@media screen and (max-width: 480px) {
+
+
+  .nav-elements {
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem; /* Reduce font size */
+    align-items: center;
+    width:0px; 
+    height: auto; 
+    margin-right: 200px;
+    transition: background-color 0.3s, transform 0.3s;
+    background-blend-mode: overlay;
+    box-sizing: border-box;
+  }
+
+.logo,.top-green,#elements,.s{
+  visibility: hidden;
+}
+
+.oval{
+  margin-left: 10px;
+  margin-bottom: 40px;
+}
+
+.eventt{
+  font-size: 3rem;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+    gap: 15px; /* Space between cards */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    width: 100%; /* Keeps container within screen */
+    margin-left: 80px;
+    overflow: hidden;
+}
+
+
+}
