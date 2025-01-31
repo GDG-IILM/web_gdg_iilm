@@ -39,7 +39,7 @@
     <nav>
       <div class="flex justify-between items-center">
           <!-- Logo -->
-          <div class="logo h-10 w-20 m-3 mr-52">
+          <div class="logo h-10 w-20 m-3 mr-52" id="logo22">
               <img src="assets/nav-logo.svg" alt="Logo" class="h-full w-full">
           </div>
   
@@ -120,7 +120,7 @@
             <div class="gdg-logo">
                 <img src="assets/landingPage/gdg-logo.svg" alt="GDG Logo" />
             </div>
-            <h1 class="text-3xl font-bold m-3 mb-0">
+            <h1 class="text-3xl font-bold m-3 mb-0" id="gdg-text">
                 <strong>Google Developers Group</strong>
             </h1>
             <h6 class="text-xs mt-0 m-2 text-gray-500">IILM UNIVERSITY GREATER NOIDA</h6>
@@ -149,7 +149,7 @@
 
     <section class="m-12">
         <div class="flex items-center flex-wrap flex-col mt-16">
-            <h1 class="text-3xl font-bold m-3 mb-10 mt-8">
+            <h1 class="text-3xl font-bold m-3 mb-10 mt-8" id="whattodo-txt">
                 <strong>What to <span class="text-amber-300">Dooooooo!</span></strong>
             </h1>
             <div class="flex w-full h-60 mt-8 p-10 justify-center">
@@ -348,28 +348,30 @@
         </div>
       </div>
       
-      <div class="container flex flex-col flex-wrap mt-10">
-        <h2 class="about-title text-5xl"><strong><span class="text-blue-500">A</span><span class="text-red-500">B</span><span class="text-emerald-600">O</span><span class="text-amber-300">U</span><span class="text-blue-500">T</span> <span class="text-amber-300">U</span><span class="text-red-500">S</span></strong></h2>
+      <div class="container flex flex-col flex-wrap mt-10 px-4">
+        <h2 class="about-title text-5xl text-center"><strong><span class="text-blue-500">A</span><span class="text-red-500">B</span><span class="text-emerald-600">O</span><span class="text-amber-300">U</span><span class="text-blue-500">T</span> <span class="text-amber-300">U</span><span class="text-red-500">S</span></strong></h2>
         <span class="h-16 w-16 -mt-11 ml-8 rounded-full bg-blue-900"></span>
-        <div class="flex justify-center gap-20">
-          <div class="card hover:scale-110 transition ease-in-out">
-            <div class="h-72 w-[450px] bg-neutral-300 rounded-md p-5">
-              <h2 class="text-3xl text-black"><strong>What are we?</strong></h2>
-              <p class="about-description m-4">GDG (Google Developer Group) is a passionate community of developers, designers, and tech enthusiasts who share a common goal: to learn, innovate, and grow in the field of technology. We are open to individuals of all skill levels who have a thirst for knowledge and a drive to create.</p>
-
+        <div class="flex flex-col lg:flex-row justify-center gap-10 mt-8">
+            <div class="card hover:scale-110 transition ease-in-out max-w-sm w-full">
+                <div class="h-72 w-full bg-neutral-300 rounded-md p-5">
+                    <h2 class="text-3xl text-black"><strong>What are we?</strong></h2>
+                    <p class="about-description m-4">GDG (Google Developer Group) is a passionate community of developers, designers, and tech enthusiasts who share a common goal: to learn, innovate, and grow in the field of technology. We are open to individuals of all skill levels who have a thirst for knowledge and a drive to create.</p>
+                </div>
             </div>
-          </div>
-
-          <div class="g-circle"></div>
-          <div class="card hover:scale-110 transition ease-in-out">
-            <div class="h-72 w-[450px] bg-neutral-300 rounded-md p-5">
-              <h2 class="text-3xl text-black"><strong>What We Do?</strong></h2>
-              <p class="about-description">
-                We organize tech events, workshops, and hackathons to foster innovation and skill development. Through interactive sessions, speaker engagements, and networking opportunities, we empower individuals to enhance their technical expertise, collaborate on projects, and bring creative ideas to life.</p>
+    
+            <div class="g-circle hidden lg:block"></div>
+    
+            <div class="card hover:scale-110 transition ease-in-out max-w-sm w-full">
+                <div class="h-72 w-full bg-neutral-300 rounded-md p-5">
+                    <h2 class="text-3xl text-black"><strong>What We Do?</strong></h2>
+                    <p class="about-description">
+                        We organize tech events, workshops, and hackathons to foster innovation and skill development. Through interactive sessions, speaker engagements, and networking opportunities, we empower individuals to enhance their technical expertise, collaborate on projects, and bring creative ideas to life.
+                    </p>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
+</div>
       <!-- yellow circle -->
       <div class="y-circle"></div>
 
