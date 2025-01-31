@@ -767,6 +767,7 @@ nav{
 
   .body{
     font-size: 1rem;
+    overflow-x: hidden;
   }
   .nav-elements {
     display: flex;
