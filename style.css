@@ -799,9 +799,12 @@ nav{
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
-    margin-left: -120px;
+    margin-left: 20px;
     height: 200px;
     width: 200px;
+    max-width: 100%;
+    overflow-x: hidden;
+   
   }
 
   .about-title, .card {
