@@ -34,7 +34,7 @@ a{
 /* Nav Bar */
 nav{
   /* background-color: #1E1E1E; */
-  height: 50px;
+  height: 8.4vh;
   width: 100%;
   position: sticky;
 }
@@ -398,8 +398,8 @@ nav{
 .about-description {
   font-size: 1.1rem;
   color: #555;
-  line-height: 1.6;
-  margin-top: 14px;
+  line-height: 1.4;
+  margin-top: 10px;
 }
 
 
@@ -800,6 +800,14 @@ nav{
   body {
     font-size: 8px;
   }
+
+  nav{
+    width: 200px;
+  }
+  form{
+    width: 200px;
+  }
+
 
   .home-img {
     display: flex;
