@@ -109,11 +109,32 @@
             <div class="dot green"></div>
         </div>
       </div>
-      
-      <div class="sticky-login">
+      <!--Chatbot integration-->
+      <div class="chatbot-icon">
+        <button id="open-chat" class="chat-button">💬</button>
+    </div>
+
+    <!-- Chatbot Container (Initially Hidden) -->
+    <div id="chatbot-container" class="chatbot-container hidden">
+        <div class="chat-header">
+            <span>Chatbot</span>
+            <button id="close-chat">❌</button>
+        </div>
+        <div class="chat-body">
+            <div id="chat-messages" class="chat-messages"></div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-message">Send</button>
+        </div>
+    </div>
+
+    <!-- Include Chatbot Script -->
+    <script src="/static/chatbot.js"></script>
+      <!-- <div class="sticky-login"> -->
         <!-- <button onclick="window.location.href='/login'"><strong>Resources</strong></button> -->
-        <a href="public/resources/index.html"><button><strong>Resources</strong></button></a>
-      </div>
+        <!-- <a href="public/resources/index.html"><button><strong>Resources</strong></button></a>
+      </div> -->
 
     <section class="mt-[-6rem]">
         <div class="flex items-center flex-wrap flex-col">

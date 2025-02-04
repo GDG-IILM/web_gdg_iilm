@@ -1,0 +1,245 @@
+General Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Light and Dark Mode Styles */
+body.light-mode {
+    --bg-color: #f9f9f9;
+    --text-color: #333;
+    --header-color: #007bff;
+    --button-bg: #007bff;
+    --button-text: #fff;
+}
+
+body.dark-mode {
+    --bg-color: #181818;
+    --text-color: #333;
+    --header-color: #1a73e8;
+    --button-bg: #1a73e8;
+    --button-text: #f9f9f9;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+} */
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--header-color);
+    color: white;
+}
+/* 
+.theme-toggler {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--button-text);
+} */
+
+/* Chatbot Icon */
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+.chat-button {
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+}
+
+/* Chatbot Container */
+.chatbot-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background-color: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.chatbot-container.hidden {
+    display: none;
+}
+
+.chat-header {
+    padding: 10px;
+    background-color: var(--header-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    z-index: 1;
+}
+/* Add a scrollbar for better visibility */
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    scroll-behavior: smooth;
+
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid var(--header-color);
+    border-radius: 5px;
+}
+
+.chat-input button {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.chat-input button:hover {
+    background-color: var(--header-color);
+}
+/* Chat messages scrolling */
+.chat-messages {
+    height: 300px; /* Adjust as needed */
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Prevent overly long lines from breaking the layout */
+.message {
+    word-wrap: break-word;
+    margin-bottom: 10px;
+}
+
+/* User message styles */
+.user-message {
+    text-align: right;
+    background-color: #d1e7dd;
+    padding: 8px 12px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+/* Bot message styles */
+.bot-message {
+    text-align: left;
+    background-color: #f8d7da;
+    padding: 8px 12px;
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    height: 300px; /* Ensure height is sufficient */
+    scroll-behavior: smooth;
+}
+#chat-messages {
+    max-height: 400px; /* Set a maximum height for the chat area */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 10px; /* Add some padding for better readability */
+    box-sizing: border-box; /* Ensure padding doesn't affect width/height */
+}
+
+#typing-indicator {
+    font-style: italic;
+    color: gray;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.hidden {
+    display: none;
+}
+
+.typing-indicator {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-top: 5px;
+}
+.message.bot-message{
+    display:block;
+}
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background-color: gray;
+    border-radius: 50%;
+    animation: blink 1.5s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+}
