@@ -15,20 +15,20 @@ body {
 /* Top Left Logo */
 .logo {
     position: absolute;
-    top: 20px;
-    left: 30px;
+    top: 2vh; /* Adjusted to viewport height for better responsiveness */
+    left: 3vw; /* Adjusted to viewport width */
 }
 
 .logo img {
-    width: 100px;
+    width: 10vw; /* Makes the logo size responsive */
+    max-width: 100px; /* Ensures logo doesn’t get too big */
 }
-
 /* Centered main container */
 .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%; /* Adjust width */
+    width: 90%; /* Adjusted width for responsiveness */
     max-width: 900px; /* Prevents excessive width */
     height: 70vh; /* Makes it properly spaced */
     margin: auto;
@@ -40,13 +40,13 @@ body {
 
 /* Left Section (Form) */
 .form-section {
-    width: 50%;
+    width: 100%; /* Adjusts to fit on smaller screens */
     text-align: left;
 }
 
 /* Welcome text */
 h1 {
-    font-size: 36px;
+    font-size: 3rem; /* Scalable font size */
     text-align: left;
 }
 
@@ -61,34 +61,66 @@ h1 {
 }
 
 p {
-    font-size: 18px;
+    font-size: 1rem; /* Adjusted for responsiveness */
     margin-bottom: 20px;
 }
 
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .form-section {
+        width: 100%; /* Ensures the form section takes full width */
+    }
+}
 /* Form Styling */
 form {
     display: flex;
     flex-direction: column;
+    width: 100%; /* Ensures the form takes up full available width */
+    max-width: 500px; /* Optional max width for better form appearance on large screens */
+    margin: auto; /* Centers the form */
 }
 
 label {
     text-align: left;
     margin-bottom: 5px;
+    font-size: 1rem; /* Adjusted for better readability */
+    font-weight: 500;
 }
 
 input {
     width: 100%;
-    padding: 10px;
+    padding: 12px; /* Increased padding for better touch target */
     margin-bottom: 15px;
     border-radius: 10px;
-    border: none;
+    border: 1px solid #3B5174; /* Subtle border to improve input visibility */
     background: #1A1A1A;
     color: white;
     font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 input::placeholder {
     color: gray;
+}
+
+/* Focus state to improve accessibility */
+input:focus {
+    outline: none;
+    background-color: #333;
+    border: 1px solid #3A80F5; /* Highlight border on focus */
 }
 
 /* Right Section (Illustration) */
@@ -97,6 +129,7 @@ input::placeholder {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 20px; /* Adjust padding to ensure space between form and image */
 }
 
 .illustration img {
@@ -105,6 +138,28 @@ input::placeholder {
     height: auto;
 }
 
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stacks form and illustration on smaller screens */
+    }
+
+    .form-section, .illustration {
+        width: 100%; /* Ensure each section takes full width */
+    }
+
+    .illustration img {
+        max-width: 90%; /* Prevents image from being too large */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Slightly smaller font size on small screens */
+    }
+
+    p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+}
 /* Bottom Left Small Illustration */
 .bottom-left-illustration {
     position: absolute;
@@ -113,7 +168,8 @@ input::placeholder {
 }
 
 .bottom-left-illustration img {
-    width: 120px;
+    width: 120px; /* Ensures the image is scaled properly */
+    height: auto; /* Keeps the aspect ratio intact */
 }
 
 /* Bottom Right "Buy me a coffee" */
@@ -124,6 +180,11 @@ input::placeholder {
     display: flex;
     align-items: center;
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.buy-coffee:hover {
+    transform: scale(1.1); /* Adds a hover effect to make it interactive */
 }
 
 .buy-coffee img {
@@ -134,6 +195,7 @@ input::placeholder {
 .buy-coffee span {
     color: #FFD700;
     font-weight: bold;
+    font-size: 1rem; /* Adjust font size for better readability */
 }
 
 /* Responsive Design */
@@ -146,10 +208,22 @@ input::placeholder {
     }
 
     .form-section, .illustration {
-        width: 100%;
+        width: 100%; /* Ensures form and illustration take up full width */
     }
 
     .illustration img {
-        width: 80%;
+        width: 80%; /* Adjusts image size for smaller screens */
+    }
+
+    /* Bottom Left Illustration */
+    .bottom-left-illustration {
+        left: 50%; /* Centers the bottom-left illustration on mobile */
+        transform: translateX(-50%); /* Ensures it's centered */
+    }
+
+    /* Buy Me a Coffee */
+    .buy-coffee {
+        bottom: 20px; /* Slightly reduce bottom space on small screens */
+        right: 20px; /* Adjust right space for better alignment */
     }
 }

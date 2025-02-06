@@ -32,186 +32,197 @@ a{
   color: white;
 }
 
-
 /* Nav Bar */
-nav{
-  /* background-color: #1E1E1E; */
-  height: 50px;
+nav {
+  background-color: #1E1E1E; /* Adding background color */
+  height: 5vh; /* Converted to vh */
   width: 100%;
   position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.nav-elements ul{
-  height: 48px;
-  width: 600px;
+.nav-elements ul {
+  height: 6vh; /* Converted to vh */
+  width: 50vw; /* Converted to vw */
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 8px;
-  padding: 4px;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-elements li{
+.nav-elements li {
   list-style: none;
 }
 
-.home-img{
-  width: 400px;
-  height: 250px;
-  margin-top: 30px;
+/* Home Image */
+.home-img {
+  width: 40vw; /* Converted to vw */
+  height: auto;
+  margin-top: 3rem; /* Converted to rem */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.gdg-logo{
-  width: 100px;
-  height: 100px;
-  margin-top: 40px;
+/* GDG Logo */
+.gdg-logo {
+  width: 10vw; /* Converted to vw */
+  height: auto;
+  margin-top: 4rem; /* Converted to rem */
   margin-bottom: 0;
 }
-
 /* Section-specific colors */
-.about h2::after { background-color: #ff4444; }
-.events h2::after { background-color: #109554; }
-.projects h2::after { background-color: #FBCC43; }
-.teams h2::after { background-color: #4285F4; }
+.about h2::after {
+  background-color: #ff4444;
+}
 
+.events h2::after {
+  background-color: #109554;
+}
+
+.projects h2::after {
+  background-color: #FBCC43;
+}
+
+.teams h2::after {
+  background-color: #4285F4;
+}
+
+/* Section list styling */
 .section ul {
-    list-style: none;
+  list-style: none;
 }
 
 .section li {
-    margin-bottom: 10px;
-    color: #ccc;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-    cursor: pointer;
+  margin-bottom: 1rem; /* Converted to rem */
+  color: #ccc;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  cursor: pointer;
 }
 
 .section li:hover {
-    color: white;
-    padding-left: 10px;
+  color: white;
+  padding-left: 1rem; /* Converted to rem */
 }
 
+/* Developer section styling */
 .developer {
-    text-align: center;
-    /* margin-top: 50px; */
-    padding: 20px;
-    color: #ccc;
+  text-align: center;
+  padding: 2rem; /* Converted to rem */
+  color: #ccc;
 }
 /* Top Green */
-.top-green{
-  height: 350px;
-  width: 120px;
+.top-green {
+  height: 35vh; /* Converted to vh for responsiveness */
+  width: 10vw; /* Converted to vw */
   background-image: linear-gradient(to bottom, #0F9D58, #3BB57A, #05371F);
-  border-radius: 0 0 40px 40px;
-  margin-left: 320px;
-  margin-top: -220px;
+  border-radius: 0 0 4rem 4rem; /* Converted to rem */
+  margin-left: 20vw; /* Converted to vw */
+  margin-top: -20vh; /* Converted to vh */
   z-index: -1;
 }
 
-.oval{
-    height: 40px;
-    width: 150px;
-    margin: 10px;
-    margin-left: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 30px;
-    border: solid 2px white;
+/* Oval */
+.oval {
+  height: 2.5rem; /* Converted to rem */
+  width: 9.375rem; /* Converted to rem */
+  margin: 0.625rem; /* Converted to rem */
+  margin-left: 3.125rem; /* Converted to rem */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.875rem; /* Converted to rem */
+  border: solid 0.125rem white; /* Converted to rem */
 }
 
-.big-circle{
-    z-index: 10;
-    border-radius: 50%;
-    background-image: linear-gradient(#3B5174);
-  }
-
-  .profile-card {
-    background-color: #999898;
-    border-radius: 45px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
-    text-align: center;
-    padding: 15px;
-    margin: 10px;
-    flex: 0 0 auto;
-    /* border: solid 2px black; */
-  }
-/* 
-  .profile-info:hover{
-    font-weight: 500;
-  }  */
-  .cross-container {
-    margin-left: 88%;
-    width: 60px;
-    height: 60px;
-    position: relative;
-    margin-bottom: -15px;
+/* Big Circle */
+.big-circle {
+  z-index: 10;
+  border-radius: 50%;
+  background-image: linear-gradient(#3B5174);
 }
 
-  .cross-bar {
-    position: absolute;
-    width: 100%;
-    height: 15px;
-    background-color: #3B5174;
-    opacity: 0.9;
-    border-radius: 20px;
-    
+/* Profile Card */
+.profile-card {
+  background-color: #999898;
+  border-radius: 2.8125rem; /* Converted to rem */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* Converted to rem */
+  width: 18.75rem; /* Converted to rem */
+  text-align: center;
+  padding: 0.9375rem; /* Converted to rem */
+  margin: 0.625rem; /* Converted to rem */
+  flex: 0 0 auto;
+}
+
+/* Cross-container */
+.cross-container {
+  margin-left: 88%;
+  width: 3.75rem; /* Converted to rem */
+  height: 3.75rem; /* Converted to rem */
+  position: relative;
+  margin-bottom: -1rem; /* Converted to rem */
+}
+/* Cross Bar */
+.cross-bar {
+  position: absolute;
+  width: 100%;
+  height: 0.9375rem; /* Converted to rem */
+  background-color: #3B5174;
+  opacity: 0.9;
+  border-radius: 1.25rem; /* Converted to rem */
 }
 
 .cross-bar.vertical {
-    transform: rotate(90deg);
-    top: 30px;
-    left: 0;
-    opacity: 56%;
-    transform: rotate(115deg);
+  transform: rotate(90deg);
+  top: 1.875rem; /* Converted to rem */
+  left: 0;
+  opacity: 56%;
+  transform: rotate(115deg);
 }
 
 .cross-bar.horizontal {
-    top: 30px;
-    left: 0;
-    opacity: 56%;
-    transform: rotate(25deg);
-}
-
-@media screen and (max-width: 480px) {
-
+  top: 1.875rem; /* Converted to rem */
+  left: 0;
+  opacity: 56%;
+  transform: rotate(25deg);
+}@media screen and (max-width: 480px) {
 
   .nav-elements {
     display: flex;
     justify-content: center;
-    font-size: 0.8rem; /* Reduce font size */
+    font-size: 0.8rem; /* Reduced font size */
     align-items: center;
-    width:0px; 
+    width: 0; 
     height: auto; 
-    margin-right: 200px;
+    margin-right: 12.5vw; /* Converted 200px to vw */
     transition: background-color 0.3s, transform 0.3s;
     background-blend-mode: overlay;
     box-sizing: border-box;
   }
 
-.logo,.top-green,#elements,.s{
-  visibility: hidden;
-}
+  .logo, .top-green, #elements, .s {
+    visibility: hidden;
+  }
 
-.oval{
-  margin-left: 10px;
-  margin-bottom: 40px;
-}
+  .oval {
+    margin-left: 0.625rem; /* Converted 10px to rem */
+    margin-bottom: 2.5rem; /* Converted 40px to rem */
+  }
 
-.eventt{
-  font-size: 3rem;
-}
+  .eventt {
+    font-size: 3rem; /* Keeping as is, font-size suitable for mobile view */
+  }
 
-.container{
-  display: flex;
-  flex-direction: column;
-    gap: 15px; /* Space between cards */
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; /* Converted 15px to rem */
     overflow-x: auto; /* Enables horizontal scrolling */
     scroll-behavior: smooth; /* Smooth scrolling */
     width: 100%; /* Keeps container within screen */
-    margin-left: 80px;
+    margin-left: 5vw; /* Converted 80px to vw */
     overflow: hidden;
-}
-
-
+  }
 }
