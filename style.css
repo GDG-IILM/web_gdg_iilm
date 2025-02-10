@@ -38,20 +38,20 @@ position: sticky;
 }
 
 .nav-elements ul{
-height: 6vh; .element-1 {
+  height: 4vh; .element-1 {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25vh; /* 2px converted to vh (based on 800px height) */
+  gap: 0.9vh; /* 2px converted to vh (based on 800px height) */
   margin-left: 65%;
   margin-top: 1.25vh; /* 10px converted to vh */
 }
 
 .semi-circle {
-  width: 12.5vw; /* 100px converted to vw (based on 800px width) */
-  height: 5.625vh; /* 45px converted to vh (based on 800px height) */
-  background-color: #0F9D58;
+  width: 6rem; /* 100px converted to vw (based on 800px width) */
+  height: 3rem; /* 45px converted to vh (based on 800px height) */
+  background-color: #646a67;
   border-radius: 5.625vh 5.625vh 0 0; /* 45px converted to vh */
 }
 
@@ -63,9 +63,9 @@ height: 6vh; .element-1 {
 }
 
 .dot {
-  width: 2.5vw; /* 20px converted to vw */
-  height: 2.5vw; /* 20px converted to vw */
-  border-radius: 50%;
+  width: 1.3vw; /* 20px converted to vw */
+  height: 1.3vw; /* 20px converted to vw */
+  border-radius: 0%;
 }
 
 .dot.green {
@@ -150,8 +150,8 @@ list-style: none;
 }
 
 .home-img{
-width: 33.33vw; 
-height: 31.25vh; 
+width: 28.33vw; 
+height: 26.25vh; 
 margin-top: 3.75vh;
 }
 
@@ -224,10 +224,10 @@ margin-bottom: 0;
 }
 
 .semi-circle {
-  width: 10vw; /* Converted from 100px to vw to keep it responsive */
-  height: 4.5vh; /* Converted from 45px to vh to maintain proportionality */
+  width: 6vw; /* width is 2x the height to maintain the semi-circle shape */
+  height: 3vw; /* height is set to half of the width to keep the correct shape */
   background-color: #0F9D58;
-  border-radius: 7.5rem 7.5rem 0 0; /* Converted from 75px to rem to keep the border radius proportional */
+  border-radius: 10vw 10vw 0 0; /* border radius is set using vw to maintain the curve */
 }
 
 
@@ -239,8 +239,8 @@ margin-bottom: 0;
 }
 
 .dot {
-  width: 2.5vw; /* 20px converted to vw */
-  height: 2.5vw; /* 20px converted to vw */
+  width: 2vw; /* 20px converted to vw */
+  height: 2vw; /* 20px converted to vw */
   border-radius: 50%;
 }
 
@@ -262,60 +262,59 @@ margin-bottom: 0;
 /* /element 2 */
 .element-2 {
   position: relative;
-  width: 20vw; /* Converted from 200px to vw to maintain responsive width */
-  height: 10vh; /* Converted from 100px to vh to maintain responsive height */
+  width: 12vw; /* width is 50% of the viewport width */
+  height: 15vh; /* height is 25% of the viewport height */
   display: flex;
 }
-
 
 .left-section {
   flex: 1;
   background-color: #4287f5;
   position: relative;
-  /* Kept in px */
 }
 
 .right-section {
   flex: 1;
   background-color: #f54242;
   position: relative;
-  /* Kept in px */
 }
+
 
 .left-circle {
   position: absolute;
-  left: -5vw; /* Converted from -30px to vw for responsiveness */
+  left: -2vw; /* Adjusted to 2% of the viewport width */
   top: 40%;
   transform: translateY(-50%);
-  width: 6vw; /* Converted from 45px to vw to maintain circular shape */
-  height: 6vw; /* Converted from 45px to vw to maintain circular shape */
+  width: 4vw; /* Width as 5% of the viewport width */
+  height: 4vw; /* Height as 5% of the viewport width, keeping it circular */
   background-color: #333;
   border-radius: 50%;
 }
 
-
 .black-triangle {
   position: absolute;
-  bottom: 2vh; /* Converted from 10px to vh for responsiveness */
+  bottom: 0.6vh; /* Adjusted to 1% of the viewport height */
   left: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
-  border-left: 5vw solid transparent; /* Converted from 40px to vw for responsiveness */
-  border-right: 5vw solid transparent; /* Converted from 40px to vw for responsiveness */
-  border-top: 5vw solid #333; /* Converted from 40px to vw for responsiveness */
+  border-left: 3vw solid transparent; /* Border width as 3% of the viewport width */
+  border-right: 3vw solid transparent; /* Border width as 3% of the viewport width */
+  border-top: 3vw solid #333; /* Border width as 3% of the viewport width */
 }
+
 
 .right-circle {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 10vw; /* Converted from 45px to vw for responsiveness */
-  height: 10vw; /* Converted from 45px to vw for responsiveness */
+  width: 3vw; /* Width as 5% of the viewport width */
+  height: 3vw; /* Height as 5% of the viewport width, keeping it circular */
   background-color: #333;
   border-radius: 50%;
 }
+
 
 /* Meet the team section */
 
@@ -334,52 +333,57 @@ margin-bottom: 0;
 
 .profile-card {
   background-color: #fff;
-  border-radius: 1rem; /* Converted from 15px to rem */
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.2); /* Converted from px to rem */
-  width: 60vw; /* Converted from 225px to vw for responsiveness */
+  border-radius: 1rem; /* Border radius in rem */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* Box shadow using rem for proportional spacing */
+  width: 15vw; /* Width as 20% of the viewport width */
   text-align: center;
-  padding: 1rem; /* Converted from 15px to rem */
-  margin: 1vh; /* Converted from 10px to vh for vertical spacing */
+  padding: 1rem; /* Padding in rem for better scalability */
+  margin: 1rem; /* Margin in rem for consistent spacing */
   flex: 0 0 auto;
 }
 
 .profile-photo img {
   width: 100%;
-  height: 30vh; /* Converted from 225px to vh for responsive height */
-  border-radius: 0.625rem; /* Converted from 10px to rem */
+  height: 30vh; /* Set height to 30% of the viewport height */
+  border-radius: 0.625rem; /* Border radius in rem */
 }
 
 .profile-info h2 {
-  margin: 1rem 0 0.3rem; /* Converted from px to rem */
-  font-size: 1.2rem; /* Converted from 1.5rem for better responsiveness */
+  margin: 1rem 0 0.5rem; /* Margin in rem for better spacing */
+  font-size: 2rem; /* Font size in rem for scalability */
   color: #333;
 }
 
 .profile-info p {
   margin: 0;
-  font-size: 1rem; /* Keep in rem for relative text sizing */
+  font-size: 1rem;
   color: #666;
 }
 
 .social-links {
-  margin-top: 2vh; /* Converted from 15px to vh for responsiveness */
+  margin-top: 1rem; /* Top margin in rem for scalable spacing */
 }
 
 .social-links a {
-  margin: 0 2vw; /* Converted from 10px to vw for spacing based on viewport width */
+  margin: 0 2rem; /* Horizontal margin in rem for consistent spacing */
   display: inline-block;
 }
 
 .social-links img {
-  width: 2rem; /* Converted from 24px to rem for responsiveness */
-  height: 2rem; /* Converted from 24px to rem for consistency */
-  transition: transform 0.3s;
+  width: 2rem; /* Width in rem for responsiveness */
+  height: 2rem; /* Height in rem for consistency */
+  transition: transform 0.3s ease; /* Transition effect for scaling */
 }
+
+/* Optional: Add a hover effect to the images */
+.social-links img:hover {
+  transform: scale(1.1); /* Slight scale effect on hover */
+}
+
 
 .social-links img:hover {
   transform: scale(1.2);
 }
-
 
 /* About Section Styling */
 .about-section {
@@ -387,42 +391,42 @@ margin-bottom: 0;
 }
 
 .circle {
-  margin: 0 5vw; /* Converted from 35px to vw for responsiveness */
-  height: 4rem; /* Converted from 36px to rem for scaling based on root font size */
-  width: 4rem; /* Converted from 36px to rem for consistency */
+  margin: 0 2rem; /* Horizontal margin in rem for consistent spacing */
+  height: 3vw; /* Height as 5% of the viewport width */
+  width: 3vw; /* Width as 5% of the viewport width */
   border-radius: 50%;
   background-color: #264d8e;
 }
 
 /* Outlined Circle */
-.circle-out {  
-  height: 4rem; /* Converted from 36px to rem for scaling */
-  width: 4rem; /* Converted from 36px to rem for consistency */
+.circle-out {
+  height: 3vw; /* Height as 5% of the viewport width */
+  width: 3vw; /* Width as 5% of the viewport width */
   border-radius: 50%;
-  border: solid #264d8e 0.125rem; /* Converted from 2px to rem */
+  border: solid #264d8e 2px;
 }
 
 .g-circle {
   position: absolute;
-  width: 20vw; /* Converted from 175px to vw for responsiveness */
-  height: 20vw; /* Converted from 175px to vw for responsiveness */
+  width: 15vw; /* Width as 20% of the viewport width */
+  height: 15vw; /* Height as 20% of the viewport width */
   background-color: #0F9D58;
   border-radius: 50%;
   z-index: -1;
-  margin-left: 55vw; /* Converted from 996px to vw */
-  margin-top: -8vh; /* Converted from -85px to vh for vertical responsiveness */
+  margin-left: 50vw; /* Center horizontally by 50% of the viewport width */
+  margin-top: -10vh; /* Adjust vertical positioning to be 10% of the viewport height */
 }
 
 
 .y-circle {
   position: absolute;
-  width: 15vw; /* Converted from 200px to vw for responsive width */
-  height: 15vw; /* Converted from 200px to vw for responsive height */
+  width: 15vw; /* Width as 20% of the viewport width */
+  height: 15vw; /* Height as 20% of the viewport width */
   background-color: #FBCC43;
   border-radius: 50%;
   z-index: -1;
-  margin-left: 3vw; /* Converted from 50px to vw */
-  margin-top: -10vh; /* Converted from -105px to vh */
+  margin-left: 2rem; /* Horizontal margin in rem */
+  margin-top: -10vh; /* Vertical margin in vh for responsive positioning */
 }
 
 /* Repeated element */
@@ -431,15 +435,15 @@ margin-bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem; /* Converted from 4px to rem */
+  gap: 0.5rem; /* Gap in rem for consistent spacing */
   margin-left: 0;
-  margin-top: -3vh; /* Converted from -50px to vh */
+  margin-top: -8vh; /* Adjust vertical margin in vh for responsiveness */
   z-index: -1;
 }
 
 .sm-dot {
-  width: 1rem; /* Converted from 15px to rem */
-  height: 1rem; /* Converted from 15px to rem */
+  width: 1.1rem;
+  height: 1.1rem;
   border-radius: 50%;
 }
 
@@ -458,84 +462,85 @@ margin-bottom: 0;
 .sm-dot.blue {
   background-color: #264D8E;
 }
+
 .sm-semi-circle {
-  width: 4.6rem; /* Converted from 70px to rem */
-  height: 1.56rem; /* Converted from 25px to rem */
+  width: 6vw; /* Width as 10% of the viewport width */
+  height: 5vh; /* Height as 4% of the viewport height */
   background-color: #0F9D58;
-  border-radius: 3.125rem 3.125rem 0 0; /* Converted from 65px to rem */
+  border-radius: 50% 50% 0 0; /* Border radius adjusted for responsive scaling */
 }
+
 
 .about-title {
-  font-size: 2.5rem; /* Kept in rem for consistency */
+  font-size: 2.5rem;
   color: white;
-  margin-bottom: 2rem; /* Converted from 30px to rem */
+  margin-bottom: 30px;
 }
-
 .about-content {
   display: flex;
   justify-content: space-between;
-  gap: 4.375rem; /* Converted from 70px to rem */
+  gap: 5vw; /* Gap in vw for responsiveness */
   flex-wrap: wrap;
-  max-width: 65vw; /* Converted from 1050px to vw */
-  margin: 0 auto 2.5rem; /* Converted from 40px to rem */
+  max-width: 90vw; /* Max width as 90% of the viewport width */
+  margin: 0 auto 5vh; /* Margin at the bottom in vh */
 }
 
 .about-item {
-  flex: 1 1 45%;
+  flex: 1 1 45%; /* Flex basis at 45% */
   background: #fff;
-  padding: 1.25rem; /* Converted from 20px to rem */
-  border-radius: 0.625rem; /* Converted from 10px to rem */
-  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* Converted from 4px and 6px to rem */
+  padding: 2rem; /* Padding in rem */
+  border-radius: 1rem; /* Border radius in rem for consistent scaling */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: left;
 }
 
 
 .about-subtitle {
-  font-size: 1.5rem; /* Kept in rem */
+  font-size: 1.5rem;
   color: #007bff;
-  margin-bottom: 1rem; /* Converted from 15px to rem */
+  margin-bottom: 15px;
 }
 
 .about-description {
-  font-size: 1.1rem; /* Kept in rem */
+  font-size: 1.1rem;
   color: #555;
   line-height: 1.4;
-  margin-top: 0.625rem; /* Converted from 10px to rem */
+  margin-top: 10px;
 }
 
 /* Contact Us */
 .l-elm-1 {
-  height: 2.1875rem; /* Converted from 35px to rem */
-  width: 7.375rem; /* Converted from 118px to rem */
-  border-radius: 1.25rem; /* Converted from 20px to rem */
+  height: 5vh; /* Height as a percentage of viewport height */
+  width: 15vw; /* Width as a percentage of viewport width */
+  border-radius: 2rem; /* Border radius in rem for consistent scaling */
   background-image: linear-gradient(to right, #EA4335, #84261E);
 }
 
 .l-elm-2 {
-  height: 2.1875rem; /* Converted from 35px to rem */
-  width: 4.6875rem; /* Converted from 75px to rem */
-  margin-top: 1rem; /* Converted from 16px to rem */
-  border-radius: 0 0.625rem 0.625rem 0; /* Converted from 10px to rem */
+  height: 5vh; /* Height as a percentage of viewport height */
+  width: 10vw; /* Width as a percentage of viewport width */
+  margin-top: 2vh; /* Margin top as a percentage of viewport height */
+  border-radius: 0 1.5rem 1.5rem 0; /* Border radius in rem */
   background-image: linear-gradient(to right, #FBCC43, #957928);
 }
 
 .big-circle {
   z-index: 10;
-  width: 6.25rem; /* Converted from 100px to rem */
-  height: 6.25rem; /* Converted from 100px to rem */
+  width: 15vw; /* Width as a percentage of viewport width */
+  height: 15vw; /* Height as a percentage of viewport width */
   border-radius: 50%;
   background-image: linear-gradient(to bottom, #EA4335, #B73429, #84261E);
 }
 
 .g-semi-circle {
-  width: 10.9375rem; /* Converted from 175px to rem */
-  height: 23.625rem; /* Converted from 378px to rem */
+  width: 11vw; /* Width as a percentage of viewport width */
+  height: 48vh; /* Height as a percentage of viewport height */
   background: linear-gradient(90deg, #00a651, #00a651);
   border-top-left-radius: 0;
-  border-top-right-radius: 9.375rem; /* Converted from 150px to rem */
+  border-top-right-radius: 10rem; /* Border radius in rem */
   border-bottom-left-radius: 0;
-  border-bottom-right-radius: 9.375rem; /* Converted from 150px to rem */
-  margin-top: -4.375rem; /* Converted from -70px to rem */
+  border-bottom-right-radius: 10rem; /* Border radius in rem */
+  margin-top: -9.8vh; /* Negative margin in vh */
   background-image: linear-gradient(to bottom, #0F9D58, #0A6A3B, #08512D, #064426, #05371F);
   display: flex;
   flex-direction: column;
@@ -543,57 +548,57 @@ margin-bottom: 0;
 
 .bottom-b-circle {
   z-index: 10;
-  width: 6.25rem; /* Converted from 100px to rem */
-  height: 6.25rem; /* Converted from 100px to rem */
+  width: 15vw; /* Width as a percentage of viewport width */
+  height: 15vw; /* Height as a percentage of viewport width */
   border-radius: 50%;
   background-image: linear-gradient(to bottom, #264D8E, #0B1628);
 }
 
 .bottom-y-circle {
   z-index: 10;
-  width: 6.25rem; /* Converted from 100px to rem */
-  height: 6.25rem; /* Converted from 100px to rem */
+  width: 10vw; /* Width as a percentage of viewport width */
+  height: 10vw; /* Height as a percentage of viewport width */
   border-radius: 50%;
   background-image: linear-gradient(to bottom, #FBCC43, #957928);
 }
+
 
 /* Form */
 #name,
 #mail,
 #msg {
-  height: 2.1875rem; /* Converted from 35px to rem */
-  width: 12rem; /* Converted from 192px to rem */
-  margin-top: 1.25rem; /* Converted from 20px to rem */
-  padding: 0.625rem; /* Converted from 10px to rem */
-  border-radius: 0.25rem; /* Converted from 4px to rem */
+  height: 5vh; /* Height relative to viewport height */
+  width: 12vw; /* Width relative to viewport width */
+  margin-top: 2vh; /* Margin in vh for vertical spacing */
+  padding: 10px;
+  border-radius: 4px;
   border: solid 1px #000000;
   background: transparent;
 }
 
 #msg {
-  height: 6.5625rem; /* Converted from 105px to rem */
-  width: 15.625rem; /* Converted from 250px to rem */
-  padding: 0.25rem; /* Converted from 4px to rem */
+  height: 15vh; /* Height relative to viewport height */
+  width: 15vw; /* Width relative to viewport width */
+  padding: 4px;
 }
-
 
 /* Sticky Login Button */
 .sticky-login {
   position: fixed;
-  bottom: 3.125vh; /* Converted from 50px to vh */
-  right: 3.125vw; /* Converted from 50px to vw */
+  bottom: 50px; /* Distance from the bottom of the screen */
+  right: 50px; /* Distance from the right edge of the screen */
   z-index: 1000; /* Ensure it appears on top of other elements */
 }
 
 .sticky-login button {
-  padding: 0.625rem 1.25rem; /* Converted from 10px 20px to rem */
+  padding: 1rem 2rem; /* Using rem for padding */
   border: none;
-  border-radius: 1.5625rem; /* Converted from 25px to rem */
+  border-radius: 2rem; /* Using rem for border-radius */
   background-color: rgb(37, 99, 235);
   color: #fff;
-  font-size: 1rem; /* Converted from 16px to rem */
+  font-size: 1rem; /* Font size in rem */
   cursor: pointer;
-  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1); /* Converted from 4px 6px to rem */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
@@ -602,31 +607,26 @@ margin-bottom: 0;
   transform: scale(1.05);
 }
 
-
-/* Mobile Responsiveness */
+/* Mobile Responsiveness
 @media (max-width: 768px) {
-  /* Adjust button sizes on smaller screens */
   .l-elm-1, .l-elm-2 {
-    width: 25rem; /* Adjusted to relative size */
+    width: 13vh;
   }
 
-  /* Ensure form fields expand to full width on smaller screens */
   #name, #mail, #msg {
-    width: 100%; /* Form fields should take full width of container */
+    width: 100%;
   }
   
-  /* Adjust circle size on smaller screens */
   .g-semi-circle {
-    width: 37.5rem; /* Adjusted from 150px to rem for responsive design */
-    height: 75rem; /* Adjusted from 300px to rem for responsive design */
+    width: 20vh;
+    height: 40vh;
   }
 
-  /* Adjust size of multiple circles for smaller screens */
   .big-circle, .bottom-b-circle, .bottom-y-circle {
-    width: 37.5rem; /* Adjusted from 150px to rem for responsive design */
-    height: 37.5rem; /* Adjusted from 150px to rem for responsive design */
+    width: 20vh;
+    height: 20vh;
   }
-}
+} */
 
 
 /* Chatbot Icon */
@@ -820,113 +820,133 @@ margin-bottom: 0;
   }
 }
 
-/* For standard 14-inch laptops (1440px - 1920px) */
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
   body {
-    font-size: 1.125rem; /* Adjusted from 18px to rem */
+    font-size: 1.125rem;
   }
 
   .home-img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 20vw; /* Adjusted from 25% to vw */
+    margin-left: 25%;
   }
+
+  .g-semi-circle {
+    width: 9vw; /* Width as a percentage of viewport width */
+    height: 29vh; /* Height as a percentage of viewport height */
+    background: linear-gradient(90deg, #00a651, #00a651);
+    border-top-left-radius: 0;
+    border-top-right-radius: 10rem; /* Border radius in rem */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 10rem; /* Border radius in rem */
+    margin-top: -5.8vh; /* Negative margin in vh */
+    background-image: linear-gradient(to bottom, #0F9D58, #0A6A3B, #08512D, #064426, #05371F);
+    display: flex;
+    flex-direction: column;
+  }
+
+
 }
 
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
   body {
-    font-size: 1.125rem; /* Adjusted from 18px to rem */
+    font-size: 18px;
   }
 
   .home-img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 20vw; /* Adjusted from 25% to vw */
+    margin-left: 25%;
   }
 
   .about-title, .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 6.25rem; /* Adjusted from 100px to rem */
+    margin-left: 100px;
   }
 
-  .g-circle {
-    margin-left: 75vw; /* Adjusted from 1200px to vw */
+  .g-circle{
+    margin-left: 1200px;
   }
 
   .y-circle {
-    margin-left: 10vw; /* Adjusted from 170px to vw */
+    margin-left:170px;
   }
 
-  .element-rep {
-    margin-left: 6.25rem; /* Adjusted from 100px to rem */
+  .element-rep{
+    margin-left: 100px;
   }
 
   #scroll-circle {
-    margin-left: 62.5vw; /* Adjusted from 1000px to vw */
+    margin-left: 1000px;
   }
 
-  #portrait-img {
-    margin-left: -21.875rem; /* Adjusted from -350px to rem */
+  #portrait-img{
+    margin-left: -350px;
   }
+
+
 }
+
 @media screen and (max-width: 480px) {
 
-  .body {
+  .body{
     font-size: 1rem;
     overflow-x: hidden;
   }
-
   .nav-elements {
     display: flex;
     justify-content: center;
-    font-size: 0.8rem; /* Font size in rem */
+    font-size: 0.8rem; /* Reduce font size */
     align-items: center;
-    width: 0px; 
+    width: 0vw; 
     height: auto; 
-    margin-right: 41.67vw; /* Converted from 200px to vw */
+    margin-right: 10.42vw; /* Converted from 200px */
     transition: background-color 0.3s, transform 0.3s;
     background-blend-mode: overlay;
     box-sizing: border-box;
-  }
+}
 
+
+@media screen and (max-width: 480px) {
   .home-img {
-    width: 41.67vw; /* Converted from 200px to vw */
-    height: 31.25vh; /* Converted from 150px to vh */
-    margin-left: -25vw; /* Converted from -120px to vw */
-    margin-top: 6.25vh; /* Converted from 30px to vh */
+    width: 41.67vw;
+    height: 18.75vh;
+    margin-left: -25vw;
+    margin-top: 3.75vh;
   }
 
   .nav-container {
     display: flex;
     justify-content: space-between; 
-    width: 30vw; /* Converted from 30% to vw */
-    padding: 0 0.42rem; /* Converted from 5px to rem */
+    width: 30vw; /* Adjusted from % to vw for better responsiveness */
+    padding: 0 1vw; 
   }
+}
 
   body {
-    font-size: 0.5rem; /* Converted from 8px to rem */
+    font-size: 1.67vw; /* Adjust font size relative to viewport width */
   }
-
+  
   nav {
-    width: 41.67vw; /* Converted from 200px to vw */
+    width: 41.67vw; /* Make nav width responsive */
   }
-
+  
   form {
-    width: 41.67vw; /* Converted from 200px to vw */
+    width: 41.67vw; /* Make form width responsive */
   }
 
   .home-img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20.83vh; /* Converted from 100px to vh */
-    margin-left: 4.17vw; /* Converted from 20px to vw */
-    height: 41.67vh; /* Converted from 200px to vh */
-    width: 41.67vw; /* Converted from 200px to vw */
+    margin-top: 12.5vh; /* Responsive margin */
+    margin-left: 40.17vw; /* Responsive margin */
+    height: 25vh; /* Responsive height */
+    width: 41.67vw; /* Responsive width */
     max-width: 100%;
     overflow-x: hidden;
   }
@@ -935,130 +955,137 @@ margin-bottom: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 20.83vw; /* Converted from 100px to vw */
+    margin-left: 20.83vw;
   }
 
-  .g-circle {
-    margin-left: 250vw; /* Converted from 1200px to vw */
+  .g-circle{
+    margin-left: 1200px;
   }
 
   .y-circle {
-    margin-left: 35.42vw; /* Converted from 170px to vw */
+    margin-left:170px;
   }
 
-  .element-rep {
-    margin-left: 20.83vw; /* Converted from 100px to vw */
+  .element-rep{
+    margin-left: 100px;
   }
 
   #scroll-circle {
-    visibility: hidden;
+   visibility: hidden;
   }
 
   #portrait-img {
-    margin-left: -72.92vw; /* Converted from -350px to vw */
+    margin-left: -72.92vw; /* Responsive margin */
   }
 
-  .element-1 {
+  .element-1{
     visibility: hidden;
   }
 
-  .home-img {
-    margin-left: 18.75vw; /* Converted from 90px to vw */
-    margin-top: 14.58vh; /* Converted from 70px to vh */
-    position: absolute;
-  }
+    .home-img {
+      margin-left: 18.75vw; /* Responsive margin */
+      margin-top: 8.75vh; /* Responsive margin */
+      position: absolute;
+    }
+  
+  
 
-  .element-2 {
-    position: relative;
-    margin-left: 208.33vw; /* Converted from 1000px to vw */
-  }
-}
-@media screen and (max-width: 480px) {
-
-  .gdg-logo {
-    margin-top: -8.33vh; /* Converted from -40px to vh */
-  }
-
-  #gdg-text {
-    margin-left: 6.25vw; /* Converted from 30px to vw */
-    font-size: 1.375rem; /* Converted from 22px to rem */
-  }
-
-  #whattodo-txt {
-    margin-top: 25vh; /* Converted from 120px to vh */
-    margin-left: 6.25vw; /* Converted from 30px to vw */
-    font-size: 1.625rem; /* Converted from 26px to rem */
-  }
-
-  .desg, .prog, .dev p {
-    width: 20.83vw; /* Converted from 100px to vw */
-    font-size: 1.25rem; /* Converted from 20px to rem */
-    margin-left: -2.08vw; /* Converted from -10px to vw */
-  }
-
-  #container-1 {
-    margin-top: 20.83vh; /* Converted from 100px to vh */
-    max-width: 20vw; /* Converted from 20% to vw */
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .about-description {
-    font-size: 0.7rem;
-  }
-
-  .about-title {
-    margin: 0;
-  }
-
-  #scroll-circle {
-    visibility: hidden;
-  }
-
-  #card-info {
-    min-height: 4.17vh; /* Converted from 20px to vh */
-    margin-left: 0;
-    display: flex;
-  }
-
-  #cont-1 {
-    font-size: 0.625rem; /* Converted from 10px to rem */
-    display: flex;
-    flex-direction: column;
-  }
-
-  #cont-2 {
-    visibility: hidden;
-  }
-
-  .g-circle, .y-circle, #elem, .element-rep, #b-circle, .y-line, .r-line, .l-elm-1, .l-elm-2, .big-circle, .bottom-b-circle, .g-semi-circle {
-    visibility: hidden;
-  }
-
-  .whatarewe {
-    font-size: 1rem;
-  }
-
-  .whitec {
-    height: 30vh;
-    width: 90%;
-    margin-left: 4.17vw; /* Converted from 20px to vw */
-  }
-
-  .whitec2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    width: 90%;
-    margin-left: 1.04vw; /* Converted from 5px to vw */
-    margin-top: -41.67vh; /* Converted from -200px to vh */
-  }
-
-  .whitec3 {
-    height: 50vh;
-    width: 90%;
-    margin-left: 1.04vw; /* Converted from 5px to vw */
-  }
-}
+    
+    .element-2 { 
+        position: relative;
+        margin-left: 50vw; /* Adjusted for better responsiveness */
+    }
+    
+    .gdg-logo {
+        margin-top: -5vh;
+        margin-left: -48vw; /* Responsive negative margin */
+    }
+    
+    #gdg-text {
+        margin-left: 6.25vw; /* Responsive margin */
+        font-size: 4.58vw; /* Responsive font size */
+    }
+    
+    
+      #whattodo-txt {
+        margin-top: 15vh; /* Responsive margin */
+        margin-left: 6.25vw; /* Responsive margin */
+        font-size: 5.42vw; /* Responsive font size */
+      }
+    
+      .desg, .prog, .dev p {
+        width: 20.83vw; /* Responsive width */
+        font-size: 4.17vw; /* Responsive font size */
+        margin-left: -2.08vw; /* Responsive negative margin */
+      }
+    
+        #container-1 {
+          margin-top: 12.5vh; /* Converted from 100px */
+          max-width: 80%; /* Increased width for better visibility */
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      
+        .about-description {
+          font-size: 3vw; /* Responsive font size */
+        }
+      
+        .about-title {
+          margin: 0;
+          text-align: center; /* Ensures proper alignment */
+        }
+      
+        #scroll-circle {
+          visibility: hidden;
+        }
+      
+        #card-info {
+          min-height: 2.5vh; /* Converted from 20px */
+          margin-left: 0;
+          display: flex;
+        }
+      
+          #cont-1 {
+            font-size: 2.08vw; /* Responsive font size (10px → 2.08vw) */
+            display: flex;
+            flex-direction: column;
+          }
+        
+          #cont-2 {
+            visibility: hidden;
+          }
+        
+          .g-circle, .y-circle, #elem, .element-rep, #b-circle, 
+          .y-line, .r-line, .l-elm-1, .l-elm-2, .big-circle, 
+          .bottom-b-circle, .g-semi-circle {
+            visibility: hidden;
+          }
+        
+          .whatarewe {
+            font-size: 4.17vw; /* Responsive font size */
+          }
+        
+          .whitec {
+            height: 30vh;
+            width: 90%;
+            margin-left: 4.17vw; /* Converted from 20px */
+          }
+        
+          .whitec2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50vh;
+            width: 90%;
+            margin-left: 1.04vw; /* Converted from 5px */
+            margin-top: -25vh; /* Adjusted for better positioning */
+          }
+        
+          .whitec3 {
+            height: 50vh;
+            width: 90%;
+            margin-left: 1.04vw; /* Converted from 5px */
+          }
+        }
+        
