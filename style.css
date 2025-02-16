@@ -362,6 +362,7 @@ margin-bottom: 0;
 
 .social-links {
   margin-top: 1rem; /* Top margin in rem for scalable spacing */
+  display: flex;
 }
 
 .social-links a {
@@ -370,7 +371,7 @@ margin-bottom: 0;
 }
 
 .social-links img {
-  width: 2rem; /* Width in rem for responsiveness */
+  width: 3rem; /* Width in rem for responsiveness */
   height: 2rem; /* Height in rem for consistency */
   transition: transform 0.3s ease; /* Transition effect for scaling */
 }
