@@ -49,8 +49,8 @@ position: sticky;
 }
 
 .semi-circle {
-  width: 6rem; /* 100px converted to vw (based on 800px width) */
-  height: 3rem; /* 45px converted to vh (based on 800px height) */
+  width: 150px; /* 100px converted to vw (based on 800px width) */
+  height: 45px; /* 45px converted to vh (based on 800px height) */
   background-color: #646a67;
   border-radius: 5.625vh 5.625vh 0 0; /* 45px converted to vh */
 }
@@ -315,8 +315,23 @@ margin-bottom: 0;
   border-radius: 50%;
 }
 
+/* What we do */
+#what-we-do-cont{
+  height: auto;
+  margin-top: 15% ;
+}
+
+.we-do{
+  display: flex;
+  justify-content: space-between;
+  gap: 5vw;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  margin: 0 auto 5vh;
+}
 
 /* Meet the team section */
+
 
 /* Scroll bar */
 .scroll-container {
@@ -335,7 +350,8 @@ margin-bottom: 0;
   background-color: #fff;
   border-radius: 1rem; /* Border radius in rem */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* Box shadow using rem for proportional spacing */
-  width: 15vw; /* Width as 20% of the viewport width */
+  width: 20vw; /* Width as 20% of the viewport width */
+  height: 60vh;
   text-align: center;
   padding: 1rem; /* Padding in rem for better scalability */
   margin: 1rem; /* Margin in rem for consistent spacing */
@@ -366,7 +382,7 @@ margin-bottom: 0;
 }
 
 .social-links a {
-  margin: 0 2rem; /* Horizontal margin in rem for consistent spacing */
+  /*margin: 0 2rem;  Horizontal margin in rem for consistent spacing */
   display: inline-block;
 }
 
@@ -635,6 +651,7 @@ margin-bottom: 0;
   position: fixed;
   bottom: 2vh; /* Bottom position in viewport height */
   right: 2vw; /* Right position in viewport width */
+  width: 10vh; /* Width in viewport height */
 }
 
 .chat-button {
@@ -653,11 +670,12 @@ margin-bottom: 0;
   bottom: 10vh; /* Bottom position relative to viewport height */
   right: 2vw; /* Right position relative to viewport width */
   width: 30vw; /* Width relative to viewport width */
-  background-color: var(--bg-color);
+  background-color: rgba(94, 178, 242, 0.705);
   border-radius: 2vh; /* Border radius relative to viewport height */
   box-shadow: 0 0.5vh 1vh rgba(0, 0, 0, 0.2);
   overflow: hidden;
   display: flex;
+  color: #000000;
   flex-direction: column;
 }
 

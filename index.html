@@ -39,8 +39,8 @@
     <nav>
       <div class="flex justify-between items-center">
           <!-- Logo -->
-          <div class="logo h-[7.8vh] w-[9vw] m-3 mr-52" id="logo22">
-              <img src="assets/nav-logo.svg" alt="Logo" class="h-full w-full">
+          <div class="logo h-[7.8vh] w-[9vw] m-3 mr-52 flex justify-center items-center" id="logo22">
+              <img src="assets/nav-logo.svg" alt="Logo" class="h-[60%] w-full">
           </div>
   
           <!-- Navigation Links -->
@@ -109,9 +109,12 @@
             <div class="dot green"></div>
         </div>
       </div>
+
       <!--Chatbot integration-->
+
+      
       <div class="chatbot-icon">
-        <button id="open-chat" class="chat-button">💬</button>
+        <button id="open-chat" class="chat-button"><img src="assets/Bot.png" alt=""></button>
     </div>
 
     <!-- Chatbot Container (Initially Hidden) -->
@@ -169,22 +172,23 @@
     </section>
 
     <section class="m-12">
-        <div class="flex items-center flex-wrap flex-col mt-16">
+        <div class="flex items-center flex-wrap flex-col mt-16" id="what-we-do-cont">
             <h1 class="text-3xl font-bold m-3 mb-10 mt-8" id="whattodo-txt">
-                <strong>What to <span class="text-amber-300">Dooooooo!</span></strong>
+                <strong>What we <span class="text-amber-300">Dooooooo!</span></strong>
             </h1>
-            <div class="flex w-full h-60 mt-8 p-10 justify-center">
-              <div class="desg flex justify-center items-center flex-col ">
+
+            <div class="flex w-full mt-8 p-10 justify-center">
+              <div class="we-do flex justify-center items-center flex-col ">
                 <img src="assets/landingPage/desg-img.svg" alt="Designing" class="ml-5">
-                <p class=""><strong>Designing</strong></p>
+                <p><strong>Designing</strong></p>
               </div>
-              <div class="prog flex justify-center items-center flex-col">
+              <div class="we-do flex justify-center items-center flex-col">
                 <img src="assets/landingPage/prog-img.svg" alt="Programming">
-                <p class="mt-11 "><strong>Programming</strong></p>
+                <p class="mt-11"><strong>Programming</strong></p>
               </div>
-              <div class="dev flex justify-center items-center flex-col">
+              <div class="we-do flex justify-center items-center flex-col">
                 <img src="assets/landingPage/dev-img.svg" alt="Development">
-                <p class=""><strong>Development</strong></p>
+                <p><strong>Development</strong></p>
               </div>
             </div>
         </div>
@@ -433,7 +437,7 @@
         </div>
 
         <div class="flex justify-center items-center mt-12">
-          <div class="whitec2 card h-[400px] w-[720px] bg-neutral-300 rounded-xl">
+          <div class="whitec2 card h-[400px] w-[720px] bg-neutral-300 rounded-xl flex flex-row">
             <div id="portrait-img">
               <div class="big-circle h-[160px] w-[160px] -mt-[75px] ml-[210px]"></div>
               <div class="g-semi-circle">
@@ -442,11 +446,11 @@
               </div>
               <div class="bottom-b-circle h-[100px] w-[100px] -mt-12 ml-40"></div>
             </div>
-            <div class="whitec3 -mt-[405px] ml-[58%]">
+            <div class="whitec3 flex justify-center flex-col items-center">
               <h1 class="text-black text-3xl"><strong>Get in touch!</strong></h1>
               <h2 class="text-gray-500 -mt-1">feel free to drop a line below.</h2>
               <div class="form">
-                <form action="">
+                <form action="" class="flex flex-col">
                   <input type="text" placeholder="Your Name" class="text-gray-800" id="name" required>
                   <input type="email" placeholder="Mail" class="text-gray-800" id="mail" required>
                   <textarea placeholder="Type your message here........." rows="4" required class="text-gray-800" id="msg"></textarea>
@@ -459,7 +463,7 @@
         </div>
       </div>
     </section>
-    <body class="bg-white-900 text-white overflow-x-hidden font-sans">
+    <footer class="mt-[18%] bg-white-900 text-white overflow-x-hidden font-sans">
       <div class="w-full h-4/5 bg-cover bg-center bg-no-repeat p-12 box-border mb-0"
           style="background-image: url('../../assets/footer/footer.png');">
           <div class="flex justify-between items-center py-5">
@@ -537,5 +541,6 @@
 
       window.addEventListener("scroll", aosRefresh);
     </script>
+</footer>
 </body>
 </html>
