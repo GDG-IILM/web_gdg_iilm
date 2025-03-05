@@ -749,6 +749,20 @@ margin-bottom: 0;
   background-color: var(--header-color);
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
 /* Chat messages scrolling */
 .chat-messages {
   height: 20vh; /* Adjusted from 300px to 20vh */
@@ -914,76 +928,45 @@ margin-bottom: 0;
 
   .body{
     font-size: 1rem;
-    overflow-x: hidden;
   }
-  .nav-elements {
-    display: flex;
-    justify-content: center;
-    font-size: 0.8rem; /* Reduce font size */
-    align-items: center;
-    width: 0vw; 
-    height: auto; 
-    margin-right: 10.42vw; /* Converted from 200px */
-    transition: background-color 0.3s, transform 0.3s;
-    background-blend-mode: overlay;
-    box-sizing: border-box;}
-
-
-@media screen and (max-width: 480px) {
-  .home-img {
-    width: 41.67vw;
-    height: 18.75vh;
-    margin-left: -25vw;
-    margin-top: 3.75vh;
-  }
-
-  .nav-container {
-    display: flex;
-    justify-content: space-between; 
-    width: 30vw; /* Adjusted from % to vw for better responsiveness */
-    padding: 0 1vw; 
-  }
-
-  .meet-team-cont{
-    height: auto;
-    width: auto;
-  }
-
-  .profile-card{
-    height: 55vh;
-    width: 80vw;
-  }
-}
+    .nav-elements {
+      flex-direction: column; /* Stack elements vertically */
+      font-size: 0.8rem; /* Adjust font size */
+      width: 100%; 
+      margin-right: 200px; 
+      padding: 10px; 
+     
+    }
+  
+    .nav-container {
+      display: flex;
+      justify-content: center; /* Center items horizontally */
+      width: 100%; /* Ensure full width utilization */
+      padding: 10px 15px; 
+    }
 
   body {
-    font-size: 1.67vw; /* Adjust font size relative to viewport width */
-  }
-  
-  nav {
-    width: 41.67vw; /* Make nav width responsive */
-  }
-  
-  form {
-    width: 41.67vw; /* Make form width responsive */
+    font-size: 8px;
   }
 
-  .home-img {
+  /* .home-img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 12.5vh; /* Responsive margin */
-    margin-left: 40.17vw; /* Responsive margin */
-    height: 25vh; /* Responsive height */
-    width: 41.67vw; /* Responsive width */
+    margin-top: 100x;
+    margin-left: 20px;
+    height: 200px;
+    width: 200px;
     max-width: 100%;
     overflow-x: hidden;
-  }
+   
+  } */
 
   .about-title, .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 20.83vw;
+    margin-left: 100px;
   }
 
   .g-circle{
@@ -1002,114 +985,123 @@ margin-bottom: 0;
    visibility: hidden;
   }
 
-  #portrait-img {
-    margin-left: -72.92vw; /* Responsive margin */
+  #portrait-img{
+    margin-left: -350px;
   }
 
   .element-1{
     visibility: hidden;
   }
 
-    .home-img {
-      margin-left: 18.75vw; /* Responsive margin */
-      margin-top: 8.75vh; /* Responsive margin */
-      position: absolute;
-    }
-  
-  
+  .home-img{ margin-left: 90px;
+    margin-top: 70px;
+    position: absolute;
+    height: 210px;
+    width: 220px;
+  }
 
-    
-    .element-2 { 
-        position: relative;
-        margin-left: 50vw; /* Adjusted for better responsiveness */
-    }
-    
-    .gdg-logo {
-        margin-top: -5vh;
-        margin-left: -48vw; /* Responsive negative margin */
-    }
-    
-    #gdg-text {
-        margin-left: 6.25vw; /* Responsive margin */
-        font-size: 4.58vw; /* Responsive font size */
-    }
-    
-    
-      #whattodo-txt {
-        margin-top: 15vh; /* Responsive margin */
-        margin-left: 6.25vw; /* Responsive margin */
-        font-size: 5.42vw; /* Responsive font size */
-      }
-    
-      
-    
-        #container-1 {
-          margin-top: 12.5vh; /* Converted from 100px */
-          max-width: 80%; /* Increased width for better visibility */
-          width: 100%;
-          margin-left: auto;
-          margin-right: auto;
-        }
-      
-        .about-description {
-          font-size: 3vw; /* Responsive font size */
-        }
-      
-        .about-title {
-          margin: 0;
-          text-align: center; /* Ensures proper alignment */
-        }
-      
-        #scroll-circle {
-          visibility: hidden;
-        }
-      
-        #card-info {
-          min-height: 2.5vh; /* Converted from 20px */
-          margin-left: 0;
-          display: flex;
-        }
-      
-          #cont-1 {
-            font-size: 2.08vw; /* Responsive font size (10px → 2.08vw) */
-            display: flex;
-            flex-direction: column;
-          }
-        
-          #cont-2 {
-            visibility: hidden;
-          }
-        
-          .g-circle, .y-circle, #elem, .element-rep, #b-circle, 
-          .y-line, .r-line, .l-elm-1, .l-elm-2, .big-circle, 
-          .bottom-b-circle, .g-semi-circle {
-            visibility: hidden;
-          }
-        
-          .whatarewe {
-            font-size: 4.17vw; /* Responsive font size */
-          }
-        
-          .whitec {
-            height: 30vh;
-            width: 90%;
-            margin-left: 4.17vw; /* Converted from 20px */
-          }
-        
-          .whitec2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 50vh;
-            width: 90%;
-            margin-left: 1.04vw; /* Converted from 5px */
-            margin-top: -25vh; /* Adjusted for better positioning */
-          }
-        
-          .whitec3 {
-            height: 50vh;
-            width: 90%;
-            margin-left: 1.04vw; /* Converted from 5px */
-          }
-        }
-        
+  .element-2{
+    position: relative;
+    margin-left: 1000px;
+  
+  }
+
+  .gdg-logo{
+    margin-top: -40px;
+  }
+
+  #gdg-text{
+    margin-left: 30px;
+    font-size: 22px;
+  }
+
+  #whattodo-txt{
+    margin-top: 120px;
+    margin-left: 30px;
+    font-size:26px;
+  }
+
+  .desg, .prog, .dev p{
+    width:100px;
+    font-size: 20px;
+    margin-left: -10px;
+  }
+
+  .container1{
+    margin-top: 100px;
+    max-width: 20%; /* Adjust width to be responsive */
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+ .about-description{
+  font-size: 0.7rem;
+ }
+
+ .about-title{
+  margin:0;
+ }
+
+ .profile-card{
+  height: auto;
+  width: 18%;
+
+ }
+
+ #scroll-circle{
+  visibility: hidden;
+ }
+
+ #card-info {
+  min-height: 20px; 
+  margin-left: 0; 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+ #cont-1{
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+ }
+
+ #cont-2{
+  visibility: hidden;
+ }
+
+ .g-circle, .y-circle, .element-rep, #b-circle, .y-line, .r-line, .l-elm-1, .l-elm-2, .big-circle,.bottom-b-circle,.g-semi-circle{
+  visibility: hidden;
+ }
+
+ .whatarewe{
+  font-size: 1rem;
+ }
+
+ .whitec{
+  height: 30vh;
+  width: 90%;
+  margin-left: 20px;
+ }
+
+ .whitec2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  width: 90%;
+  margin-left: 5px;
+  margin-top: -200px;
+ }
+
+ .whitec3{
+  height: 50vh;
+  width: 90%;
+  margin-left: 5px;
+ }
+
+
+}
+
+
