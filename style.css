@@ -926,8 +926,7 @@ margin-bottom: 0;
     margin-right: 10.42vw; /* Converted from 200px */
     transition: background-color 0.3s, transform 0.3s;
     background-blend-mode: overlay;
-    box-sizing: border-box;
-}
+    box-sizing: border-box;}
 
 
 @media screen and (max-width: 480px) {
@@ -943,6 +942,16 @@ margin-bottom: 0;
     justify-content: space-between; 
     width: 30vw; /* Adjusted from % to vw for better responsiveness */
     padding: 0 1vw; 
+  }
+
+  .meet-team-cont{
+    height: auto;
+    width: auto;
+  }
+
+  .profile-card{
+    height: 55vh;
+    width: 80vw;
   }
 }
 
@@ -1032,11 +1041,7 @@ margin-bottom: 0;
         font-size: 5.42vw; /* Responsive font size */
       }
     
-      .desg, .prog, .dev p {
-        width: 20.83vw; /* Responsive width */
-        font-size: 4.17vw; /* Responsive font size */
-        margin-left: -2.08vw; /* Responsive negative margin */
-      }
+      
     
         #container-1 {
           margin-top: 12.5vh; /* Converted from 100px */
