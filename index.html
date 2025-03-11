@@ -37,58 +37,152 @@
 <body>
     <!-- Nav Bar -->
     <nav>
-      <div class="flex justify-between items-center">
-          <!-- Logo -->
-          <div class="logo h-[7.8vh] w-[9vw] m-3 mr-52 flex justify-center items-center" id="logo22">
-              <img src="assets/nav-logo.svg" alt="Logo" class="h-[60%] w-full">
-          </div>
-  
-          <!-- Navigation Links -->
-          <div class="nav-elements">
-              <ul class="flex space-x-8">
-                  <li>
-                      <a href="./landing-page.html" class="relative text-white group">
-                          <span class="relative inline-block transition-transform duration-300 transform group-hover:text-blue-500 group-hover:-translate-y-1">
-                              Home
-                          </span>
-                          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="public/project/project.html" class="relative text-white group">
-                          <span class="relative inline-block transition-transform duration-300 transform group-hover:text-yellow-500 group-hover:-translate-y-1">
-                              Projects
-                          </span>
-                          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="/public/events/index.html" class="relative text-white group">
-                          <span class="relative inline-block transition-transform duration-300 transform group-hover:text-red-500 group-hover:-translate-y-1">
-                              Events
-                          </span>
-                          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
-                      </a>
-                  </li>
-                  <li>
-                      <a href="public/meetTheTeam/meetOurTeam.html" class="relative text-white group">
-                          <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1">
-                              Team
-                          </span>
-                          <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
-                      </a>
-                  </li>
-              </ul>
-          </div>
-      </div>
-  </nav>
+    <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <div class="logo h-[7.8vh] w-[9vw] m-3 mr-8 md:mr-52 flex justify-center items-center" id="logo22">
+            <img src="assets/nav-logo.svg" alt="Logo" class="h-[60%] w-full">
+        </div>
+        
+        <!-- Hamburger Menu Button (visible only on mobile) -->
+        <button id="hamburger-button" class="flex md:hidden flex-col justify-center items-center w-10 h-10 mr-4 focus:outline-none z-30">
+            <div id="hamburger-icon" class="relative w-6 h-6">
+                <!-- Three lines that will transform to X -->
+                <span class="absolute h-1 w-6 bg-sky-800 rounded transition-all duration-300 ease-in-out" style="top: 0;"></span>
+                <span class="absolute h-1 w-6 bg-sky-800 rounded transition-all duration-300 ease-in-out" style="top: 50%; transform: translateY(-50%);"></span>
+                <span class="absolute h-1 w-6 bg-sky-800 rounded transition-all duration-300 ease-in-out" style="bottom: 0;"></span>
+            </div>
+        </button>
 
-    <hr class="w-full h-1 mt-4">
+        <!-- Desktop Navigation Links (hidden on mobile) -->
+        <div class="nav-elements hidden md:block">
+            <ul class="flex space-x-8">
+                <li>
+                    <a href="index.html" class="relative text-white group">
+                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-blue-500 group-hover:-translate-y-1">
+                            Home
+                        </span>
+                        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="public/project/project.html" class="relative text-white group">
+                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-yellow-500 group-hover:-translate-y-1">
+                            Projects
+                        </span>
+                        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/public/events/index.html" class="relative text-white group">
+                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-red-500 group-hover:-translate-y-1">
+                            Events
+                        </span>
+                        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="public/meetTheTeam/meetOurTeam.html" class="relative text-white group">
+                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1 mr-10">
+                            Team
+                        </span>
+                        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden fixed inset-0 z-20 transition-all duration-300 ease-in-out bg-gray-800 backdrop-blur-sm">
+        <div class="pt-[7.8vh] w-full h-full transition-all duration-300 ease-in-out transform opacity-0" id="menu-container">
+            <ul class="flex flex-col space-y-6 p-8">
+                <li>
+                    <a href="index.html" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">Home</a>
+                </li>
+                <li>
+                    <a href="public/project/project.html" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">Projects</a>
+                </li>
+                <li>
+                    <a href="/public/events/index.html" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">Events</a>
+                </li>
+                <li>
+                    <a href="public/meetTheTeam/meetOurTeam.html" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">Team</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<hr class="w-full h-1 mt-4">
+
+<!-- JavaScript for hamburger menu toggle with animation -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuContainer = document.getElementById('menu-container');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+        const body = document.body;
+        let isOpen = false;
+        
+        hamburgerButton.addEventListener('click', function() {
+            isOpen = !isOpen;
+            
+            // Toggle menu visibility
+            if (isOpen) {
+                // Show menu
+                mobileMenu.classList.remove('hidden');
+                // Prevent background scrolling
+                body.style.overflow = 'hidden';
+                
+                // Small delay to allow DOM to update before animation
+                setTimeout(() => {
+                    menuContainer.classList.add('opacity-100');
+                    menuContainer.classList.remove('opacity-0');
+                }, 10);
+            } else {
+                // Hide with animation
+                menuContainer.classList.remove('opacity-100');
+                menuContainer.classList.add('opacity-0');
+                
+                // Delay hiding to allow animation to complete
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    // Restore scrolling
+                    body.style.overflow = '';
+                }, 300);
+            }
+            
+            // Get the three spans inside the hamburger icon
+            const spans = hamburgerIcon.querySelectorAll('span');
+            
+            if (isOpen) {
+                // Transform to X
+                spans[0].style.top = '50%';
+                spans[0].style.transform = 'translateY(-50%) rotate(45deg)';
+                
+                spans[1].style.opacity = '0';
+                
+                spans[2].style.bottom = '50%';
+                spans[2].style.transform = 'translateY(50%) rotate(-45deg)';
+            } else {
+                // Transform back to hamburger
+                spans[0].style.top = '0';
+                spans[0].style.transform = 'none';
+                
+                spans[1].style.opacity = '1';
+                
+                spans[2].style.bottom = '0';
+                spans[2].style.transform = 'none';
+            }
+        });
+    });
+</script>
+
+<!-- nav bar ends -->
+
 
     <!-- ELEMENTS -->
-    <!-- <div class="circle">
-      <div class="mouth"></div>
-  </div> -->
 
       <div class="element-1">
         <div class="semi-circle"></div>
@@ -172,27 +266,29 @@
     </section>
 
     <section class="m-12">
-        <div class="flex items-center flex-wrap flex-col mt-16" id="what-we-do-cont">
-            <h1 class="text-3xl font-bold m-3 mb-10 mt-8" id="whattodo-txt">
-                <strong>What we <span class="text-amber-300">Dooooooo!</span></strong>
-            </h1>
-
-            <div class="flex w-full mt-8 p-10 justify-center">
-              <div class="we-do flex justify-center items-center flex-col ">
-                <img src="assets/landingPage/desg-img.svg" alt="Designing" class="ml-5">
-                <p><strong>Designing</strong></p>
+      <div class="flex items-center flex-wrap flex-col mt-16 text-center" id="what-we-do-cont">
+          <h1 class="text-4xl md:text-5xl font-bold m-3 mb-12 mt-8" id="whattodo-txt">
+              <strong>What we <span class="text-amber-300">Dooooooo!</span></strong>
+          </h1>
+  
+          <div class="flex w-full mt-8 p-10 justify-center flex-wrap gap-10 md:gap-20 lg:gap-32">
+              <div class="we-do flex justify-center items-center flex-col w-2/3 sm:w-1/3 md:w-1/4 lg:w-auto">
+                  <img src="assets/landingPage/desg-img.svg" alt="Designing" class="ml-5 w-20 sm:w-24 md:w-28 lg:w-32">
+                  <p class="mt-5 md:mt-8 text-lg md:text-xl"><strong>Designing</strong></p>
               </div>
-              <div class="we-do flex justify-center items-center flex-col">
-                <img src="assets/landingPage/prog-img.svg" alt="Programming">
-                <p class="mt-11"><strong>Programming</strong></p>
+              <div class="we-do flex justify-center items-center flex-col w-2/3 sm:w-1/3 md:w-1/4 lg:w-auto">
+                  <img src="assets/landingPage/prog-img.svg" alt="Programming" class="w-20 sm:w-24 md:w-28 lg:w-32">
+                  <p class="mt-5 md:mt-11 text-lg md:text-xl"><strong>Programming</strong></p>
               </div>
-              <div class="we-do flex justify-center items-center flex-col">
-                <img src="assets/landingPage/dev-img.svg" alt="Development">
-                <p><strong>Development</strong></p>
+              <div class="we-do flex justify-center items-center flex-col w-2/3 sm:w-1/3 md:w-1/4 lg:w-auto">
+                  <img src="assets/landingPage/dev-img.svg" alt="Development" class="w-20 sm:w-24 md:w-28 lg:w-32">
+                  <p class="mt-5 md:mt-8 text-lg md:text-xl"><strong>Development</strong></p>
               </div>
-            </div>
-        </div>
-    </section> 
+          </div>
+      </div>
+  </section>
+  
+  
     
     <section>
         <div class="meet-team-cont w-auto flex justify-center h-auto mt-10 p-14">
@@ -251,7 +347,7 @@
                       </div>
 
                       <!-- Card 4 -->
-                      <div class="profile-card  hover:scale-105 transition ease-in-out">
+                      <div class="profile-card hover:scale-105 transition ease-in-out">
                         <div class="profile-photo">
                           <img src="assets/Images/team_images/vaibhav raj.jpg" alt="Profile Photo">
                         </div>
@@ -429,108 +525,106 @@
     </section>
 
     <!-- Contact US section -->
-    <section class="mt-10 h-96">
-      <div class="lines2 h-full w-full">
-        <div class="l-element">
-          <div class="l-elm-1"></div>
-          <div class="l-elm-2"></div>
+    <section class="mt-10 h-auto lg:h-96">
+  <div class="lines2 h-full w-full">
+    <div class="l-element">
+      <div class="l-elm-1"></div>
+      <div class="l-elm-2"></div>
+    </div>
+
+    <div class="flex justify-center items-center mt-12">
+      <div class="whitec2 card bg-neutral-300 rounded-xl flex flex-col lg:flex-row h-auto lg:h-[400px] w-[95%] lg:w-[720px] p-6 lg:p-0">
+        
+        <div id="portrait-img" class="flex flex-col items-center lg:block">
+          <div class="big-circle h-[120px] w-[120px] lg:h-[160px] lg:w-[160px] mt-4 lg:-mt-[75px] lg:ml-[210px]"></div>
+          <div class="g-semi-circle">
+            <div class="h-[200px] w-[200px] lg:h-[300px] lg:w-[300px] bg-[url(assets/contact.svg)] bg-cover mt-4 lg:mt-10 lg:ml-11"></div>
+            <div class="bottom-y-circle h-[50px] w-[50px] lg:h-[75px] lg:w-[75px] -mt-4 lg:-mt-10 -ml-0 lg:-ml-14"></div>
+          </div>
+          <div class="bottom-b-circle h-[75px] w-[75px] lg:h-[100px] lg:w-[100px] -mt-6 lg:-mt-12 ml-20 lg:ml-40"></div>
         </div>
 
-        <div class="flex justify-center items-center mt-12">
-          <div class="whitec2 card h-[400px] w-[720px] bg-neutral-300 rounded-xl flex flex-row">
-            <div id="portrait-img">
-              <div class="big-circle h-[160px] w-[160px] -mt-[75px] ml-[210px]"></div>
-              <div class="g-semi-circle">
-                <div class="h-[300px] w-[300px] bg-[url(assets/contact.svg)] bg-cover mt-10 ml-11"></div>
-                <div class="bottom-y-circle h-[75px] w-[75px] -mt-10 -ml-14"></div>
-              </div>
-              <div class="bottom-b-circle h-[100px] w-[100px] -mt-12 ml-40"></div>
-            </div>
-            <div class="whitec3 flex justify-center flex-col items-center">
-              <h1 class="text-black text-3xl"><strong>Get in touch!</strong></h1>
-              <h2 class="text-gray-500 -mt-1">feel free to drop a line below.</h2>
-              <div class="form">
-                <form action="" class="flex flex-col">
-                  <input type="text" placeholder="Your Name" class="text-gray-800" id="name" required>
-                  <input type="email" placeholder="Mail" class="text-gray-800" id="mail" required>
-                  <textarea placeholder="Type your message here........." rows="4" required class="text-gray-800" id="msg"></textarea>
-                    <!-- <button type="submit">Send</button> -->
-                  <button type="submit" class="bg-blue-600 hover:bg-blue-700 hover:text-gray-300 h-8 w-20 block ml-[26%] mt-4 rounded">Send</button>
-                </form>
-              </div>
-            </div>
+        <div class="whitec3 flex justify-center flex-col items-center w-full text-center lg:text-left">
+          <h1 class="text-black text-2xl lg:text-3xl"><strong>Get in touch!</strong></h1>
+          <h2 class="text-gray-500 -mt-1 text-sm lg:text-base">Feel free to drop a line below.</h2>
+          <div class="form w-full px-4">
+            <form action="" class="name1 flex flex-col w-full">
+              <input type="text" placeholder="Your Name" class="text-gray-800 p-2 rounded w-full mt-2" id="name" required>
+              <input type="email" placeholder="Mail" class="text-gray-800 p-2 rounded w-full mt-2" id="mail" required>
+              <textarea placeholder="Type your message here..." rows="4" required class="text-gray-800 p-2 rounded w-full mt-2" id="msg"></textarea>
+              <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white h-10 w-full lg:w-32 mt-4 rounded">Send</button>
+            </form>
           </div>
         </div>
       </div>
-    </section>
-    <footer class="mt-[18%] bg-white-900 text-white overflow-x-hidden font-sans">
-      <div class="w-full h-4/5 bg-cover bg-center bg-no-repeat p-12 box-border mb-0"
-          style="background-image: url('../../assets/footer/footer.png');">
-          <div class="flex justify-between items-center py-5">
-              <div class="pt-48 flex-1 mb-12">
-                  <h2 class="text-xl mb-3">Stay in the Loop</h2>
-                  <p>Connect with us on social media</p>
-                  <div class="flex space-x-3 mt-4">
-                      <a href="https://github.com" target="_blank">
-                          <img src="assets/Images/github_color.png" alt="Github" class="w-8">
-                      </a>
-                      <a href="https://instagram.com" target="_blank">
-                          <img src="assets/Images/ig_color.png" alt="Instagram" class="w-8">
-                      </a>
-                      <a href="https://linkedin.com" target="_blank">
-                          <img src="assets/Images//linkedin_color.png" alt="LinkedIn" class="w-8">
-                      </a>
-                      <a href="mailto:gdsciilm@gmail.com" target="_blank">
-                          <img src="assets/Images/gmai_color.png" alt="Email" class="w-8">
-                      </a>
-                  </div>
-                  <p class="mt-4 text-white">or e-mail us at:
-                      <a href="mailto:gdsciilm@gmail.com" class="text-white-400">gdsciilm@gmail.com</a>
-                  </p>
-              </div>
-              <div class="flex justify-center items-center">
-                  <div
-                  class="mt-36 rounded-2xl border border-white bg-black p-4 text-center cursor-pointer transition-transform duration-300 shadow-none hover:shadow-md hover:shadow-[#74AAAA] transform hover:scale-105">
-                      <p class="text-lg">Join Our Chapter</p>
-                      <span class="text-sm text-gray-400">to stay updated with our events</span>
-                  </div>
-              </div>
-          </div>
-          <div class="flex justify-between py-5">
-              <div class="flex-1 px-5">
-                  <h3 class="border-b-2 border-white mb-3">About</h3>
-                  <ul>
-                      <li><a href="about.html" class="text-white no-underline">Vision</a></li>
-                      <li><a href="technologies.html" class="text-white no-underline">Technologies</a></li>
-                  </ul>
-              </div>
-              <div class="flex-1 px-5">
-                  <h3 class="border-b-2 border-gray-200 mb-3">Events</h3>
-                  <ul>
-                      <li><a href="https://gdgiilm.netlify.app/public/project/project" class="text-white no-underline">Upcoming Events</a></li>
-                      <li><a href="https://gdgiilm.netlify.app/public/project/project" class="text-white no-underline">Previous Events</a></li>
-                  </ul>
-              </div>
-              <div class="flex-1 px-5">
-                  <h3 class="border-b-2 border-white mb-3">Projects</h3>
-                  <ul>
-                      <li><a href="https://gdgiilm.netlify.app/public/project/projects/autoscroll" class="text-white no-underline">Project 1</a></li>
-                      <li><a href="https://gdgiilm.netlify.app/public/project/projects/bankman" class="text-white no-underline">Project 2</a></li>
-                      <li><a href="https://gdgiilm.netlify.app/public/project/project" class="text-white no-underline">All Projects</a></li>
-                  </ul>
-              </div>
-              <div class="flex-1 px-5">
-                  <h3 class="border-b-2 border-white mb-3">Teams</h3>
-                  <ul>
-                      <li><a href="https://gdgiilm.netlify.app/public/meettheteam/meetourteam" class="text-white no-underline">Our Team</a></li>
-                  </ul>
-              </div>
-          </div>
-          <div class="text-center mt-5">
-              <p class="text-lg">Made with <span class="text-red-500">❤️</span> by GDG-IILM 2024~25</p>
-              <p class="text-sm mt-2">&copy; 2024. All rights reserved.</p>
-          </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer mt-20 bg-white text-white overflow-x-hidden font-sans">
+  <div class="w-full h-auto p-6 lg:p-12 bg-cover bg-center bg-no-repeat" style="background-image: url('../../assets/footer/footer.png');">
+    
+    <div class="flex flex-col lg:flex-row justify-between items-center py-5">
+      <div class="text-center lg:text-left pt-12 lg:pt-48 w-full lg:w-auto">
+        <h2 class="text-lg lg:text-xl mb-2">Stay in the Loop</h2>
+        <p class="text-sm lg:text-base">Connect with us on social media</p>
+        <div class="social-footer flex justify-center lg:justify-start space-x-3 mt-4">
+          <a href="https://github.com" target="_blank"><img src="assets/Images/github_color.png" alt="Github" class="w-6 lg:w-8"></a>
+          <a href="https://instagram.com" target="_blank"><img src="assets/Images/ig_color.png" alt="Instagram" class="w-6 lg:w-8"></a>
+          <a href="https://linkedin.com" target="_blank"><img src="assets/Images/linkedin_color.png" alt="LinkedIn" class="w-6 lg:w-8"></a>
+          <a href="mailto:gdsciilm@gmail.com" target="_blank"><img src="assets/Images/gmai_color.png" alt="Email" class="w-6 lg:w-8"></a>
+        </div>
+        <p class="mt-4 text-white text-sm">or email us at: 
+          <a href="mailto:gdsciilm@gmail.com" class="text-white">gdsciilm@gmail.com</a>
+        </p>
       </div>
+
+      <div class="flex justify-center items-center mt-8 lg:mt-0">
+        <div class="rounded-2xl border border-white bg-black p-4 text-center cursor-pointer transition-transform duration-300 shadow-none hover:shadow-md hover:shadow-[#74AAAA] transform hover:scale-105 w-10/12 lg:w-auto">
+          <p class="text-lg">Join Our Chapter</p>
+          <span class="text-sm text-gray-400">to stay updated with our events</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-footer flex flex-col lg:flex-row justify-between py-5 text-center lg:text-left">
+      <div class="flex-1 px-2 lg:px-5 mb-4 lg:mb-0">
+        <h3 class="border-b-2 border-white mb-3 text-lg">About</h3>
+        <ul>
+          <li><a href="about.html" class="text-white no-underline text-sm lg:text-base">Vision</a></li>
+          <li><a href="technologies.html" class="text-white no-underline text-sm lg:text-base">Technologies</a></li>
+        </ul>
+      </div>
+      <div class="flex-1 px-2 lg:px-5 mb-4 lg:mb-0">
+        <h3 class="border-b-2 border-white mb-3 text-lg">Events</h3>
+        <ul>
+          <li><a href="https://gdgiilm.netlify.app/public/project/project" class="text-white no-underline text-sm lg:text-base">Upcoming Events</a></li>
+          <li><a href="https://gdgiilm.netlify.app/public/project/project" class="text-white no-underline text-sm lg:text-base">Previous Events</a></li>
+        </ul>
+      </div>
+      <div class="flex-1 px-2 lg:px-5 mb-4 lg:mb-0">
+        <h3 class="border-b-2 border-white mb-3 text-lg">Projects</h3>
+        <ul>
+          <li><a href="https://gdgiilm.netlify.app/public/project/projects/autoscroll" class="text-white no-underline text-sm lg:text-base">Project 1</a></li>
+          <li><a href="https://gdgiilm.netlify.app/public/project/projects/bankman" class="text-white no-underline text-sm lg:text-base">Project 2</a></li>
+          <li><a href="https://gdgiilm.netlify.app/public/project/project" class="text-white no-underline text-sm lg:text-base">All Projects</a></li>
+        </ul>
+      </div>
+      <div class="flex-1 px-2 lg:px-5">
+        <h3 class="border-b-2 border-white mb-3 text-lg">Teams</h3>
+        <ul>
+          <li><a href="https://gdgiilm.netlify.app/public/meettheteam/meetourteam" class="text-white no-underline text-sm lg:text-base">Our Team</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <p class="text-lg">Made with <span class="text-red-500">❤️</span> by GDG-IILM 2024~25</p>
+      <p class="text-sm mt-2">&copy; 2024. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

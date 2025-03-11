@@ -30,12 +30,14 @@ color: white;
 }
 
 /* Nav Bar */
-nav{
-/* background-color: #1E1E1E; */
-height: 8.4vh;
-width: 100%;
-position: sticky;
+nav {
+  height: 8.4vh;
+  width: 100%;
+  position: sticky;
+  top: 0; 
+  z-index: 1000; 
 }
+
 
 .nav-elements ul{
   height: 4vh; .element-1 {
@@ -43,9 +45,9 @@ position: sticky;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.9vh; /* 2px converted to vh (based on 800px height) */
-  margin-left: 65%;
-  margin-top: 1.25vh; /* 10px converted to vh */
+  gap: 0.9vh; 
+  margin-left: 85%;
+  margin-top: 1.25vh; 
 }
 
 .semi-circle {
@@ -346,8 +348,8 @@ margin-bottom: 0;
   display: none; /* Hide scrollbar */
 }
 
+
 .profile-card {
-  background-color: #fff;
   border-radius: 1rem; /* Border radius in rem */
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* Box shadow using rem for proportional spacing */
   width: 20vw; /* Width as 20% of the viewport width */
@@ -929,38 +931,12 @@ margin-bottom: 0;
   .body{
     font-size: 1rem;
   }
-    .nav-elements {
-      flex-direction: column; /* Stack elements vertically */
-      font-size: 0.8rem; /* Adjust font size */
-      width: 100%; 
-      margin-right: 200px; 
-      padding: 10px; 
-     
-    }
-  
-    .nav-container {
-      display: flex;
-      justify-content: center; /* Center items horizontally */
-      width: 100%; /* Ensure full width utilization */
-      padding: 10px 15px; 
-    }
 
   body {
     font-size: 8px;
   }
 
-  /* .home-img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100x;
-    margin-left: 20px;
-    height: 200px;
-    width: 200px;
-    max-width: 100%;
-    overflow-x: hidden;
-   
-  } */
+  
 
   .about-title, .card {
     display: flex;
@@ -1007,7 +983,8 @@ margin-bottom: 0;
   }
 
   .gdg-logo{
-    margin-top: -40px;
+    margin-top: 50px;
+    margin-bottom: -50px;
   }
 
   #gdg-text{
@@ -1027,13 +1004,6 @@ margin-bottom: 0;
     margin-left: -10px;
   }
 
-  .container1{
-    margin-top: 100px;
-    max-width: 20%; /* Adjust width to be responsive */
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
  .about-description{
   font-size: 0.7rem;
@@ -1043,11 +1013,72 @@ margin-bottom: 0;
   margin:0;
  }
 
- .profile-card{
-  height: auto;
-  width: 18%;
+ .profile-card {
+  flex: 0 0 auto;
+  width: 280px; 
+  height: auto; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.3s ease-in-out;
+  scroll-snap-align: center; /* Ensures smooth snapping */
+}
 
- }
+.profile-card:hover {
+  transform: scale(1.05);
+}
+
+.profile-photo {
+  width: 100%;
+  max-width: 200px; /* Limit image size */
+  height: 200px; /* Maintain square aspect ratio */
+  overflow: hidden;
+  border-radius: 50%; /* Keep image circular */
+}
+
+.profile-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border-radius: 50%;
+}
+
+.profile-info {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-info h2 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.profile-info p {
+  font-size: 14px;
+  color: gray;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-links a img {
+  width: 30px; /* Adjust icon size */
+  height: 30px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-links a:hover img {
+  transform: scale(1.1);
+}
+
 
  #scroll-circle{
   visibility: hidden;
@@ -1079,6 +1110,7 @@ margin-bottom: 0;
   font-size: 1rem;
  }
 
+
  .whitec{
   height: 30vh;
   width: 90%;
@@ -1096,12 +1128,64 @@ margin-bottom: 0;
  }
 
  .whitec3{
-  height: 50vh;
-  width: 90%;
-  margin-left: 5px;
+  margin-bottom: 400px;
  }
+
+ .footer {
+  background-color: rgb(26, 25, 25);
+  padding: 8px;
+  text-align: center;
+}
+
+.footer h2, .footer h3 {
+  font-size: 1rem;
+}
+
+.footer h2{
+  font-weight: 900;
+  margin-bottom: 10px;
+  margin-top: 80px;
+}
+
+
+.footer p, .footer ul li a {
+  font-size: 0.7rem;
+}
+
+
+  .footer .social-footer {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center;
+    gap: 15px; 
+  }
+
+  .footer .flex img {
+    width: 24px; 
+  }
+
+  .about-footer{
+    margin-top: 200px;
+  }
+
+.footer .flex > div {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.footer .flex img {
+  width: 18px;
+}
+
+.footer .rounded-2xl {
+  width: 100%;
+  padding: 8px;
+}
 
 
 }
+
+
 
 
