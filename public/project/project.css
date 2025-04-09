@@ -82,6 +82,90 @@ a{
     top: -275px;
 }
 
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+        padding: 0 1rem;
+        margin-bottom: -50px;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .animation-cont {
+        transform: scale(0.8);
+        position: relative;
+        left: 0;
+        top: 0;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+        margin-top: -50px;
+        margin-bottom: 50px;
+        width: 100%;
+    }
+    
+    #animation-container {
+        margin: 0 auto;
+    }
+    
+    #fallback-text {
+        text-align: center;
+    }
+    
+    /* Project card adjustments for mobile */
+    .projects-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem;
+        margin-top: 50px;
+    }
+    
+    .project-card {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 1.5rem auto;
+    }
+    
+    /* Navbar adjustments */
+    .nav-elements {
+        display: none;
+    }
+    
+    .nav-elements ul {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 40vh;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+        text-align: center !important;
+        margin-left: 0 !important;
+    }
+    
+    .animation-cont {
+        transform: scale(0.7);
+        margin-top: 0;
+    }
+    
+    .project-card {
+        max-width: 280px;
+    }
+}
+
+.hero span{
+    font-size: 2rem;
+}
+
 /* project tile section */
 
 .projects-grid {

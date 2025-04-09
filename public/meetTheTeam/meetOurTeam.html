@@ -13,18 +13,158 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Vidaloka&display=swap" rel="stylesheet">      
+    
+    <style>
+        /* Mobile navbar styles */
+        @media (max-width: 768px) {
+            .nav-elements {
+                display: none;
+            }
+            .hamburger-menu {
+                display: flex !important;
+            }
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(30, 30, 30, 0.95);
+                z-index: 100;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+            }
+            .mobile-menu.active {
+                transform: translateY(0);
+            }
+            .mobile-menu ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .mobile-menu li {
+                list-style: none;
+            }
+            .mobile-menu a {
+                font-size: 1.5rem;
+                padding: 0.5rem 1rem;
+            }
+            .close-menu {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+
+            .hero-content{
+                width: 90% !important;
+                margin: 0 auto !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow-x: hidden !important;
+            }
+
+            .hero-content pre{
+                font-size: 0.8rem !important;
+                width: 100% !important;
+                overflow-x: hidden !important;
+                white-space: pre-wrap !important;
+            }
+            
+            /* Team section responsive fixes */
+            .button-group {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 0.5rem;
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+            
+            .button-group button {
+                font-size: 0.8rem;
+                padding: 0.5rem;
+                white-space: nowrap;
+            }
+            
+            .team-container {
+                overflow-x: hidden !important;
+                width: 100% !important;
+                padding: 0 10px !important;
+            }
+            
+            body {
+                overflow-x: hidden !important;
+                max-width: 100vw;
+            }
+            
+            .member-card {
+                max-width: 320px !important;
+                margin: 0 auto 20px auto !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .card {
+                width: 90% !important;
+                max-width: 280px !important;
+                margin: 0 auto 20px auto !important;
+            }
+            
+            .hero-content pre {
+                font-size: 0.7rem !important;
+            }
+            
+            .team-section-heading {
+                font-size: 1.8rem !important;
+            }
+            
+            .team-container {
+                padding: 0 5px !important;
+            }
+        }
+        
+        /* Fix for desktop site navbar issue */
+        @media (min-width: 769px) {
+            .mobile-menu {
+                display: none !important;
+            }
+        }
+        
+        /* Remove left side navigation that appears in desktop view */
+        body > div:first-of-type {
+            display: none !important;
+        }
+        
+        /* Hide IILM University button on top */
+        .oval {
+            display: none !important;
+        }
+        
+        /* Hide × button that appears in top left corner */
+        body > span:first-child {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
         <!-- Nav Bar -->
         <nav>
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <div class="logo h-10 w-20 m-3 mr-52">
+                <div class="logo h-10 w-20 m-3 md:mr-52">
                     <img src="../../assets/nav-logo.svg" alt="Logo" class="h-full w-full">
                 </div>
         
-                <!-- Navigation Links -->
-                <div class="nav-elements">
+                <!-- Navigation Links - Desktop -->
+                <div class="nav-elements hidden md:block">
                     <ul class="flex space-x-8">
                         <li>
                             <a href="../../index.html" class="relative text-white group">
@@ -51,7 +191,15 @@
                             </a>
                         </li>
                         <li>
-                            <a href="public/meetTheTeam/meet-our-team.html" class="relative text-white group">
+                            <a href="../resources/index.html" class="relative text-white group">
+                                <span class="relative inline-block transition-transform duration-300 transform group-hover:text-purple-500 group-hover:-translate-y-1">
+                                    Resources
+                                </span>
+                                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="meetOurTeam.html" class="relative text-white group">
                                 <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1">
                                     Team
                                 </span>
@@ -60,8 +208,65 @@
                         </li>
                     </ul>
                 </div>
+                
+                <!-- Hamburger Menu Button -->
+                <div class="hamburger-menu hidden md:hidden mr-4 cursor-pointer z-50 flex flex-col space-y-1">
+                    <div class="bar w-6 h-1 bg-white mb-1"></div>
+                    <div class="bar w-6 h-1 bg-white mb-1"></div>
+                    <div class="bar w-6 h-1 bg-white"></div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <div class="close-menu">&times;</div>
+                <ul>
+                    <li>
+                        <a href="../../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="../project/project.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="../events/index.html">Events</a>
+                    </li>
+                    <li>
+                        <a href="../resources/index.html">Resources</a>
+                    </li>
+                    <li>
+                        <a href="meetOurTeam.html">Team</a>
+                    </li>
+                </ul>
             </div>
         </nav>
+
+        <!-- Add JavaScript for mobile menu -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const hamburgerMenu = document.querySelector('.hamburger-menu');
+                const mobileMenu = document.querySelector('.mobile-menu');
+                const closeMenu = document.querySelector('.close-menu');
+                
+                hamburgerMenu.addEventListener('click', function() {
+                    mobileMenu.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                closeMenu.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+                
+                // Close menu when clicking a link
+                const mobileLinks = document.querySelectorAll('.mobile-menu a');
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileMenu.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+            });
+        </script>
 
     <hr class="w-full h-1 mt-4">
 
@@ -82,8 +287,8 @@
                         <h1 class="text-6xl font-bold montserrat-bold text-amber-300">MEET THE TEAMS</h1>
                     </div>
                 </div>
-                <div data-aos="fade-up">
-                    <pre class="p-4 mt-6 text-3xl">Our team runs on creativity, coffee, and code—where 
+                <div class="hero-content" data-aos="fade-up">
+                    <pre >Our team runs on creativity, coffee, and code—where 
 problem-solving developers, pixel-perfect designers, and
 laser-focused managers come together to make magic 
 happen.</pre>

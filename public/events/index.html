@@ -11,17 +11,126 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Vidaloka&display=swap" rel="stylesheet">      
+    
+    <style>
+        /* Mobile navbar styles */
+        @media (max-width: 768px) {
+            .nav-elements {
+                display: none;
+            }
+            .hamburger-menu {
+                display: flex !important;
+            }
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(30, 30, 30, 0.95);
+                z-index: 100;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+            }
+            .mobile-menu.active {
+                transform: translateY(0);
+            }
+            .mobile-menu ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .mobile-menu li {
+                list-style: none;
+            }
+            .mobile-menu a {
+                font-size: 1.5rem;
+                padding: 0.5rem 1rem;
+            }
+            .close-menu {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: white;
+            }
+            
+            /* Responsive adjustments for events page */
+            .container {
+                flex-direction: column !important;
+                align-items: center !important;
+                max-width: 100% !important;
+                overflow-x: hidden !important;
+            }
+            
+            .profile-card {
+                width: 90% !important;
+                max-width: 300px !important;
+                margin: 0 auto 20px auto !important;
+            }
+            
+            .oval {
+                display: none !important;
+            }
+            
+            .s {
+                display: none !important;
+            }
+            
+            .eventt {
+                font-size: 2.5rem !important;
+                margin-top: 1rem !important;
+            }
+            
+            body {
+                overflow-x: hidden !important;
+                max-width: 100vw !important;
+            }
+            
+            #elements {
+                display: none !important;
+            }
+        }
+        
+        /* Fix for desktop site navbar issue */
+        @media (min-width: 769px) {
+            .mobile-menu {
+                display: none !important;
+            }
+        }
+        
+        /* Remove left side navigation that appears in desktop view */
+        body > div:first-of-type {
+            display: none !important;
+        }
+        
+        /* Hide IILM University button on top */
+        .oval {
+            display: none !important;
+        }
+        
+        /* Hide × button that appears in top left corner */
+        body > span:first-child {
+            display: none !important;
+        }
+    </style>
 </head>
 <body>
         <!-- Nav Bar -->
         <nav>
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <div class="logo h-10 w-20 m-3 mr-52">
+                <div class="logo h-10 w-20 m-3 md:mr-52">
                     <img src="../../assets/nav-logo.svg" alt="Logo" class="h-full w-full">
                 </div>
         
-                <!-- Navigation Links -->
+                <!-- Navigation Links - Desktop -->
                 <div class="nav-elements">
                     <ul class="flex space-x-8">
                         <li>
@@ -49,6 +158,14 @@
                             </a>
                         </li>
                         <li>
+                            <a href="../resources/index.html" class="relative text-white group">
+                                <span class="relative inline-block transition-transform duration-300 transform group-hover:text-purple-500 group-hover:-translate-y-1">
+                                    Resources
+                                </span>
+                                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                            </a>
+                        </li>
+                        <li>
                             <a href="../meetTheTeam/meetOurTeam.html" class="relative text-white group">
                                 <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1">
                                     Team
@@ -58,9 +175,38 @@
                         </li>
                     </ul>
                 </div>
+                
+                <!-- Hamburger Menu Button -->
+                <div class="hamburger-menu hidden md:hidden mr-4 cursor-pointer z-50 flex flex-col space-y-1">
+                    <div class="bar w-6 h-1 bg-white mb-1"></div>
+                    <div class="bar w-6 h-1 bg-white mb-1"></div>
+                    <div class="bar w-6 h-1 bg-white"></div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu">
+                <div class="close-menu text-white">&times;</div>
+                <ul>
+                    <li>
+                        <a href="../../index.html" class="text-white">Home</a>
+                    </li>
+                    <li>
+                        <a href="../../public/project/project.html" class="text-white">Projects</a>
+                    </li>
+                    <li>
+                        <a href="./index.html" class="text-white">Events</a>
+                    </li>
+                    <li>
+                        <a href="../resources/index.html" class="text-white">Resources</a>
+                    </li>
+                    <li>
+                        <a href="../meetTheTeam/meetOurTeam.html" class="text-white">Team</a>
+                    </li>
+                </ul>
             </div>
         </nav>
-      
+        
           <hr class="w-full h-1 mt-4">
 
         
@@ -234,11 +380,31 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
-      let aosRefresh = _.debounce(() => {
-      AOS.refresh();
-      }, 200); // Adjust debounce time as needed
-
     </script>
-      <!-- window.addEventListener("scroll", aosRefresh); -->
+    
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const closeMenu = document.querySelector('.close-menu');
+            
+            hamburger.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+            });
+            
+            closeMenu.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = document.querySelectorAll('.mobile-menu a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

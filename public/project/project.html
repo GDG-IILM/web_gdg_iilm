@@ -30,12 +30,12 @@
     <nav>
         <div class="flex justify-between items-center">
             <!-- Logo -->
-            <div class="logo h-10 w-20 m-3 mr-52">
+            <div class="logo h-10 w-20 m-3 md:mr-52">
                 <img src="../../assets/nav-logo.svg" alt="Logo" class="h-full w-full">
             </div>
     
-            <!-- Navigation Links -->
-            <div class="nav-elements">
+            <!-- Navigation Links (Desktop) -->
+            <div class="nav-elements hidden md:block">
                 <ul class="flex space-x-8">
                     <li>
                         <a href="././../../index.html" class="relative text-white group">
@@ -62,6 +62,14 @@
                         </a>
                     </li>
                     <li>
+                        <a href="../resources/index.html" class="relative text-white group">
+                            <span class="relative inline-block transition-transform duration-300 transform group-hover:text-purple-500 group-hover:-translate-y-1">
+                                Resources
+                            </span>
+                            <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
+                        </a>
+                    </li>
+                    <li>
                         <a href="../meetTheTeam/meetOurTeam.html" class="relative text-white group">
                             <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1">
                                 Team
@@ -71,21 +79,38 @@
                     </li>
                 </ul>
             </div>
+            
+            <!-- Hamburger Menu Button (Mobile) -->
+            <div class="hamburger-menu md:hidden mr-4 cursor-pointer flex flex-col space-y-1">
+                <div class="bar w-6 h-1 bg-white"></div>
+                <div class="bar w-6 h-1 bg-white"></div>
+                <div class="bar w-6 h-1 bg-white"></div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="mobile-menu fixed inset-0 bg-gray-900 bg-opacity-95 z-50 flex flex-col justify-center items-center transform -translate-y-full transition-transform duration-300 ease-in-out">
+            <div class="close-menu absolute top-4 right-4 text-white text-3xl cursor-pointer">&times;</div>
+            <ul class="flex flex-col space-y-6 text-center">
+                <li><a href="././../../index.html" class="text-white text-xl block py-2 px-4 hover:bg-gray-800 rounded transition duration-300">Home</a></li>
+                <li><a href="../project/project.html" class="text-white text-xl block py-2 px-4 hover:bg-gray-800 rounded transition duration-300">Projects</a></li>
+                <li><a href="../events/index.html" class="text-white text-xl block py-2 px-4 hover:bg-gray-800 rounded transition duration-300">Events</a></li>
+                <li><a href="../resources/index.html" class="text-white text-xl block py-2 px-4 hover:bg-gray-800 rounded transition duration-300">Resources</a></li>
+                <li><a href="../meetTheTeam/meetOurTeam.html" class="text-white text-xl block py-2 px-4 hover:bg-gray-800 rounded transition duration-300">Team</a></li>
+            </ul>
         </div>
     </nav>
 
     <hr class="w-full h-1 mt-4">
 
     <header class="hero">
-        <h1 style="font-size: 5.5rem; text-align: left; margin-left: 1em; margin-top: 0.5em;">OUR<br><span style="display: inline-block; margin-left: 0em; margin-top: 0em;">PROJECTS</span></h1>
+        <h1 class="text-left lg:text-left md:ml-10 lg:ml-16 mt-4 text-5xl lg:text-6xl">OUR<br><span class="md:ml-0 mt-0">PROJECTS</span></h1>
     </header>
-<!-- progress animation -->
+    <!-- progress animation -->
  
     <div class="animation-cont">
-        <div id="animation-container" style="width: 390px; height: 390px; display: none; "></div>
-
-    <div id="fallback-text">Loading animation...</div> 
-    
+        <div id="animation-container" class="mx-auto" style="width: 100%; max-width: 390px; height: 390px; display: none;"></div>
+        <div id="fallback-text" class="text-center">Loading animation...</div> 
     </div>
 
 <!-- project tile  section -->
@@ -296,5 +321,33 @@
     "description": "GDG IILM is a hub for innovation and creativity, showcasing projects like task managers, fitness trackers, and more."
 }
 </script>   
+
+<!-- Mobile Menu Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const closeMenu = document.querySelector('.close-menu');
+        
+        hamburgerMenu.addEventListener('click', function() {
+            mobileMenu.classList.remove('-translate-y-full');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenu.addEventListener('click', function() {
+            mobileMenu.classList.add('-translate-y-full');
+            document.body.style.overflow = '';
+        });
+        
+        // Close menu when clicking a link
+        const mobileLinks = document.querySelectorAll('.mobile-menu a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('-translate-y-full');
+                document.body.style.overflow = '';
+            });
+        });
+    });
+</script>
 </body>
 </html>

@@ -152,9 +152,7 @@ list-style: none;
 }
 
 .home-img{
-width: 28.33vw; 
-height: 26.25vh; 
-margin-top: 3.75vh;
+
 }
 
 .gdg-logo{
@@ -351,13 +349,14 @@ margin-bottom: 0;
 
 .profile-card {
   border-radius: 1rem; /* Border radius in rem */
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); /* Box shadow using rem for proportional spacing */
+  box-shadow: 0 0.5rem 1rem rgba(173, 171, 171, 0.2); /* Box shadow using rem for proportional spacing */
   width: 20vw; /* Width as 20% of the viewport width */
   height: 60vh;
   text-align: center;
   padding: 1rem; /* Padding in rem for better scalability */
   margin: 1rem; /* Margin in rem for consistent spacing */
   flex: 0 0 auto;
+  background-color: #f5f5f5;
 }
 
 .profile-photo img {
@@ -381,6 +380,7 @@ margin-bottom: 0;
 .social-links {
   margin-top: 1rem; /* Top margin in rem for scalable spacing */
   display: flex;
+  justify-content: center;
 }
 
 .social-links a {
