@@ -13,6 +13,65 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Mobile navbar styles -->
+    <style>
+        @media (max-width: 768px) {
+            .nav-elements {
+                display: none;
+            }
+            .hamburger-menu {
+                display: flex !important;
+            }
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(30, 30, 30, 0.95);
+                z-index: 100;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+            }
+            .mobile-menu.active {
+                transform: translateY(0);
+            }
+            .mobile-menu ul {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1.5rem;
+            }
+            .mobile-menu li {
+                list-style: none;
+            }
+            .mobile-menu a {
+                font-size: 1.5rem;
+                padding: 0.5rem 1rem;
+                color: white;
+                text-decoration: none;
+            }
+            .close-menu {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                font-size: 1.5rem;
+                cursor: pointer;
+                color: white;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-menu {
+                display: none !important;
+            }
+        }
+    </style>
+
     <!-- Open Graph Tags -->
     <meta property="og:title" content="Innovative Projects at GDG IILM">
     <meta property="og:description" content="Explore innovative projects like task managers, weather apps, and more at GDG IILM. Join us in solving real-world challenges with technology.">
@@ -34,11 +93,11 @@
                 <img src="../../assets/nav-logo.svg" alt="Logo" class="h-full w-full">
             </div>
     
-            <!-- Navigation Links (Desktop) -->
+            <!-- Navigation Links - Desktop -->
             <div class="nav-elements hidden md:block">
                 <ul class="flex space-x-8">
                     <li>
-                        <a href="././../../index.html" class="relative text-white group">
+                        <a href="../../index.html" class="relative text-white group">
                             <span class="relative inline-block transition-transform duration-300 transform group-hover:text-blue-500 group-hover:-translate-y-1">
                                 Home
                             </span>
@@ -70,7 +129,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../meetTheTeam/meetOurTeam.html" class="relative text-white group">
+                        <a href="meetOurTeam.html" class="relative text-white group">
                             <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1">
                                 Team
                             </span>
@@ -80,27 +139,37 @@
                 </ul>
             </div>
             
-            <!-- Hamburger Menu Button (Mobile) -->
-            <div class="hamburger-menu md:hidden mr-4 cursor-pointer flex flex-col space-y-1">
-                <div class="bar w-6 h-1 bg-white"></div>
-                <div class="bar w-6 h-1 bg-white"></div>
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger-menu hidden md:hidden mr-4 cursor-pointer z-50 flex flex-col space-y-1">
+                <div class="bar w-6 h-1 bg-white mb-1"></div>
+                <div class="bar w-6 h-1 bg-white mb-1"></div>
                 <div class="bar w-6 h-1 bg-white"></div>
             </div>
         </div>
-        
-        <!-- Mobile Menu (Hidden by default) -->
-        <div class="mobile-menu fixed inset-0 bg-gray-900 bg-opacity-95 z-50 flex flex-col justify-center items-center transform -translate-y-full transition-transform duration-300 ease-in-out">
-            <div class="close-menu absolute top-4 right-4 text-white text-3xl cursor-pointer">&times;</div>
-            <ul class="flex flex-col space-y-6 text-center">
-                <li><a href="././../../index.html" class="text-white text-xl block py-2 px-4 hover:bg-gray-800 rounded transition duration-300">Home</a></li>
-                <li><a href="../project/project.html" class="text-white text-xl block py-2 px-4 hover:bg-gray-800 rounded transition duration-300">Projects</a></li>
-                <li><a href="../events/index.html" class="text-white text-xl block py-2 px-4 hover:bg-gray-800 rounded transition duration-300">Events</a></li>
-                <li><a href="../resources/index.html" class="text-white text-xl block py-2 px-4 hover:bg-gray-800 rounded transition duration-300">Resources</a></li>
-                <li><a href="../meetTheTeam/meetOurTeam.html" class="text-white text-xl block py-2 px-4 hover:bg-gray-800 rounded transition duration-300">Team</a></li>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="close-menu">&times;</div>
+            <ul>
+                <li>
+                    <a href="../../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="../project/project.html">Projects</a>
+                </li>
+                <li>
+                    <a href="../events/index.html">Events</a>
+                </li>
+                <li>
+                    <a href="../resources/index.html">Resources</a>
+                </li>
+                <li>
+                    <a href="meetOurTeam.html">Team</a>
+                </li>
             </ul>
         </div>
     </nav>
-
+    
     <hr class="w-full h-1 mt-4">
 
     <header class="hero">
@@ -325,25 +394,25 @@
 <!-- Mobile Menu Script -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const hamburger = document.querySelector('.hamburger-menu');
         const mobileMenu = document.querySelector('.mobile-menu');
         const closeMenu = document.querySelector('.close-menu');
         
-        hamburgerMenu.addEventListener('click', function() {
-            mobileMenu.classList.remove('-translate-y-full');
+        hamburger.addEventListener('click', function() {
+            mobileMenu.classList.add('active');
             document.body.style.overflow = 'hidden';
         });
         
         closeMenu.addEventListener('click', function() {
-            mobileMenu.classList.add('-translate-y-full');
+            mobileMenu.classList.remove('active');
             document.body.style.overflow = '';
         });
         
-        // Close menu when clicking a link
+        // Close mobile menu when clicking on a link
         const mobileLinks = document.querySelectorAll('.mobile-menu a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', function() {
-                mobileMenu.classList.add('-translate-y-full');
+                mobileMenu.classList.remove('active');
                 document.body.style.overflow = '';
             });
         });

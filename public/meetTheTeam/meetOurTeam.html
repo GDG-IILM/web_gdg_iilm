@@ -243,11 +243,11 @@
         <!-- Add JavaScript for mobile menu -->
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                const hamburgerMenu = document.querySelector('.hamburger-menu');
+                const hamburger = document.querySelector('.hamburger-menu');
                 const mobileMenu = document.querySelector('.mobile-menu');
                 const closeMenu = document.querySelector('.close-menu');
                 
-                hamburgerMenu.addEventListener('click', function() {
+                hamburger.addEventListener('click', function() {
                     mobileMenu.classList.add('active');
                     document.body.style.overflow = 'hidden';
                 });
@@ -257,7 +257,7 @@
                     document.body.style.overflow = '';
                 });
                 
-                // Close menu when clicking a link
+                // Close mobile menu when clicking on a link
                 const mobileLinks = document.querySelectorAll('.mobile-menu a');
                 mobileLinks.forEach(link => {
                     link.addEventListener('click', function() {
@@ -527,20 +527,7 @@ happen.</pre>
             </div>
 
             <!-- Social Media -->
-            <div class="card" data-dept="3">
-                <div class="flex flex-col items-center">
-                    <a target="_blank"  ><img  src="../../assets/Images/team_images/aaditya.jpg" alt="aaditya.jpg"/></a>
-                    <h3>Aaditya Kumar Choudhary</h3>
-                    <p>Social Media Lead</p>
-                    <p class="description hidden">Social Media Lead | Crafting Connections & Spreading Tech Vibes.</p>
-                    <div>
-                        <!-- <span><a href=""><i class="fa-solid fa-briefcase"></i></a></span> -->
-                        <span><a href="https://www.instagram.com/aadityakumarchoudharyy/profilecard/?igsh=MWp0NGg1c3pmOW8xdw=="><i class="fab fa-instagram" style="font-size: 20px; margin-right: 5px;"></i></a></span>
-                        <span><a href="https://github.com/aadityakumarchoudhary"><i class="fab fa-github" style="font-size: 20px; margin-right: 5px;"></i></a></span>
-                        <span><a href="https://www.linkedin.com/in/aaditya-kumar-choudhary-443b68288"><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></span>
-                    </div>
-                </div>
-            </div>
+            
             <div class="card" data-dept="3">
                 <div class="flex flex-col items-center">
                     <a target="_blank" ><img  src="../../assets/Images/team_images/aman.jpeg" alt="aman.jpeg"/></a>
@@ -555,20 +542,7 @@ happen.</pre>
                     </div>
                 </div>
             </div>
-            <div class="card" data-dept="3">
-                <div class="flex flex-col items-center">
-                    <a target="_blank"  ><img  src="../../assets/Images/team_images/harshit.jpg" alt="harshit.jpg"/></a>
-                    <h3>Harshit Singh</h3>
-                    <p>Social Media</p>
-                    <p class="description hidden">Crafting Innovation & Design at GDG | Ed-Tech Innovator transforming ICSE learning and Passionate explorer of AI/ML.</p>
-                    <div>
-                        <!-- <span><a href=""><i class="fa-solid fa-briefcase"></i></a></span> -->
-                        <span><a href="https://www.instagram.com/_.harshitt__/profilecard/?igsh=MTZvOWgzcmIwZWdobw=="><i class="fab fa-instagram" style="font-size: 20px; margin-right: 5px;"></i></a></span>
-                        <span><a href="https://github.com/harshitcodes1308"><i class="fab fa-github" style="font-size: 20px; margin-right: 5px;"></i></a></span>
-                        <span><a href="https://www.linkedin.com/in/harshit-singh-422533311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin" style="font-size: 20px;"></i></a></span>
-                    </div>
-                </div>
-            </div>
+        
             <div class="card" data-dept="3">
                 <div class="flex flex-col items-center">
                     <a target="_blank" ><img  src="../../assets/Images/team_images/yashica.jpg" alt="yashica.jpg"/></a>
@@ -791,36 +765,63 @@ happen.</pre>
     <!-- Script -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init();
-      const buttons = document.querySelectorAll('.button-group button');
-    const cards = document.querySelectorAll('.card');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        document.querySelector('.button-group .active').classList.remove('active');
-        button.classList.add('active');
-
-        const dept = button.dataset.dept;
-
-        cards.forEach(card => {
-          const description = card.querySelector('.description');
-          if (!dept || card.dataset.dept === dept) {
-            card.classList.remove('hidden');
-            if (dept) {
-              card.classList.add('expanded');
-              description.classList.remove('hidden');
-            } else {
-              card.classList.remove('expanded');
-              description.classList.add('hidden');
-            }
-          } else {
-            card.classList.add('hidden');
-          }
+        // Mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const closeMenu = document.querySelector('.close-menu');
+            
+            hamburger.addEventListener('click', function() {
+                mobileMenu.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeMenu.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = document.querySelectorAll('.mobile-menu a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
         });
-      });
-    });
 
-    document.getElementById('view-all').click();
+        // Existing scripts
+        AOS.init();
+        const buttons = document.querySelectorAll('.button-group button');
+        const cards = document.querySelectorAll('.card');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelector('.button-group .active').classList.remove('active');
+                button.classList.add('active');
+
+                const dept = button.dataset.dept;
+
+                cards.forEach(card => {
+                    const description = card.querySelector('.description');
+                    if (!dept || card.dataset.dept === dept) {
+                        card.classList.remove('hidden');
+                        if (dept) {
+                            card.classList.add('expanded');
+                            description.classList.remove('hidden');
+                        } else {
+                            card.classList.remove('expanded');
+                            description.classList.add('hidden');
+                        }
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        document.getElementById('view-all').click();
     </script>
 </body>
 </html>

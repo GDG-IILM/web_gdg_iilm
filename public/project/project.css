@@ -12,6 +12,7 @@ body {
 }
 
 /* Navbar styles */
+
 /* Anchor Tag */
 a{
     text-decoration: none;
@@ -19,28 +20,7 @@ a{
   }
   
   
-  /* Nav Bar */
-  nav{
-      background-color: #1E1E1E;
-      height: 50px;
-      width: 100%;
-      position: sticky;
-  }
   
-  .nav-elements ul{
-      height: 48px;
-      width: 600px;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      margin: 8px;
-      padding: 4px;
-  }
-  
-  .nav-elements li{
-      list-style: none;
-  
-  }
   
   .home-img{
       width: 400px;
@@ -131,14 +111,6 @@ a{
         margin: 0 auto 1.5rem auto;
     }
     
-    /* Navbar adjustments */
-    .nav-elements {
-        display: none;
-    }
-    
-    .nav-elements ul {
-        width: 100%;
-    }
 }
 
 @media (max-width: 480px) {
