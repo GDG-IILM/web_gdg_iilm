@@ -40,11 +40,6 @@
       "dest": "/index.html"
     }
   ],
-  "functions": {
-    "app.py": {
-      "runtime": "python3.9"
-    }
-  },
   "env": {
     "PYTHONPATH": "."
   }
