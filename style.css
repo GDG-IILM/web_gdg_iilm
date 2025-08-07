@@ -954,6 +954,16 @@ margin-bottom: 0;
 
   body {
     font-size: 8px;
+    overflow-x: hidden;
+  }
+
+  html {
+    overflow-x: hidden;
+  }
+
+  /* Hide desktop navigation on mobile */
+  .nav-elements {
+    display: none !important;
   }
 
   

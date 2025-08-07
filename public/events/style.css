@@ -200,6 +200,7 @@ nav {
     transition: background-color 0.3s, transform 0.3s;
     background-blend-mode: overlay;
     box-sizing: border-box;
+    display: none;
   }
 
   .logo, .top-green, #elements, .s {
@@ -215,6 +216,7 @@ nav {
     font-size: 3rem; /* Keeping as is, font-size suitable for mobile view */
   }
 
+
   .container {
     display: flex;
     flex-direction: column;
@@ -224,5 +226,33 @@ nav {
     width: 100%; /* Keeps container within screen */
     margin-left: 5vw; /* Converted 80px to vw */
     overflow: hidden;
+  }
+
+
+  /* Fix events section margin top for mobile */
+  section {
+    margin-top: 2rem; /* Add proper spacing for mobile */
+  }
+
+  /* Specific fix for the main events section */
+  section:first-of-type {
+    margin-top: 18rem; /* Proper top margin for the first section */
+  }
+
+  /* Fix profile card overlapping in mobile */
+  .profile-card {
+    margin: 2rem 0.5rem; /* Increase top margin to prevent cropping */
+    width: 90%; /* Make card responsive */
+    max-width: 300px; /* Limit maximum width */
+    padding: 1.5rem 1rem; /* Add more padding to prevent content cropping */
+  }
+
+  /* Fix content cropping in mobile */
+  .profile-photo {
+    margin-top: 1rem; /* Add top margin to photo */
+  }
+
+  .profile-info {
+    padding: 1rem 0; /* Add vertical padding to info section */
   }
 }
