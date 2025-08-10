@@ -32,7 +32,9 @@
     <link rel="icon" type="image/x-icon" href="assets/nav-logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Vidaloka&display=swap" rel="stylesheet">      
+    <link href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Vidaloka&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=smart_toy" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />      
     
     <style>
       /* Contact card specific fixes */
@@ -179,7 +181,7 @@
 
         <!-- Desktop Navigation Links (hidden on mobile) -->
         <div class="nav-elements hidden md:block">
-            <ul class="flex space-x-8">
+            <ul class="flex space-x-8 mr-8">
                 <li>
                     <a href="index.html" class="relative text-white group">
                         <span class="relative inline-block transition-transform duration-300 transform group-hover:text-blue-500 group-hover:-translate-y-1">
@@ -220,14 +222,7 @@
                         <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
                     </a>
                 </li>
-                <li>
-                    <a href="#" onclick="toggleSAKHIChatbot(); return false;" class="relative text-white group">
-                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-purple-500 group-hover:-translate-y-1 mr-10">
-                            🤖 SAKHI
-                        </span>
-                        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
-                    </a>
-                </li>
+
             </ul>
         </div>
     </div>
@@ -251,9 +246,7 @@
                 <li>
                     <a href="public/meetTheTeam/meetOurTeam.html" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">Team</a>
                 </li>
-                <li>
-                    <a href="#" onclick="toggleSAKHIChatbot(); return false;" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">🤖 SAKHI</a>
-                </li>
+
             </ul>
         </div>
     </div>
@@ -355,15 +348,15 @@
       
       <div class="chatbot-icon">
         <button id="open-chat" class="chat-button" onclick="toggleSAKHIChatbot()">
-          <img src="assets/Bot.png" alt="SAKHI Chatbot">
+          🤖ིྀ
         </button>
     </div>
 
     <!-- SAKHI Chatbot Container (Initially Hidden) -->
     <div id="sakhi-chatbot-container" class="sakhi-chatbot-container hidden">
         <div class="chat-header">
-            <span>🤖 SAKHI - Your AI Assistant</span>
-            <button id="close-chat" onclick="toggleSAKHIChatbot()">❌</button>
+            <span><i class="fas fa-robot"></i> SAKHI - Your AI Assistant</span>
+            <button id="close-chat" onclick="toggleSAKHIChatbot()"><i class="fas fa-times"></i></button>
         </div>
         <div class="chat-body">
             <iframe 
@@ -377,14 +370,271 @@
 
     <!-- SAKHI Chatbot Script -->
     <script>
+        // Speech Recognition and Synthesis variables
+        let recognition;
+        let synthesis;
+        let isListening = false;
+        let microphoneButton;
+
+        // Initialize speech recognition and synthesis
+        function initializeSpeechFeatures() {
+            // Check if browser supports speech recognition
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                recognition.continuous = false;
+                recognition.interimResults = false;
+                recognition.lang = 'en-US';
+
+                recognition.onstart = function() {
+                    console.log('Speech recognition started');
+                    isListening = true;
+                    updateMicrophoneButton();
+                };
+
+                recognition.onresult = function(event) {
+                    const transcript = event.results[0][0].transcript;
+                    const confidence = event.results[0][0].confidence;
+                    console.log('Speech recognized:', transcript, 'Confidence:', confidence);
+                    
+                    // Show success notification
+                    showSpeechSuccess(transcript);
+                    
+                    // Send the transcript to the chatbot iframe
+                    sendMessageToChatbot(transcript);
+                    
+                    isListening = false;
+                    updateMicrophoneButton();
+                };
+
+                recognition.onerror = function(event) {
+                    console.error('Speech recognition error:', event.error);
+                    isListening = false;
+                    updateMicrophoneButton();
+                };
+
+                recognition.onend = function() {
+                    console.log('Speech recognition ended');
+                    isListening = false;
+                    updateMicrophoneButton();
+                };
+            } else {
+                console.warn('Speech recognition not supported in this browser');
+            }
+
+            // Initialize speech synthesis
+            if ('speechSynthesis' in window) {
+                synthesis = window.speechSynthesis;
+            } else {
+                console.warn('Speech synthesis not supported in this browser');
+            }
+        }
+
+        // Function to send message to chatbot iframe
+        function sendMessageToChatbot(message) {
+            const iframe = document.getElementById('sakhi-chatbot-frame');
+            if (iframe && iframe.contentWindow) {
+                // Try to communicate with the iframe
+                try {
+                    iframe.contentWindow.postMessage({
+                        type: 'voice-message',
+                        message: message
+                    }, '*');
+                } catch (error) {
+                    console.log('Could not send message to iframe, but speech was recognized:', message);
+                    // Fallback: show a notification that speech was recognized
+                    showSpeechNotification(message);
+                }
+            }
+        }
+
+        // Function to show speech recognition notification
+        function showSpeechNotification(message) {
+            // Create a temporary notification
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #4CAF50;
+                color: white;
+                padding: 15px;
+                border-radius: 5px;
+                z-index: 10000;
+                max-width: 300px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            `;
+            notification.innerHTML = `
+                <strong>Voice Message Recognized:</strong><br>
+                "${message}"<br>
+                <small>Please type this message in the chatbot</small>
+            `;
+            document.body.appendChild(notification);
+            
+            // Remove notification after 5 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 5000);
+        }
+
+        // Function to show speech recognition success
+        function showSpeechSuccess(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #28a745;
+                color: white;
+                padding: 15px;
+                border-radius: 5px;
+                z-index: 10000;
+                max-width: 300px;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                animation: slideIn 0.3s ease-out;
+            `;
+            notification.innerHTML = `
+                <strong><i class="fas fa-check-circle"></i> Voice Message Sent!</strong><br>
+                "${message}"<br>
+                <small>Your message has been sent to SAKHI</small>
+            `;
+            document.body.appendChild(notification);
+            
+            // Remove notification after 3 seconds
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 3000);
+        }
+
+        // Function to update microphone button appearance
+        function updateMicrophoneButton() {
+            if (microphoneButton) {
+                if (isListening) {
+                    microphoneButton.innerHTML = '<i class="fas fa-microphone-slash"></i>';
+                    microphoneButton.classList.add('recording');
+                } else {
+                    microphoneButton.innerHTML = '<i class="fas fa-microphone"></i>';
+                    microphoneButton.classList.remove('recording');
+                }
+            }
+        }
+
+        // Function to toggle microphone
+        function toggleMicrophone() {
+            if (!recognition) {
+                alert('Speech recognition is not supported in your browser. Please use a modern browser like Chrome, Firefox, or Safari.');
+                return;
+            }
+
+            if (isListening) {
+                recognition.stop();
+            } else {
+                // Request microphone permission first
+                navigator.mediaDevices.getUserMedia({ audio: true })
+                    .then(function(stream) {
+                        // Permission granted, start recognition
+                        recognition.start();
+                        stream.getTracks().forEach(track => track.stop()); // Stop the stream
+                    })
+                    .catch(function(err) {
+                        console.error('Microphone permission denied:', err);
+                        alert('Microphone access is required for voice input. Please allow microphone access and try again.');
+                    });
+            }
+        }
+
+        // Text-to-speech toggle state
+        let ttsEnabled = false;
+
+        // Function to speak text (for bot responses)
+        function speakText(text) {
+            if (synthesis && ttsEnabled) {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 0.9;
+                utterance.pitch = 1;
+                utterance.volume = 0.8;
+                synthesis.speak(utterance);
+            }
+        }
+
+        // Function to toggle text-to-speech
+        function toggleTextToSpeech() {
+            ttsEnabled = !ttsEnabled;
+            const ttsButton = document.getElementById('tts-btn');
+            if (ttsButton) {
+                if (ttsEnabled) {
+                    ttsButton.innerHTML = '<i class="fas fa-volume-up"></i>';
+                    ttsButton.title = 'Text-to-speech enabled (click to disable)';
+                    ttsButton.classList.add('active');
+                } else {
+                    ttsButton.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                    ttsButton.title = 'Text-to-speech disabled (click to enable)';
+                    ttsButton.classList.remove('active');
+                }
+            }
+        }
+
         function toggleSAKHIChatbot() {
             const chatbot = document.getElementById("sakhi-chatbot-container");
             if (chatbot.classList.contains("hidden")) {
                 chatbot.classList.remove("hidden");
+                // Initialize speech features when chatbot is opened
+                setTimeout(() => {
+                    initializeSpeechFeatures();
+                    addMicrophoneButton();
+                }, 100);
             } else {
                 chatbot.classList.add("hidden");
             }
         }
+
+
+
+        // Function to add microphone button to chatbot
+        function addMicrophoneButton() {
+            const chatHeader = document.querySelector('.chat-header');
+            if (chatHeader && !document.getElementById('microphone-btn')) {
+                // Create microphone button
+                microphoneButton = document.createElement('button');
+                microphoneButton.id = 'microphone-btn';
+                microphoneButton.innerHTML = '<i class="fas fa-microphone"></i>';
+                microphoneButton.onclick = toggleMicrophone;
+                microphoneButton.title = 'Click to start voice input';
+                
+                // Create text-to-speech toggle button
+                const ttsButton = document.createElement('button');
+                ttsButton.id = 'tts-btn';
+                ttsButton.innerHTML = '<i class="fas fa-volume-up"></i>';
+                ttsButton.title = 'Toggle text-to-speech for bot responses';
+                ttsButton.onclick = toggleTextToSpeech;
+                
+                // Insert buttons before the close button
+                const closeButton = chatHeader.querySelector('#close-chat');
+                if (closeButton) {
+                    closeButton.parentNode.insertBefore(ttsButton, closeButton);
+                    closeButton.parentNode.insertBefore(microphoneButton, ttsButton);
+                } else {
+                    chatHeader.appendChild(microphoneButton);
+                    chatHeader.appendChild(ttsButton);
+                }
+            }
+        }
+
+        // Listen for messages from the iframe (if the chatbot supports it)
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'bot-response') {
+                // Speak the bot's response
+                speakText(event.data.message);
+            }
+        });
+
+        // Initialize speech features when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeSpeechFeatures();
+        });
     </script>
       <!-- <div class="sticky-login"> -->
         <!-- <button onclick="window.location.href='/login'"><strong>Resources</strong></button> -->
@@ -402,12 +652,12 @@
             <h6 class="text-xs m-0 text-gray-500">IILM UNIVERSITY GREATER NOIDA</h6>
             <div class="flex flex-col md:flex-row gap-3 mt-3">
               <a href="https://gdg.community.dev/gdg-on-campus-iilm-university-greater-noida-india/">
-                <button type="button" class="w-44 md:w-56 bg-blue-600 hover:bg-blue-700 rounded-lg p-3 text-white hover:text-gray-300">
+                <button type="button" class="w-48 md:w-64 bg-blue-600 hover:bg-blue-700 rounded-lg p-3 text-white hover:text-gray-300">
                   <strong>Join Community</strong>
                 </button>
               </a>
               <a href="https://compass-backend-production-e15e.up.railway.app/" target="_blank">
-                <button type="button" class="w-44 md:w-56 bg-green-600 hover:bg-green-700 rounded-lg p-3 text-white hover:text-gray-300">
+                <button type="button" class="w-48 md:w-64 bg-green-600 hover:bg-green-700 rounded-lg p-3 text-white hover:text-gray-300">
                   <strong>Team Nomination Form</strong>
                 </button>
               </a>

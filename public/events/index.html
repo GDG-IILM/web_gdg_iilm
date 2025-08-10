@@ -18,48 +18,6 @@
             .nav-elements {
                 display: none;
             }
-            .hamburger-menu {
-                display: flex !important;
-            }
-            .mobile-menu {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background-color: rgba(30, 30, 30, 0.95);
-                z-index: 100;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                transform: translateY(-100%);
-                transition: transform 0.3s ease;
-            }
-            .mobile-menu.active {
-                transform: translateY(0);
-            }
-            .mobile-menu ul {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 1.5rem;
-            }
-            .mobile-menu li {
-                list-style: none;
-            }
-            .mobile-menu a {
-                font-size: 1.5rem;
-                padding: 0.5rem 1rem;
-            }
-            .close-menu {
-                position: absolute;
-                top: 1.5rem;
-                right: 1.5rem;
-                font-size: 1.5rem;
-                cursor: pointer;
-                color: white;
-            }
             
             /* Responsive adjustments for events page */
             .container {
@@ -98,12 +56,7 @@
             }
         }
         
-        /* Fix for desktop site navbar issue */
-        @media (min-width: 769px) {
-            .mobile-menu {
-                display: none !important;
-            }
-        }
+
         
         /* Remove left side navigation that appears in desktop view */
         body > div:first-of-type {
@@ -176,34 +129,38 @@
                     </ul>
                 </div>
                 
-                <!-- Hamburger Menu Button -->
-                <div class="hamburger-menu hidden md:hidden mr-4 cursor-pointer z-50 flex flex-col space-y-1">
-                    <div class="bar w-6 h-1 bg-white mb-1"></div>
-                    <div class="bar w-6 h-1 bg-white mb-1"></div>
-                    <div class="bar w-6 h-1 bg-white"></div>
-                </div>
+                <!-- Hamburger Menu Button (visible only on mobile) -->
+                <button id="hamburger-button" class="flex md:hidden flex-col justify-center items-center w-10 h-10 mr-4 focus:outline-none z-30">
+                    <div id="hamburger-icon" class="relative w-6 h-6">
+                        <!-- Three lines that will transform to X -->
+                        <span class="absolute h-1 w-6 bg-sky-800 rounded transition-all duration-300 ease-in-out" style="top: 0;"></span>
+                        <span class="absolute h-1 w-6 bg-sky-800 rounded transition-all duration-300 ease-in-out" style="top: 50%; transform: translateY(-50%);"></span>
+                        <span class="absolute h-1 w-6 bg-sky-800 rounded transition-all duration-300 ease-in-out" style="bottom: 0;"></span>
+                    </div>
+                </button>
             </div>
 
-            <!-- Mobile Menu -->
-            <div class="mobile-menu">
-                <div class="close-menu">&times;</div>
-                <ul>
-                    <li>
-                        <a href="../../index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="../project/project.html">Projects</a>
-                    </li>
-                    <li>
-                        <a href="../events/index.html">Events</a>
-                    </li>
-                    <li>
-                        <a href="../resources/index.html">Resources</a>
-                    </li>
-                    <li>
-                        <a href="../meetTheTeam/meetOurTeam.html">Team</a>
-                    </li>
-                </ul>
+            <!-- Mobile Menu (hidden by default) -->
+            <div id="mobile-menu" class="hidden fixed inset-0 z-20 transition-all duration-300 ease-in-out bg-gray-800 backdrop-blur-sm">
+                <div class="pt-[7.8vh] w-full h-full transition-all duration-300 ease-in-out transform opacity-0" id="menu-container">
+                    <ul class="flex flex-col space-y-6 p-8">
+                        <li>
+                            <a href="../../index.html" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">Home</a>
+                        </li>
+                        <li>
+                            <a href="../project/project.html" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">Projects</a>
+                        </li>
+                        <li>
+                            <a href="../events/index.html" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">Events</a>
+                        </li>
+                        <li>
+                            <a href="../resources/index.html" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">Resources</a>
+                        </li>
+                        <li>
+                            <a href="../meetTheTeam/meetOurTeam.html" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">Team</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
         
@@ -382,27 +339,66 @@
       AOS.init();
     </script>
     
-    <!-- Mobile Menu JavaScript -->
+    <!-- JavaScript for hamburger menu toggle with animation -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger-menu');
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const closeMenu = document.querySelector('.close-menu');
+            const hamburgerButton = document.getElementById('hamburger-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuContainer = document.getElementById('menu-container');
+            const hamburgerIcon = document.getElementById('hamburger-icon');
+            const body = document.body;
+            let isOpen = false;
             
-            hamburger.addEventListener('click', function() {
-                mobileMenu.classList.add('active');
-            });
-            
-            closeMenu.addEventListener('click', function() {
-                mobileMenu.classList.remove('active');
-            });
-            
-            // Close mobile menu when clicking on a link
-            const mobileLinks = document.querySelectorAll('.mobile-menu a');
-            mobileLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileMenu.classList.remove('active');
-                });
+            hamburgerButton.addEventListener('click', function() {
+                isOpen = !isOpen;
+                
+                // Toggle menu visibility
+                if (isOpen) {
+                    // Show menu
+                    mobileMenu.classList.remove('hidden');
+                    // Prevent background scrolling
+                    body.style.overflow = 'hidden';
+                    
+                    // Small delay to allow DOM to update before animation
+                    setTimeout(() => {
+                        menuContainer.classList.add('opacity-100');
+                        menuContainer.classList.remove('opacity-0');
+                    }, 10);
+                } else {
+                    // Hide with animation
+                    menuContainer.classList.remove('opacity-100');
+                    menuContainer.classList.add('opacity-0');
+                    
+                    // Delay hiding to allow animation to complete
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                        // Restore scrolling
+                        body.style.overflow = '';
+                    }, 300);
+                }
+                
+                // Get the three spans inside the hamburger icon
+                const spans = hamburgerIcon.querySelectorAll('span');
+                
+                if (isOpen) {
+                    // Transform to X
+                    spans[0].style.top = '50%';
+                    spans[0].style.transform = 'translateY(-50%) rotate(45deg)';
+                    
+                    spans[1].style.opacity = '0';
+                    
+                    spans[2].style.bottom = '50%';
+                    spans[2].style.transform = 'translateY(50%) rotate(-45deg)';
+                } else {
+                    // Transform back to hamburger
+                    spans[0].style.top = '0';
+                    spans[0].style.transform = 'none';
+                    
+                    spans[1].style.opacity = '1';
+                    
+                    spans[2].style.bottom = '0';
+                    spans[2].style.transform = 'none';
+                }
             });
         });
     </script>

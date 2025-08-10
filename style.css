@@ -677,13 +677,18 @@ margin-bottom: 0;
 }
 
 .chat-button {
-  font-size: 3vh; /* Font size relative to viewport height */
+  font-size: 5vh; /* Font size relative to viewport height */
   padding: 2vh; /* Padding relative to viewport height */
   border: none;
   border-radius: 50%;
   background-color: var(--button-bg);
   color: var(--button-text);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 8vh;
+  height: 8vh;
 }
 
 /* Chatbot Container */
@@ -774,14 +779,14 @@ margin-bottom: 0;
   right: 2vw; /* Right position relative to viewport width */
   width: 400px; /* Fixed width for better iframe display */
   height: 600px; /* Fixed height for better iframe display */
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   z-index: 1000;
-  border: 2px solid #4285F4;
+  border: 1px solid #e0e0e0;
 }
 
 .sakhi-chatbot-container.hidden {
@@ -790,29 +795,149 @@ margin-bottom: 0;
 
 .sakhi-chatbot-container .chat-header {
   padding: 15px 20px;
-  background: linear-gradient(135deg, #4285F4, #34A853);
-  color: white;
+  background: #000000;
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: bold;
-  font-size: 16px;
-  border-radius: 13px 13px 0 0;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 7px 7px 0 0;
+  letter-spacing: 0.5px;
 }
 
 .sakhi-chatbot-container .chat-header button {
   background: none;
   border: none;
-  color: white;
-  font-size: 18px;
+  color: #ffffff;
+  font-size: 16px;
   cursor: pointer;
-  padding: 5px;
-  border-radius: 50%;
-  transition: background-color 0.3s;
+  padding: 6px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  font-weight: 400;
 }
 
 .sakhi-chatbot-container .chat-header button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+/* Microphone button styling */
+#microphone-btn {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 4px !important;
+  width: 36px !important;
+  height: 36px !important;
+  cursor: pointer !important;
+  margin-left: 8px !important;
+  font-size: 14px !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#microphone-btn:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+  transform: scale(1.05) !important;
+}
+
+#microphone-btn.recording {
+  background: #ffffff !important;
+  color: #000000 !important;
+  animation: pulse 1.5s infinite !important;
+}
+
+/* FontAwesome icon styling */
+#microphone-btn i,
+#tts-btn i,
+#close-chat i {
+  font-size: 14px !important;
+  line-height: 1 !important;
+}
+
+.chat-header span i {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+  }
+  70% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* Text-to-speech button styling */
+#tts-btn {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  border-radius: 4px !important;
+  width: 36px !important;
+  height: 36px !important;
+  cursor: pointer !important;
+  margin-left: 8px !important;
+  font-size: 14px !important;
+  transition: all 0.2s ease !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#tts-btn:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+  transform: scale(1.05) !important;
+}
+
+#tts-btn.active {
+  background: #ffffff !important;
+  color: #000000 !important;
+  animation: glow 2s ease-in-out infinite alternate !important;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3), 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  to {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
 
 .sakhi-chatbot-container .chat-body {
@@ -1039,13 +1164,151 @@ margin-bottom: 0;
     display: none !important;
   }
 
+  /* What we do section mobile margin */
+  #what-we-do-cont {
+    margin-top: 26rem !important;
+  }
+
+  /* Contact form mobile styling to match site theme */
+  .whitec2 {
+    background: #F5F5F5 !important;
+    border: none !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 20px !important;
+    margin: 2rem auto !important;
+    padding: 2rem !important;
+    width: 95% !important;
+    max-width: 400px !important;
+    min-height: auto !important;
+    height: auto !important;
+    position: relative !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Decorative background elements */
+  .whitec2::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -50px !important;
+    right: -50px !important;
+    width: 100px !important;
+    height: 100px !important;
+    background: linear-gradient(135deg, #EA4335, #FBCC43) !important;
+    border-radius: 50% !important;
+    z-index: 1 !important;
+  }
+
+  .whitec2::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -30px !important;
+    left: -30px !important;
+    width: 80px !important;
+    height: 80px !important;
+    background: linear-gradient(135deg, #4285F4, #0F9D58) !important;
+    border-radius: 50% !important;
+    z-index: 1 !important;
+  }
+
+  .whitec3 {
+    position: relative !important;
+    z-index: 2 !important;
+    background: transparent !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+
+  .whitec3 h2 {
+    color: #1E1E1E !important;
+    font-size: 1.8rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
+  }
+
+  .whitec3 p {
+    color: #666666 !important;
+    font-size: 1rem !important;
+    margin-bottom: 2rem !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Form inputs styling */
+  .whitec3 input,
+  .whitec3 textarea {
+    background: #FFFFFF !important;
+    border: 2px solid #E0E0E0 !important;
+    color: #1E1E1E !important;
+    font-size: 1rem !important;
+    padding: 1rem !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 1.5rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    min-height: auto !important;
+  }
+
+  .whitec3 input::placeholder,
+  .whitec3 textarea::placeholder {
+    color: #999999 !important;
+    font-weight: 400 !important;
+  }
+
+  .whitec3 input:focus,
+  .whitec3 textarea:focus {
+    outline: none !important;
+    border-color: #4285F4 !important;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .whitec3 textarea {
+    min-height: 120px !important;
+    resize: vertical !important;
+  }
+
+  /* Submit button styling */
+  .whitec3 button[type="submit"] {
+    background: #4285F4 !important;
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    padding: 1rem 2rem !important;
+    border: none !important;
+    border-radius: 12px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.3) !important;
+    width: 100% !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .whitec3 button[type="submit"]:hover {
+    background: #3367D6 !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(66, 133, 244, 0.4) !important;
+  }
+
+  .whitec3 button[type="submit"]:active {
+    transform: translateY(-1px) !important;
+  }
+
   
 
   .about-title, .card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 100px;
+    margin-left: 0;
+    margin: 0 auto;
   }
 
   .g-circle{

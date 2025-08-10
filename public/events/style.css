@@ -255,4 +255,13 @@ nav {
   .profile-info {
     padding: 1rem 0; /* Add vertical padding to info section */
   }
+
+  /* Reduce space between button and image for mobile */
+  .profile-info .custom-button-spacing {
+    margin-top: 0.1rem !important; /* Very small margin for mobile */
+  }
+
+  .profile-info button {
+    margin-top: 0.1rem !important; /* Minimal button spacing */
+  }
 }
