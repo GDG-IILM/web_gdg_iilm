@@ -214,10 +214,18 @@
                 </li>
                 <li>
                     <a href="public/meetTheTeam/meetOurTeam.html" class="relative text-white group">
-                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1 mr-10">
+                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-green-500 group-hover:-translate-y-1">
                             Team
                         </span>
                         <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-green-500 transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" onclick="toggleSAKHIChatbot(); return false;" class="relative text-white group">
+                        <span class="relative inline-block transition-transform duration-300 transform group-hover:text-purple-500 group-hover:-translate-y-1 mr-10">
+                            🤖 SAKHI
+                        </span>
+                        <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-purple-500 transition-all duration-300 group-hover:w-full"></span>
                     </a>
                 </li>
             </ul>
@@ -242,6 +250,9 @@
                 </li>
                 <li>
                     <a href="public/meetTheTeam/meetOurTeam.html" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">Team</a>
+                </li>
+                <li>
+                    <a href="#" onclick="toggleSAKHIChatbot(); return false;" class="block text-white text-xl py-3 px-4 hover:bg-gray-700 rounded transition duration-300">🤖 SAKHI</a>
                 </li>
             </ul>
         </div>
@@ -339,30 +350,42 @@
         </div>
       </div>
 
-      <!--Chatbot integration-->
+      <!--SAKHI Chatbot Integration-->
 
       
       <div class="chatbot-icon">
-        <button id="open-chat" class="chat-button"><img src="assets/Bot.png" alt=""></button>
+        <button id="open-chat" class="chat-button" onclick="toggleSAKHIChatbot()">
+          <img src="assets/Bot.png" alt="SAKHI Chatbot">
+        </button>
     </div>
 
-    <!-- Chatbot Container (Initially Hidden) -->
-    <div id="chatbot-container" class="chatbot-container hidden">
+    <!-- SAKHI Chatbot Container (Initially Hidden) -->
+    <div id="sakhi-chatbot-container" class="sakhi-chatbot-container hidden">
         <div class="chat-header">
-            <span>Chatbot</span>
-            <button id="close-chat">❌</button>
+            <span>🤖 SAKHI - Your AI Assistant</span>
+            <button id="close-chat" onclick="toggleSAKHIChatbot()">❌</button>
         </div>
         <div class="chat-body">
-            <div id="chat-messages" class="chat-messages"></div>
-        </div>
-        <div class="chat-input">
-            <input type="text" id="user-input" placeholder="Type a message...">
-            <button id="send-message">Send</button>
+            <iframe 
+                id="sakhi-chatbot-frame" 
+                src="https://compass-sarvam-chatbot.onrender.com/" 
+                frameborder="0"
+                style="width: 100%; height: 100%; border: none; border-radius: 0 0 10px 10px;">
+            </iframe>
         </div>
     </div>
 
-    <!-- Include Chatbot Script -->
-    <script src="/static/chatbot.js"></script>
+    <!-- SAKHI Chatbot Script -->
+    <script>
+        function toggleSAKHIChatbot() {
+            const chatbot = document.getElementById("sakhi-chatbot-container");
+            if (chatbot.classList.contains("hidden")) {
+                chatbot.classList.remove("hidden");
+            } else {
+                chatbot.classList.add("hidden");
+            }
+        }
+    </script>
       <!-- <div class="sticky-login"> -->
         <!-- <button onclick="window.location.href='/login'"><strong>Resources</strong></button> -->
         <!-- <a href="public/resources/index.html"><button><strong>Resources</strong></button></a>
@@ -377,11 +400,18 @@
                 <strong>Google Developers Group</strong>
             </h1>
             <h6 class="text-xs m-0 text-gray-500">IILM UNIVERSITY GREATER NOIDA</h6>
-            <a href="https://gdg.community.dev/gdg-on-campus-iilm-university-greater-noida-india/" class="mt-3">
-              <button type="button" class="w-36 md:w-40 bg-blue-600 hover:bg-blue-700 rounded-lg p-2 text-white hover:text-gray-300">
-                <strong>Join Community</strong>
-              </button>
-            </a>
+            <div class="flex flex-col md:flex-row gap-3 mt-3">
+              <a href="https://gdg.community.dev/gdg-on-campus-iilm-university-greater-noida-india/">
+                <button type="button" class="w-44 md:w-56 bg-blue-600 hover:bg-blue-700 rounded-lg p-3 text-white hover:text-gray-300">
+                  <strong>Join Community</strong>
+                </button>
+              </a>
+              <a href="https://compass-backend-production-e15e.up.railway.app/" target="_blank">
+                <button type="button" class="w-44 md:w-56 bg-green-600 hover:bg-green-700 rounded-lg p-3 text-white hover:text-gray-300">
+                  <strong>Team Nomination Form</strong>
+                </button>
+              </a>
+            </div>
         </div>
         
         <div class="flex justify-center items-center mt-6 md:mt-8" id="elem">

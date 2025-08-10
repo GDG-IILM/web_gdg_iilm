@@ -767,6 +767,79 @@ margin-bottom: 0;
   transition: background-color 0.3s;
 }
 
+/* SAKHI Chatbot Container Styles */
+.sakhi-chatbot-container {
+  position: fixed;
+  bottom: 15vh; /* Bottom position relative to viewport height */
+  right: 2vw; /* Right position relative to viewport width */
+  width: 400px; /* Fixed width for better iframe display */
+  height: 600px; /* Fixed height for better iframe display */
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  border: 2px solid #4285F4;
+}
+
+.sakhi-chatbot-container.hidden {
+  display: none;
+}
+
+.sakhi-chatbot-container .chat-header {
+  padding: 15px 20px;
+  background: linear-gradient(135deg, #4285F4, #34A853);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 13px 13px 0 0;
+}
+
+.sakhi-chatbot-container .chat-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.sakhi-chatbot-container .chat-header button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sakhi-chatbot-container .chat-body {
+  flex: 1;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Responsive design for SAKHI chatbot */
+@media screen and (max-width: 768px) {
+  .sakhi-chatbot-container {
+    width: 90vw;
+    height: 70vh;
+    right: 5vw;
+    bottom: 10vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sakhi-chatbot-container {
+    width: 95vw;
+    height: 75vh;
+    right: 2.5vw;
+    bottom: 8vh;
+  }
+}
+
 .chat-input button:hover {
   background-color: var(--header-color);
 }
